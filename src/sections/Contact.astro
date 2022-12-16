@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon"
+import { linkedin, email } from "@/data/profiles"
+---
+
+
+
+<section id="contact">
+  <h1 id="header-element">Contact me</h1>
+  <p id="contact-text">You can get in touch with me at <u>any time</u>; I'm interested in new opportunities. If you have any questions, don't hesitate to ask me:</p>
+  <ul id="contact-list">
+    {[linkedin, email].map(({ href, title, icon }) => (
+      <li><a href={href} target="_blank" title={title}><Icon name={icon} /></a></li>
+    ))}
+  </ul>
+</section>
+
+
+
+<style lang="styl">
+#contact
+  display flex
+  flex-direction column
+  align-items center
+  background rgb(10, 20, 30) linear-gradient(135deg, rgb(0, 10, 20), rgb(10, 25, 30))
+  $px = 1em
+  padding 1.5em $px 5em $px
+
+#header-element
+  font-size clamp(2em, 6vw, 3em)
+  text-align center
+  margin 0
+
+#contact-text
+  font-size clamp(1em, 1.5vw, 1.2em)
+  text-align justify
+  color gainsboro
+
+#contact-list
+  list-style none
+  display grid
+  justify-content center
+  padding-left 0
+  border-radius 8px
+  box-shadow 0 0 4px rgb(25, 50, 100)
+  overflow hidden
+  margin-bottom 0
+  > li > a:first-child
+    display inline-block
+    color royalblue
+    background rgb(0, 10, 20)
+    width 100%
+    text-decoration none
+    box-sizing border-box
+    padding .5em .75em
+    transition .15s
+    &::after
+      content attr(title)
+    > svg:first-child
+      width 3em
+      vertical-align middle
+      filter drop-shadow(0 0 8px black)
+      margin-right .5em
+      transition transform .2s
+    &:hover
+      color cornflowerblue
+      background rgb(5, 15, 25)
+      > svg:first-child
+        transform translateY(-.25em)
+    &:active
+      background rgb(10, 20, 30)
+      text-shadow 0 0 3px
+</style>

@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon"
+
+interface Props {
+  name: string
+  title?: string
+}
+
+const { name, title = undefined } = Astro.props
+---
+
+
+
+<div class="skill" title={title}><Icon name={name} /></div>
+
+
+
+<style lang="styl">
+.skill
+  display inline-flex
+  flex-direction column
+  align-items center
+  &::after
+    content attr(title)
+    opacity 0
+    transition opacity .15s
+    font-style italic
+    font-weight lighter
+  > svg:first-child
+    $side = 4em
+    width $side
+    min-height $side
+    filter drop-shadow(0 0 8px black)
+    transition filter .15s, translate .2s
+  &:hover
+    &::after
+      opacity 1
+    > svg:first-child
+      filter drop-shadow(0 0 4px teal)
+      translate 0 -.25em
+  &:active
+    > svg:first-child
+      translate 0 -.5em
+</style>

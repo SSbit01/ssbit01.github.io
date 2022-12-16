@@ -1,0 +1,135 @@
+---
+import { Icon } from "astro-icon"
+---
+
+
+
+<section id="home">
+  <div id="intro">
+    <h1>Hello World, I'm <a href="#about" id="me">Stefan Samson</a></h1>
+    <h2 id="description">A <mark>student</mark> and a <mark>full-stack developer</mark></h2>
+    <a href="#about" title="There are some beautiful things ;)" id="scroll-down">
+      Scroll Down<Icon name="ph:arrow-fat-line-down-duotone" id="scroll-down-icon" />
+    </a>
+  </div>
+</section>
+
+
+
+<style lang="styl">
+#home
+  display grid
+  color mediumspringgreen
+  background rgb(10, 15, 20) linear-gradient(135deg, rgb(30, 50, 60), rgb(10, 20, 30), rgb(10, 15, 20), rgb(20, 20, 10), rgb(30, 30, 15)) fixed
+  background-size 400% 400%
+  min-height 100vh
+  border-bottom thin solid
+  animation 40s ease infinite dynamic-bg
+  @keyframes dynamic-bg
+    50%
+      background-position 100% 100%
+
+#intro
+  transform-origin top
+  text-align center
+  font-size clamp(1em, 5vw, 1.5em)
+  $px = .75rem
+  padding 0 $px 5em $px
+  margin auto
+  animation 1.75s ease home
+  @keyframes home
+    from, 50%
+      scale .6
+      opacity 0
+      pointer-events none
+  mark
+    position relative
+    white-space nowrap
+    color aquamarine
+    background inherit
+    font-style italic
+    &::after
+      content ""
+      position absolute
+      right 0
+      bottom 0
+      left 0
+      transform scaleX(0)
+      transform-origin center
+      height .1em
+      background mediumturquoise
+      border-radius 2px
+      transition transform .15s
+    &:hover::after
+      transform scaleX(1)
+  > h1:first-child
+    font-size clamp(2em, 10vw, 2.5em)
+
+#me
+  position relative
+  white-space nowrap
+  font-style italic
+  color aquamarine
+  text-shadow 0 0 4px
+  text-decoration underline double paleturquoise
+  text-decoration-thickness 2px
+  text-underline-offset 4px
+  &::after
+    content "SSbit01"
+    color black
+    background mediumaquamarine
+    position absolute
+    inset 0
+    transform scaleX(0)
+    transform-origin right
+    border-radius 4px
+    box-shadow 0 0 8px teal
+    transition background .15s, transform .2s, box-shadow .2s
+  &:hover::after
+    transform scaleX(1)
+    transform-origin left
+  &:active
+    user-select none
+    &::after
+      background rgb(120, 220, 200)
+      box-shadow 0 0 12px mediumaquamarine
+
+#description
+  color lightseagreen
+  &::after
+    content ""
+    display inline-block
+    vertical-align sub
+    width .2em
+    height 1em
+    background lightcyan
+    box-shadow 0 0 6px lightcyan
+    border-radius 2px
+    margin 0 .35em
+    animation 1s infinite step-end caret
+    @keyframes caret
+      50%
+        opacity 0
+
+#scroll-down
+  display inline-flex
+  gap .25em
+  color steelblue
+  text-decoration none
+  padding .3em .5em
+  border thin solid transparent
+  border-radius 4px
+  transition-duration .15s
+  &:hover
+    color rgb(50, 140, 230)
+  &:active
+    color dodgerblue
+    background rgba(10, 15, 20, .9)
+    border-color currentColor
+  &-icon
+    width 1em
+    animation 1s infinite bounce
+    @keyframes bounce
+      50%
+        transform translateY(25%)
+</style>

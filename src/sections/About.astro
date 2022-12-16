@@ -1,0 +1,255 @@
+---
+import { Icon } from "astro-icon"
+import Skill from "@/components/Skill.astro"
+---
+
+
+
+<section id="about">
+  <div id="about-first">
+    <img src="https://avatars.githubusercontent.com/u/59541034" alt="Avatar" loading="lazy" id="avatar" />
+    <div id="info-box">
+      <h1 class="title-section"><a href="#about-first">Who am I?</a></h1>
+      <p>I'm <strong>Stefan Samson</strong>, also known as <strong><em>SSbit01</em></strong>, a <u>self-taught</u> young programmer who loves to learn and try out the latest technologies. </p>
+      <p>In this section, you can check my <a href="#skill-set">skill set</a>. At the time of writing this, I can develop <u>full-stack</u> web applications and do some <u>data analysis</u> and <u>visualization</u> with <em>Python</em> and <em>JavaScript</em> (or <em>TypeScript</em>).</p>
+    </div>
+  </div>
+
+
+  <div id="skill-set">
+    <h1 class="title-section"><a href="#skill-set"><Icon name="carbon:skill-level-advanced" />Skill Set</a></h1>
+
+    <fieldset id="front-end">
+      <legend><a href="#front-end"><Icon name="eva:browser-fill" />Front-End</a></legend>
+      <fieldset>
+        <legend>Structuring</legend>
+        <Skill name="vscode-icons:file-type-html" title="HTML5" />
+        <Skill name="vscode-icons:file-type-pug" title="Pug" />
+      </fieldset>
+      <fieldset>
+        <legend>Styling</legend>
+        <Skill name="vscode-icons:file-type-css" title="CSS" />
+        <Skill name="logos:sass" title="Sass / SCSS" />
+        <Skill name="stylus" title="Stylus" />
+        <Skill name="logos:bootstrap" title="Bootstrap" />
+        <Skill name="logos:tailwindcss-icon" title="Tailwind CSS" />
+      </fieldset>
+      <fieldset>
+        <legend>Programming</legend>
+        <Skill name="logos:javascript" title="JavaScript" />
+        <Skill name="logos:typescript-icon" title="TypeScript" />
+        <fieldset>
+          <legend>Frameworks / Libraries</legend>
+          <Skill name="logos:react" title="React" />
+          <Skill name="logos:vue" title="Vue" />
+          <Skill name="logos:redux" title="Redux" />
+          <Skill name="jquery" title="jQuery" />
+          <Skill name="logos:d3" title="D3.js" />
+        </fieldset>
+      </fieldset>
+    </fieldset>
+
+    <fieldset id="back-end">
+      <legend><a href="#back-end"><Icon name="clarity:rack-server-solid" />Back-End</a></legend>
+      <Skill name="supabase" title="Supabase" />
+      <Skill name="logos:nodejs-icon" title="Node.js" />
+      <Skill name="simple-icons:express" title="Express" />
+      <fieldset>
+        <legend><Icon name="ph:database-duotone" />Databases</legend>
+        <Skill name="mongodb" title="MongoDB" />
+        <Skill name="mongoose" title="Mongoose" />
+        <Skill name="logos:postgresql" title="PostgreSQL" />
+      </fieldset>
+    </fieldset>
+
+    <fieldset id="all-in-one-web">
+      <legend><a href="#all-in-one-web">All-In-One</a></legend>
+      <Skill name="file-icons:nextjs" title="Next.js" />
+      <Skill name="vscode-icons:file-type-astro" title="Astro" />
+    </fieldset>
+
+    <fieldset id="communication">
+      <legend><a href="#communication"><Icon name="fluent:communication-16-filled" />Communication</a></legend>
+      <Skill name="cib:socket-io" title="Socket.IO" />
+      <Skill name="logos:graphql" title="GraphQL" />
+    </fieldset>
+
+    <fieldset id="testing">
+      <legend><a href="#testing"><Icon name="file-icons:test-js" />Testing</a></legend>
+      <Skill name="logos:mocha" title="Mocha" />
+      <Skill name="logos:chai" title="Chai" />
+    </fieldset>
+
+    <fieldset id="data-analysis">
+      <legend><a href="#data-analysis"><Icon name="ep:data-analysis" />Data Analysis</a></legend>
+      <Skill name="logos:python" title="Python" />
+      <Skill name="logos:numpy" title="NumPy" />
+      <Skill name="simple-icons:pandas" title="Pandas" />
+      <Skill name="logos:matplotlib-icon" title="Matplotlib" />
+      <Skill name="seaborn" title="Seaborn" />
+    </fieldset>
+
+  </div>
+</section>
+
+
+
+<style lang="stylus">
+.title-section
+  font-size clamp(1.5em, 9vw, 2em)
+  > a:first-child
+    position relative
+    color mediumseagreen
+    text-decoration none
+    transition color .15s
+    &::before
+      content ""
+      position absolute
+      background mediumaquamarine
+      right 0
+      bottom 0
+      left 0
+      transform scaleX(0)
+      transform-origin right
+      height .1em
+      background mediumturquoise
+      border-radius 2px
+      transition transform .15s
+    &::after
+      content "#"
+      position absolute
+      right -1em
+      color darkslategray
+      opacity 0
+      transition opacity .15s
+    &:hover, &:focus
+      color mediumspringgreen
+      &::after
+        opacity 1
+    &:active::before
+      transform scaleX(1)
+      transform-origin left
+
+#about
+  background rgb(10, 15, 20) linear-gradient(135deg, rgb(25, 35, 40), rgb(10, 15, 20))
+  $px = .75em
+  padding 0 $px 5em $px
+  border-bottom thin solid mediumspringgreen
+
+#about-first
+  display flex
+  align-items flex-start
+  justify-content center
+  gap 1.5em 2em
+  padding-top 2em
+
+#avatar
+  aspect-ratio 1 / 1
+  width 15em
+  max-width 100%
+  border-radius 50%
+  box-shadow 0 0 8px teal
+  transition box-shadow .2s, translate .15s
+  &:hover
+    box-shadow 0 0 12px 2px springgreen
+  &:active
+    translate 0 -.5em
+
+#info-box
+  font-size clamp(1.1em, 1.55vw, 1.4em)
+  text-align justify
+  max-width 50em
+  border-bottom thin solid teal
+  > h1:first-child
+    margin 0
+  > p
+    strong, em
+      color aquamarine
+    u
+      text-decoration-color mediumaquamarine
+    a
+      transition color .15s
+
+#skill-set
+  display grid
+  justify-content center
+  gap 1.5em
+  margin-top 2em
+  > h1:first-child
+    text-align center
+    margin-bottom -.25em
+    > a
+      display inline-flex
+      align-items center
+      gap .25em
+      > svg:first-child
+        width 1em
+  fieldset  // All fieldsets
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content space-evenly
+    gap 1em
+    border-radius 8px
+    box-shadow 1px 1px 4px black
+    fieldset  // Nested fieldsets
+      background rgba(5, 10, 15, .5)
+      border thin solid rgb(30, 40, 40)
+      $px = .5em
+      padding 1em $px .5em $px
+      margin 0
+      > legend
+        display flex
+        align-items center
+        gap .25em
+        color silver
+        svg
+          width 1.5em
+  > fieldset  // First level fieldset children
+    background rgba(5, 15, 20, .5)
+    padding .75em
+    border thin solid darkslategray
+    margin 0 -.25em
+    scroll-margin-top .5em
+    > legend
+      font-size 1.5em
+      > a:first-child  
+        display inline-flex
+        align-items flex-end
+        gap .25em
+        position relative
+        color mediumseagreen
+        text-decoration none
+        transition color .15s
+        &::before
+          content ""
+          color black
+          background mediumaquamarine
+          position absolute
+          right 0
+          bottom 0
+          left 0
+          transform scaleX(0)
+          transform-origin right
+          height .1em
+          background mediumturquoise
+          border-radius 2px
+          transition transform .15s
+        &:hover, &:focus
+          color mediumspringgreen
+        &:active::before
+          transform scaleX(1)
+          transform-origin left
+        > svg:first-child
+          width 1.25em
+
+
+@media (max-width 780px)
+  #about-first
+    flex-direction column
+    align-items center
+  #info-box
+    font-size clamp(1em, 4.25vw, 1.1em)
+    > h1:first-child
+      text-align center
+</style>

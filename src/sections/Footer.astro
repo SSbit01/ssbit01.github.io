@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon"
+import * as profiles from "@/data/profiles"
+---
+
+
+
+<footer id="end">
+  <ul id="profiles">
+    {Object.values(profiles).map(({ href, title, icon }) => (
+        <li><a href={href} target="_blank" title={title}><Icon name={icon} /></a></li>
+    ))}
+  </ul>
+  <div id="info">
+    <p><a href="https://github.com/SSbit01/ssbit01.github.io.git" target="_blank" id="git-repository"><Icon name="mdi:git" />Repository</a></p>
+    <p>Created by <strong>Stefan Samson</strong></p>
+    <p>This website makes use of <a href="https://fonts.google.com/specimen/Jura" target="_blank">Jura</a>, which is a fantastic font!</p>
+    <p>Built with <a href="https://astro.build" target="_blank">{Astro.generator}</a></p>
+  </div>
+</footer>
+
+
+
+<style lang="styl">
+#end
+  background rgb(5, 10, 15)
+  $px = 1em
+  padding 2em $px 3em $px
+  border-top thin solid crimson
+
+#profiles
+  list-style none
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  gap .25em .5em
+  padding-left 0
+  margin-top 0
+  > li > a:first-child
+    display flex
+    align-items flex-end
+    gap .2em
+    color cadetblue
+    padding .5em
+    border-radius 50%
+    transition-property background, color, box-shadow
+    transition-duration .15s
+    > svg:first-child
+      width 3em
+    &:hover
+      color black
+      background aquamarine
+    &:focus
+      box-shadow 0 0 12px teal
+
+#info
+  color lightgray
+  text-align center
+  margin-top 2em
+  > p > a
+    text-decoration none
+    transition .15s
+    &:hover
+      text-decoration underline
+
+#git-repository
+  display inline-flex
+  align-items flex-end
+  gap .2em
+  > svg
+    width 1.25em
+</style>

@@ -1,0 +1,35 @@
+{
+  "name": "stefan-samson-portfolio",
+  "description": "Stefan Samson's personal portfolio",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SSbit01/SSbit01.git"
+  },
+  "keywords": [
+    "personal",
+    "portfolio"
+  ],
+  "author": "SSbit01",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SSbit01/SSbit01/issues"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^1.0.0",
+    "astro": "^1.6.15",
+    "astro-compress": "^1.1.22",
+    "astro-icon": "^0.8.0"
+  },
+  "devDependencies": {
+    "stylus": "^0.59.0"
+  }
+}

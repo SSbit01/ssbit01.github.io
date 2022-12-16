@@ -1,0 +1,153 @@
+---
+import { Icon } from "astro-icon"
+import { github, replit, codepen, freecododecamp } from "@/data/profiles"
+import Project from "@/components/Project.astro"
+---
+
+
+
+<section id="projects">
+  <h1 id="header-element">These are some of my best personal projects<Icon name="ph:smiley-wink-fill" /></h1>
+
+  <div id="featured-projects">
+    <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.ssbit01.repl.co/" featured>This is a platform where users can create and join chat rooms without the need to create an account</Project>
+    <Project name="Voting App" tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]} source="https://github.com/SSbit01/voting-app" website="https://voting-app-ssbit01.vercel.app/" featured>This is a platform where users can create polls and everyone can vote on them</Project>
+    <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV" featured>This is personally my favourite project &lt;3</Project>
+  </div>
+
+  <details id="more-projects-details">
+    <summary>Other Projects</summary>
+    <div id="other-projects">
+      <Project name="Image Search Abstraction Layer" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.ssbit01.repl.co/">A simple image search website that makes use of the <strong>Pixabay API</strong></Project>
+      <Project name="Wikipedia Viewer" tags={["Pug", "Bootstrap", "Wikipedia"]} source="https://codepen.io/ssbit01/pen/dyNJwxv" website="https://codepen.io/ssbit01/full/dyNJwxv" />
+      <Project name="Scatterplot: Doping in Professional Bicycle Racing" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/qBaorjO" website="https://codepen.io/ssbit01/full/qBaorjO" />
+      <Project name="Bar Chart: U.S. GDP" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/poEdPWW" website="https://codepen.io/ssbit01/full/poEdPWW" />
+      <Project name="Choropleth Map: U.S. Educational Attainment" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/gOwZzEZ" website="https://codepen.io/ssbit01/full/gOwZzEZ" />
+      <Project name="Heatmap: Monthly Global Land-Surface Temperature" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/eYdKxMO" website="https://codepen.io/ssbit01/full/eYdKxMO" />
+      <Project name="Recipe Box" tags={["Vue", "Local Storage"]} source="https://codepen.io/ssbit01/pen/poeZmRq" website="https://codepen.io/ssbit01/full/poeZmRq" />
+      <Project name="Rock Paper Scissors (Lizard Spock)" tags={["Vue", "Font Awesome"]} source="https://codepen.io/ssbit01/pen/xxjpVoR" website="https://codepen.io/ssbit01/full/xxjpVoR" />
+      <Project name="25 + 5 Clock" tags={["React"]} source="https://codepen.io/ssbit01/pen/QWKGEVQ" website="https://codepen.io/ssbit01/full/QWKGEVQ" />
+      <Project name="Markdown Previewer" tags={["React"]} source="https://codepen.io/ssbit01/pen/vYKbwRZ" website="https://codepen.io/ssbit01/full/vYKbwRZ" />
+      <Project name="Simon Game" tags={["React"]} source="https://codepen.io/ssbit01/pen/poePVeV" website="https://codepen.io/ssbit01/full/poePVeV" />
+      <Project name="Random Quote Machine" tags={["Bootstrap", "jQuery"]} source="https://codepen.io/ssbit01/pen/JjGZmrd" website="https://codepen.io/ssbit01/full/JjGZmrd" />
+      <Project name="Password Generator" tags={["Bootstrap", "Vanilla JavaScript"]} source="https://codepen.io/ssbit01/pen/RwVOaKw" website="https://codepen.io/ssbit01/full/RwVOaKw" />
+      <Project name="Intro to Python" tags={["HTML", "CSS"]} source="https://codepen.io/ssbit01/pen/RwNzXrB" website="https://codepen.io/ssbit01/full/RwNzXrB" />
+    </div>
+  </details>
+
+  <div id="profiles-container">
+    <h2>See more in my <mark>profiles</mark></h2>
+    <ul id="profiles">
+      {[github, replit, codepen, freecododecamp].map(({ href, title, icon }) => (
+         <li><a href={href} target="_blank" title={title}><Icon name={icon} /></a></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+
+
+<style lang="styl">
+#projects
+  background rgb(15, 25, 35) linear-gradient(135deg, rgb(5, 10, 15), rgb(20, 30, 40)) fixed
+  padding-top 2.75em
+  padding-bottom 5em
+  border-bottom thin solid mediumspringgreen
+
+#header-element
+  color deepskyblue
+  text-align center
+  font-size clamp(1.5em, 6vw, 2em)
+  gap .3em
+  margin 0 .75em
+  > svg
+    display inline-block
+    vertical-align sub
+    width 1.25em
+    color skyblue
+    margin 0 .3em
+
+#featured-projects
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  margin-top 2.5em
+
+#more-projects-details
+  margin-top 3em
+  > summary:first-child
+    background mediumaquamarine
+    color black
+    font-size 1.5em
+    text-align center
+    max-width max-content
+    padding .25em .5em
+    border-radius 8px
+    box-shadow 0 0 3px teal
+    $mx = auto
+    margin 0 $mx 2rem $mx
+    cursor pointer
+    user-select none
+    transition .15s
+    &:hover
+      box-shadow 0 0 8px mediumspringgreen
+    &:active
+      scale .95
+  &[open]
+    > summary:first-child
+      color mediumaquamarine
+      background rgba(0, 0, 5, .5)
+    > #other-projects
+      animation show .5s ease
+      @keyframes show
+        from
+          opacity 0
+
+#other-projects
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+
+#profiles-container
+  text-align center
+  $mx = .75em
+  margin 2.5em $mx 0 $mx
+  > h2:first-child
+    font-size clamp(1.5em, 8vw, 2em)
+    > mark
+      color mediumspringgreen
+      background none
+
+#profiles
+  list-style none
+  display flex
+  align-items center
+  justify-content center
+  background rgba(0, 5, 10, .3)
+  max-width max-content
+  padding-left 0
+  border-radius 16px
+  box-shadow 0 0 4px darkcyan
+  margin auto
+  overflow hidden  // border-radius overlaps in children
+  > li
+    > a:first-child
+      display inline-block
+      color teal
+      padding .3em .4em
+      transition .15s
+      &:hover
+        color lightseagreen
+        background rgba(0, 5, 10, .6)
+        > svg
+          transform translateY(-5%)
+      &:active
+        color mediumaquamarine
+        > svg
+          filter drop-shadow(0 0 3px teal)
+      > svg
+        width 3em
+        transition transform .2s
+</style>

@@ -1,0 +1,135 @@
+---
+import { Icon } from "astro-icon"
+
+
+interface Props {
+  name: string
+  tags?: string[]
+  source: string
+  website?: string
+  featured?: boolean
+}
+
+
+function toTag(str: string) {
+  return str.toLowerCase().replaceAll(/\W/g, "-")
+}
+
+
+const { name, tags, source, website } = Astro.props,
+      id = toTag(name)
+---
+
+
+
+<figure>
+  <img src={`/images/${id}.webp`} alt="" loading="lazy" />
+  
+  <figcaption>
+    <h2>{name}</h2>
+
+    {tags?.length && (
+      <ul>
+        {tags.map(tag => (
+          <li>{toTag(tag)}</li>
+        ))}
+      </ul>
+    )}
+
+    {Astro.slots.has("default") && <p class="description"><slot /></p>}
+    
+    <div class="links">
+      <a href={source} target="_blank" rel="noreferrer noopener" title="Source Code"><Icon name="fluent:code-24-filled" /></a>
+      <a href={website} target="_blank" rel="noreferrer noopener" title="Website"><Icon name="lucide:external-link" /></a>
+    </div>
+  </figcaption>
+</figure>
+
+
+
+<style lang="styl">
+figure
+  position relative
+  text-align center
+  box-shadow 0 0 4px darkslategray
+  margin 0
+  overflow hidden
+  &:hover
+    > img
+      filter blur(8px) opacity(.5) brightness(.75)
+      scale 1.25
+  &:not(:hover)
+    > figcaption
+      visibility hidden
+      opacity 0
+      scale .9
+  > img
+    vertical-align top  // PREVENTS EXTRA WHITE SPACE
+    aspect-ratio 16 / 9
+    width 48em
+    max-width 100%
+    transition .2s
+  > figcaption
+    display flex
+    flex-direction column
+    gap 1em
+    position absolute
+    inset 1em .5em
+    padding 0 .5rem
+    transform-origin bottom
+    transition .4s
+    > h2:first-child
+      font-size clamp(1.5em, 5.75vw, 3em)
+      line-height 1em
+      margin-top auto
+      margin-bottom .1em
+    > ul
+      list-style none
+      display flex
+      flex-wrap wrap
+      align-items center
+      justify-content center
+      gap .6em
+      padding-left 0
+      margin 0
+      > li
+        background rgba(0, 5, 10, .75)
+        padding .2em .4em
+        border-radius 16px
+        box-shadow 0 0 3px 2px crimson
+    > .description
+      margin 0
+    .links
+      display flex
+      align-items center
+      justify-content space-evenly
+      margin auto 0
+      > a
+        font-size clamp(2em, 7vw, 3em)
+        $side = 1em
+        width $side
+        height $side
+        color gold
+        padding .2em
+        border-radius 50%
+        transition .2s
+        &:hover
+          background rgba(0, 5, 10, .25)
+          box-shadow 0 0 3px
+        &:active
+          background rgba(10, 15, 20, .5)
+          box-shadow 0 0 8px
+
+@media(max-width 430px)
+  figure > figcaption
+    font-size .9em
+    gap .75em
+  .description
+    display none
+
+@media(max-width 350px)
+  figure > figcaption
+    gap .6em
+    > ul
+      display none
+</style>
