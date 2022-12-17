@@ -14,7 +14,7 @@ import * as profiles from "@/data/profiles"
   <div id="info">
     <p><a href="https://github.com/SSbit01/ssbit01.github.io.git" target="_blank" id="git-repository"><Icon name="mdi:git" />Repository</a></p>
     <p>Created by <strong>Stefan Samson</strong></p>
-    <p>This website makes use of <a href="https://fonts.google.com/specimen/Jura" target="_blank">Jura</a>, which is a fantastic font!</p>
+    <p>This website makes use of <a href="https://fonts.google.com/specimen/Jura" target="_blank">Jura</a>, which is a great font!</p>
     <p>Built with <a href="https://astro.build" target="_blank">{Astro.generator}</a></p>
   </div>
 </footer>
@@ -59,10 +59,14 @@ import * as profiles from "@/data/profiles"
   text-align center
   margin-top 2em
   > p > a
+    color dodgerblue
     text-decoration none
-    transition .15s
+    transition color .15s, text-shadow .15s
     &:hover
+      color deepskyblue
       text-decoration underline
+    &:active
+      text-shadow 0 0 4px
 
 #git-repository
   display inline-flex

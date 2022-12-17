@@ -168,7 +168,13 @@ import Skill from "@/components/Skill.astro"
     u
       text-decoration-color mediumaquamarine
     a
-      transition color .15s
+      color dodgerblue
+      transition color .15s, text-shadow .15s
+      &:hover
+        color deepskyblue
+      &:active
+        text-shadow 0 0 4px
+      
 
 #skill-set
   display grid
