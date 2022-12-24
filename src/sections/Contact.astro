@@ -6,7 +6,7 @@ import { linkedin, email } from "@/data/profiles"
 
 
 <section id="contact">
-  <h1 id="header-element">Contact me</h1>
+  <h1 class="section-header">Contact me</h1>
   <p id="contact-text">You can get in touch with me at <u>any time</u>; I'm interested in new opportunities. If you have any questions, don't hesitate to ask me:</p>
   <ul id="contact-list">
     {[linkedin, email].map(({ href, title, icon }) => (
@@ -26,7 +26,7 @@ import { linkedin, email } from "@/data/profiles"
   $px = 1em
   padding 1.5em $px 5em $px
 
-#header-element
+.section-header
   font-size clamp(2em, 6vw, 3em)
   text-align center
   margin 0

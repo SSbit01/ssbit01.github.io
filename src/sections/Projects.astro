@@ -7,7 +7,7 @@ import Project from "@/components/Project.astro"
 
 
 <section id="projects">
-  <h1 id="header-element">These are some of my best personal projects<Icon name="ph:smiley-wink-fill" /></h1>
+  <h1 class="section-header">These are some of my best personal projects<Icon name="ph:smiley-wink-fill" /></h1>
 
   <div id="featured-projects">
     <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.ssbit01.repl.co/" featured>This is a platform where users can create and join chat rooms without the need to create an account</Project>
@@ -54,7 +54,7 @@ import Project from "@/components/Project.astro"
   padding-bottom 5em
   border-bottom thin solid mediumspringgreen
 
-#header-element
+.section-header
   color deepskyblue
   text-align center
   font-size clamp(1.5em, 6vw, 2em)
