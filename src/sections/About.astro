@@ -10,8 +10,10 @@ import Skill from "@/components/Skill.astro"
     <img src="https://avatars.githubusercontent.com/u/59541034" alt="Avatar" loading="lazy" id="avatar" />
     <div id="info-box">
       <h1 class="title-section"><a href="#about-first">Who am I?</a></h1>
-      <p>I'm <strong>Stefan Samson</strong>, also known as <strong><em>SSbit01</em></strong>, a <u>self-taught</u> young programmer who loves to learn and try out the latest technologies. </p>
-      <p>In this section, you can check my <a href="#skill-set">skill set</a>. At the time of writing this, I can develop <u>full-stack</u> web applications and do some <u>data analysis</u> and <u>visualization</u> with <em>Python</em> and <em>JavaScript</em> (or <em>TypeScript</em>).</p>
+      <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a young <strong>self-taught developer</strong> who loves to <strong>learn</strong> and <strong>try out</strong> the <strong>latest technologies</strong>.</p>
+      <p>I can develop <strong>full-stack web applications</strong> and do some <strong>data analysis</strong> and <strong>visualization</strong> with <em>Python</em> and <em>JavaScript</em> (or <em>TypeScript</em>).</p>
+      <p>I've always been curious about <strong>science</strong> and <strong>technology</strong>. I started programming with <em>Python</em> when I was 12 years old, which I taught myself. Shortly after, I became interested in <strong>Data Science</strong> and <strong>Artificial Intelligence</strong>, which I'm still learning.</p>
+      <p>I was also interested in <strong>Web Development</strong> and <strong>Communications</strong>; I learned <em>front-end</em> and <em>back-end</em> technologies that allowed me to create <u>exciting projects</u>.</p>
     </div>
   </div>
 
@@ -63,13 +65,13 @@ import Skill from "@/components/Skill.astro"
     </fieldset>
 
     <fieldset id="all-in-one-web">
-      <legend><a href="#all-in-one-web">All-In-One</a></legend>
+      <legend><a href="#all-in-one-web">All-In-One Web Frameworks</a></legend>
       <Skill name="file-icons:nextjs" title="Next.js" />
       <Skill name="vscode-icons:file-type-astro" title="Astro" />
     </fieldset>
 
-    <fieldset id="communication">
-      <legend><a href="#communication"><Icon name="fluent:communication-16-filled" />Communication</a></legend>
+    <fieldset id="communications">
+      <legend><a href="#communications"><Icon name="fluent:communication-16-filled" />Communications</a></legend>
       <Skill name="cib:socket-io" title="Socket.IO" />
       <Skill name="logos:graphql" title="GraphQL" />
     </fieldset>
@@ -138,7 +140,7 @@ import Skill from "@/components/Skill.astro"
 
 #about-first
   display flex
-  align-items flex-start
+  align-items center
   justify-content center
   gap 1.5em 2em
   padding-top 2em
@@ -156,7 +158,6 @@ import Skill from "@/components/Skill.astro"
     translate 0 -.5em
 
 #info-box
-  font-size clamp(1.1em, 1.55vw, 1.4em)
   text-align justify
   max-width 50em
   border-bottom thin solid teal
@@ -250,12 +251,10 @@ import Skill from "@/components/Skill.astro"
           width 1.25em
 
 
-@media (max-width 780px)
+@media (max-width 800px)
   #about-first
     flex-direction column
     align-items center
-  #info-box
-    font-size clamp(1em, 4.25vw, 1.1em)
-    > h1:first-child
-      text-align center
+  #info-box > h1:first-child
+    text-align center
 </style>

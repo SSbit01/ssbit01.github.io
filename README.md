@@ -1,4 +1,5 @@
+# ![favicon](./public/favicon.ico) ***Stefan Samson (SSbit01)*** ![favicon](./public/favicon.ico)
 
-# ![favicon](./public/favicon.ico) ***SSbit01*** ![favicon](./public/favicon.ico)
+This is my ***portfolio*** website.
 
-This is my ***portfolio*** website, built with [Astro.js](https://astro.build/).
+Built with [Astro.js](https://astro.build/), an **outstanding framework**!

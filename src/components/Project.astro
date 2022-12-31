@@ -22,7 +22,7 @@ const { name, tags, source, website } = Astro.props,
 
 
 
-<figure>
+<figure tabindex="1">
   <img src={`/images/${id}.webp`} alt="" loading="lazy" />
   
   <figcaption>
@@ -51,18 +51,20 @@ const { name, tags, source, website } = Astro.props,
 figure
   position relative
   text-align center
-  box-shadow 0 0 4px darkslategray
   margin 0
+  box-shadow inset 0 0 4px darkslategray
   overflow hidden
-  &:hover
+  transition opacity 1s, box-shadow .2s
+  &:hover, &:focus
     > img
       filter blur(8px) opacity(.5) brightness(.75)
-      scale 1.25
-  &:not(:hover)
+  &:not(:hover):not(:focus)
     > figcaption
       visibility hidden
       opacity 0
       scale .9
+  &:focus
+    box-shadow inset 0 0 2px 2px darkslategray
   > img
     vertical-align top  // PREVENTS EXTRA WHITE SPACE
     aspect-ratio 16 / 9
@@ -74,15 +76,16 @@ figure
     flex-direction column
     gap 1em
     position absolute
-    inset 1em .5em
-    padding 0 .5rem
+    inset 0
     transform-origin bottom
+    padding 1em
+    overflow auto
     transition .4s
     > h2:first-child
       font-size clamp(1.5em, 5.75vw, 3em)
-      line-height 1em
+      line-height 1.1em
       margin-top auto
-      margin-bottom .1em
+      margin-bottom 0
     > ul
       list-style none
       display flex
@@ -99,6 +102,14 @@ figure
         box-shadow 0 0 3px 2px crimson
     > .description
       margin 0
+      :global(a)
+        color deepskyblue
+        text-decoration none
+        transition color .15s, text-shadow .15s
+        &:hover
+          text-decoration underline
+        &:active
+          text-shadow 0 0 4px
     .links
       display flex
       align-items center
@@ -123,13 +134,7 @@ figure
 @media(max-width 430px)
   figure > figcaption
     font-size .9em
-    gap .75em
-  .description
-    display none
-
-@media(max-width 350px)
-  figure > figcaption
     gap .6em
     > ul
-      display none
+      font-size .85em
 </style>

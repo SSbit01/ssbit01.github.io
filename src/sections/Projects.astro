@@ -10,15 +10,15 @@ import Project from "@/components/Project.astro"
   <h1 class="section-header">These are some of my best personal projects<Icon name="ph:smiley-wink-fill" /></h1>
 
   <div id="featured-projects">
-    <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.ssbit01.repl.co/" featured>This is a platform where users can create and join chat rooms without the need to create an account</Project>
-    <Project name="Voting App" tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]} source="https://github.com/SSbit01/voting-app" website="https://voting-app-ssbit01.vercel.app/" featured>This is a platform where users can create polls and everyone can vote on them</Project>
-    <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV" featured>This is personally my favourite project &lt;3</Project>
+    <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.ssbit01.repl.co/" featured>A platform where users can create and join chat rooms without creating an account. It makes use of WebSockets</Project>
+    <Project name="Voting App" tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]} source="https://github.com/SSbit01/voting-app" website="https://voting-app-ssbit01.vercel.app/" featured>A platform where users can create polls and everyone can vote on them</Project>
+    <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV" featured>My own implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Conway's Game Of Life</a>. This is one of my favorite projects &lt;3</Project>
   </div>
 
   <details id="more-projects-details">
     <summary>Other Projects</summary>
     <div id="other-projects">
-      <Project name="Image Search Abstraction Layer" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.ssbit01.repl.co/">A simple image search website that makes use of the <strong>Pixabay API</strong></Project>
+      <Project name="Image Search Abstraction Layer" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.ssbit01.repl.co/">Image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank">Pixabay API</a></Project>
       <Project name="Wikipedia Viewer" tags={["Pug", "Bootstrap", "Wikipedia"]} source="https://codepen.io/ssbit01/pen/dyNJwxv" website="https://codepen.io/ssbit01/full/dyNJwxv" />
       <Project name="Scatterplot: Doping in Professional Bicycle Racing" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/qBaorjO" website="https://codepen.io/ssbit01/full/qBaorjO" />
       <Project name="Bar Chart: U.S. GDP" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/poEdPWW" website="https://codepen.io/ssbit01/full/poEdPWW" />
@@ -36,7 +36,7 @@ import Project from "@/components/Project.astro"
   </details>
 
   <div id="profiles-container">
-    <h2>See more in my <mark>profiles</mark></h2>
+    <h2>See more on my <mark>profiles</mark></h2>
     <ul id="profiles">
       {[github, replit, codepen, freecododecamp].map(({ href, title, icon }) => (
          <li><a href={href} target="_blank" title={title}><Icon name={icon} /></a></li>
@@ -94,21 +94,19 @@ import Project from "@/components/Project.astro"
       box-shadow 0 0 8px mediumspringgreen
     &:active
       scale .95
+  &:not([open]) > #other-projects
+    opacity 0
   &[open]
     > summary:first-child
       color mediumaquamarine
       background rgba(0, 0, 5, .5)
-    > #other-projects
-      animation show .5s ease
-      @keyframes show
-        from
-          opacity 0
 
 #other-projects
   display flex
   flex-wrap wrap
   align-items center
   justify-content center
+  transition opacity .4s
 
 #profiles-container
   text-align center
