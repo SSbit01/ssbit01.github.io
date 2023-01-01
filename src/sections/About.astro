@@ -7,7 +7,8 @@ import Skill from "@/components/Skill.astro"
 
 <section id="about">
   <div id="about-first">
-    <img src="https://avatars.githubusercontent.com/u/59541034" alt="Avatar" loading="lazy" id="avatar" />
+    <img src="/images/me.webp" alt="Avatar" loading="lazy" id="avatar" />
+    
     <div id="info-box">
       <h1 class="title-section"><a href="#about-first">Who am I?</a></h1>
       <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a young <strong>self-taught developer</strong> who loves to <strong>learn</strong> and <strong>try out</strong> the <strong>latest technologies</strong>.</p>
@@ -16,6 +17,20 @@ import Skill from "@/components/Skill.astro"
       <p>I was also interested in <strong>Web Development</strong> and <strong>Communications</strong>; I learned <em>front-end</em> and <em>back-end</em> technologies that allowed me to create <u>exciting projects</u>.</p>
     </div>
   </div>
+
+
+  <fieldset id="interests">
+    <legend>Interests</legend>
+
+    <ul>
+      <li><Icon name="mdi:code-braces" />Coding</li>
+      <li><Icon name="mdi:robot-angry" />Artificial Intelligence</li>
+      <li><Icon name="eos-icons:atom-electron" />Physics</li>
+      <li><Icon name="mdi:telescope" />Astronomy</li>
+      <li><Icon name="simple-icons:windows95" />Retrocomputing</li>
+      <li><Icon name="mdi:nintendo-game-boy" />Video Games & Modding</li>
+    </ul>
+  </fieldset>
 
 
   <div id="skill-set">
@@ -113,7 +128,7 @@ import Skill from "@/components/Skill.astro"
       left 0
       transform scaleX(0)
       transform-origin right
-      height .1em
+      height 3px
       background mediumturquoise
       border-radius 2px
       transition transform .15s
@@ -160,10 +175,10 @@ import Skill from "@/components/Skill.astro"
 #info-box
   text-align justify
   max-width 50em
-  border-bottom thin solid teal
   > h1:first-child
     margin 0
   > p
+    font-size clamp(1em, 3vw, 1.1em)
     strong, em
       color aquamarine
     u
@@ -175,7 +190,37 @@ import Skill from "@/components/Skill.astro"
         color deepskyblue
       &:active
         text-shadow 0 0 4px
-      
+
+#interests
+  background rgba(5, 10, 15, .75)
+  max-width 70em
+  padding-top .75em
+  border thin solid darkslategray
+  border-radius 8px
+  box-shadow 1px 1px 4px black
+  margin-top .5em
+  margin-right auto
+  margin-left auto
+  > legend:first-child
+    color aquamarine
+    font-size 1.2em
+  > ul
+    list-style none
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content space-evenly
+    gap 1em
+    padding 0
+    margin 0
+    > li
+      display flex
+      align-items center
+      gap .3em
+      color darkcyan
+      > svg
+        color lightseagreen
+        width 1.5em
 
 #skill-set
   display grid
@@ -219,7 +264,7 @@ import Skill from "@/components/Skill.astro"
     margin 0 -.25em
     scroll-margin-top .5em
     > legend
-      font-size 1.5em
+      font-size clamp(1.1em, 5.5vw, 1.5em)
       > a:first-child  
         display inline-flex
         align-items flex-end
@@ -238,10 +283,10 @@ import Skill from "@/components/Skill.astro"
           left 0
           transform scaleX(0)
           transform-origin right
-          height .1em
+          height 2px
           background mediumturquoise
           border-radius 2px
-          transition transform .15s
+          transition transform .2s
         &:hover, &:focus
           color mediumspringgreen
         &:active::before

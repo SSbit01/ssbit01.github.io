@@ -27,7 +27,7 @@ const { name, title = undefined } = Astro.props
     font-style italic
     font-weight lighter
   > svg:first-child
-    $side = 4em
+    $side = clamp(3.5em, 10vw, 4em)
     width $side
     min-height $side
     filter drop-shadow(0 0 8px black)
