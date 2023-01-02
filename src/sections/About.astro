@@ -6,11 +6,11 @@ import Skill from "@/components/Skill.astro"
 
 
 <section id="about">
-  <div id="about-first">
+  <div id="about-me">
     <img src="/images/me.webp" alt="Avatar" loading="lazy" id="avatar" />
     
-    <div id="info-box">
-      <h1 class="title-section"><a href="#about-first">Who am I?</a></h1>
+    <div id="about-summary">
+      <h1 class="title-section"><a href="#about-me">About Me</a></h1>
       <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a young <strong>self-taught developer</strong> who loves to <strong>learn</strong> and <strong>try out</strong> the <strong>latest technologies</strong>.</p>
       <p>Capable of developing <strong>full-stack web applications</strong> and doing some <strong>data analysis</strong> and <strong>visualization</strong> with <em>Python</em> and <em>JavaScript</em> (or <em>TypeScript</em>).</p>
       <p>I've always been curious about <strong>science</strong> and <strong>technology</strong>. <em>Python</em> was my first programming language, which I taught myself at the age of 12. Shortly after, I became interested in <strong>Data Science</strong> and <strong>Artificial Intelligence</strong>, which I'm still learning.</p>
@@ -153,7 +153,7 @@ import Skill from "@/components/Skill.astro"
   padding 0 $px 5em $px
   border-bottom thin solid mediumspringgreen
 
-#about-first
+#about-me
   display flex
   align-items center
   justify-content center
@@ -173,7 +173,7 @@ import Skill from "@/components/Skill.astro"
   &:active
     translate 0 -.5em
 
-#info-box
+#about-summary
   text-align justify
   max-width 50em
   > h1:first-child
@@ -297,10 +297,10 @@ import Skill from "@/components/Skill.astro"
 
 
 @media (max-width 825px)
-  #about-first
+  #about-me
     flex-direction column
     align-items center
-  #info-box > h1:first-child
+  #about-summary > h1:first-child
     text-align center
 
 @media (max-width 580px)
