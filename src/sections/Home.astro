@@ -32,7 +32,7 @@ import { Icon } from "astro-icon"
 #intro
   transform-origin top
   text-align center
-  font-size clamp(.95em, 5vw, 1.5em)
+  font-size clamp(.9em, 4.8vw, 1.5em)
   $px = 1.5rem
   padding 0 $px 5em $px
   margin auto
@@ -63,7 +63,7 @@ import { Icon } from "astro-icon"
     &:hover::after
       transform scaleX(1)
   > h1:first-child
-    font-size clamp(2em, 10vw, 2.5em)
+    font-size clamp(2em, 8vw, 2.5em)
 
 #me
   position relative
@@ -120,12 +120,13 @@ import { Icon } from "astro-icon"
   padding .3em .5em
   border thin solid transparent
   border-radius 4px
+  transition-property color, background, border-color
   transition-duration .15s
   &:hover
-    color rgb(50, 140, 230)
-  &:active
     color dodgerblue
     background rgba(10, 15, 20, .9)
+  &:active
+    color deepskyblue
     border-color currentColor
   &-icon
     width 1em
