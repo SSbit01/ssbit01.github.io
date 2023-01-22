@@ -36,7 +36,7 @@ const { name, tags, source, website } = Astro.props,
       </ul>
     )}
 
-    {Astro.slots.has("default") && <p class="description"><slot /></p>}
+    {Astro.slots.has("default") && <div class="description"><slot /></div>}
     
     <div class="links">
       <a href={source} target="_blank" rel="noreferrer noopener" title="Source Code"><Icon name="fluent:code-24-filled" /></a>
@@ -100,36 +100,42 @@ figure
         padding .2em .4em
         border-radius 16px
         box-shadow 0 0 3px 2px crimson
-    > .description
-      margin 0
-      :global(a)
-        color deepskyblue
-        text-decoration none
-        transition color .15s, text-shadow .15s
-        &:hover
-          text-decoration underline
-        &:active
-          text-shadow 0 0 4px
-    .links
-      display flex
-      align-items center
-      justify-content space-evenly
-      margin auto 0
-      > a
-        font-size clamp(2em, 7vw, 3em)
-        $side = 1em
-        width $side
-        height $side
-        color gold
-        padding .2em
-        border-radius 50%
-        transition .2s
-        &:hover
-          background rgba(0, 5, 10, .25)
-          box-shadow 0 0 3px
-        &:active
-          background rgba(10, 15, 20, .5)
-          box-shadow 0 0 8px
+
+.description
+  display grid
+  gap .5em
+  > :global(p)
+    margin 0
+  :global(a)
+    color deepskyblue
+    text-decoration none
+    transition color .15s, text-shadow .15s
+    &:hover
+      text-decoration underline
+    &:active
+      text-shadow 0 0 4px
+
+.links
+  display flex
+  align-items center
+  justify-content space-evenly
+  margin auto 0
+  > a
+    font-size clamp(2em, 7vw, 3em)
+    $side = 1em
+    width $side
+    height $side
+    color gold
+    padding .2em
+    border-radius 50%
+    transition .2s
+    &:hover
+      background rgba(0, 5, 10, .25)
+      box-shadow 0 0 3px
+    &:active
+      background rgba(10, 15, 20, .5)
+      box-shadow 0 0 8px
+
 
 @media(max-width 430px)
   figure > figcaption
