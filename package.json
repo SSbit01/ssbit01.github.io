@@ -1,22 +1,12 @@
 {
   "name": "stefan-samson-portfolio",
-  "description": "Stefan Samson's personal website",
-  "type": "module",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SSbit01/SSbit01.git"
-  },
-  "keywords": [
-    "website",
-    "personal",
-    "portfolio"
-  ],
-  "author": "SSbit01",
-  "license": "GPL-3.0",
+  "homepage": "https://ssbit01.github.io/SSbit01/ssbit01.github.io",
   "bugs": {
-    "url": "https://github.com/SSbit01/SSbit01/issues"
+    "url": "https://github.com/SSbit01/ssbit01.github.io/issues"
   },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Stefan Samson <ss42701@outlook.com> (https://ssbit01.github.io/)",
+  "repository": "github:SSbit01/ssbit01.github.io",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -32,5 +22,6 @@
   },
   "devDependencies": {
     "stylus": "^0.59.0"
-  }
+  },
+  "private": true
 }
