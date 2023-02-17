@@ -10,5 +10,6 @@ export default defineConfig({
     sitemap(),
     compress()
   ],
-  site: "https://ssbit01.github.io"
+  
+  site: "https://ssbit01.github.io/"
 })
