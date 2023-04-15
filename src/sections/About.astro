@@ -158,13 +158,11 @@ import Skill from "@/components/Skill.astro"
   display flex
   align-items center
   justify-content center
-  gap 1.5em
+  gap 2em
   padding-top 2em
 
 #avatar
-  $side = 15em
-  width $side
-  height $side
+  width 18em
   max-width 100%
   border-radius 50%
   box-shadow 0 0 8px teal
@@ -175,12 +173,12 @@ import Skill from "@/components/Skill.astro"
     translate 0 -.5em
 
 #about-summary
-  text-align justify
   max-width 50em
   > h1:first-child
     margin 0
   > p
     font-size clamp(1em, 3vw, 1.1em)
+    line-height 1.5
     strong, em
       color aquamarine
     u
