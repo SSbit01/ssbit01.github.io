@@ -5,36 +5,59 @@ import ProjectsSection from "@/sections/Projects.astro"
 import ContactSection from "@/sections/Contact.astro"
 import NavBar from "@/components/NavBar.astro"
 import Footer from "@/sections/Footer.astro"
+
+
+const metaData = {
+  title: "Stefan Samson (SSbit01)",
+  description: "Stefan Samson's personal website"
+}
 ---
 
 
 
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Stefan Samson's personal website" />
-		<meta name="color-scheme" content="dark light" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
 
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{metaData.title}</title>
+    <meta name="description" content={metaData.description} />
+    {Astro.site && <link rel="canonical" href={Astro.site} />}
+    <meta charset="UTF-8" />
 
-		<title>Stefan Samson - SSbit01</title>
-	</head>
+    <meta property="og:title" content={metaData.title} />
+    <meta property="og:description" content={metaData.description} />
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Stefan" />
+    <meta property="profile:last_name" content="Samson" />
+    <meta property="profile:username" content="SSbit01" />
+    <meta property="profile:gender" content="male" />
+    {Astro.site && (
+      <meta property="og:url" content={Astro.site} />
+      <meta property="og:image" content={`${Astro.site}/images/projects/portfolio.webp`} />
+    )}
 
-	<body>
-		<main>
-			<HomeSection />
-			<AboutSection />
-			<ProjectsSection />
-			<ContactSection />
-		</main>
-		<NavBar />
-		<Footer />
-	</body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  </head>
+
+
+  <body>
+
+    <main>
+      <HomeSection />
+      <AboutSection />
+      <ProjectsSection />
+      <ContactSection />
+    </main>
+
+    <NavBar />
+    <Footer />
+
+  </body>
 
 </html>
 
@@ -42,18 +65,18 @@ import Footer from "@/sections/Footer.astro"
 
 <style lang="styl" is:global>
 @font-face
-	font-family Jura  // Credit Font
-	font-style normal
-	font-display swap
-	src url("/fonts/jura.ttf") format("opentype")
+  font-family Jura  // Credit Font
+  font-style normal
+  font-display swap
+  src url("/fonts/jura.ttf") format("opentype")
 
 html
-	scrollbar-width thin
-	scroll-behavior smooth
+  scrollbar-width thin
+  scroll-behavior smooth
 
 body
-	color white
-	background black
-	font-family Jura, Calibri, Arial, sans-serif
-	margin 0
+  color white
+  background black
+  font-family Jura, Calibri, Arial, sans-serif
+  margin 0
 </style>

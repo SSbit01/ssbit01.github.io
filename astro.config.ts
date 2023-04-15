@@ -5,5 +5,5 @@ import { defineConfig } from "astro/config"
 export default defineConfig({
   integrations: [],
   
-  site: "https://ssbit01.github.io/"
+  site: "https://ssbit01.github.io"
 })
