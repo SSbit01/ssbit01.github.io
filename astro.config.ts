@@ -7,7 +7,7 @@ import compress from "astro-compress"
 export default defineConfig({
   
   integrations: [
-    compress()
+    compress({ img: false })
   ],
 
   site: "https://ssbit01.github.io/"
