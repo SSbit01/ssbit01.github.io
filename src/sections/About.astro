@@ -6,7 +6,10 @@ import Skill from "@/components/Skill.astro"
 
 
 <section id="about">
+
+
   <div id="about-me">
+
     <img src="/images/me.webp" alt="Avatar" loading="lazy" id="avatar" />
     
     <div id="about-summary">
@@ -16,10 +19,12 @@ import Skill from "@/components/Skill.astro"
       <p>I've always been curious about <strong>science</strong> and <strong>technology</strong>. <em>Python</em> was my first programming language, which I taught myself at the age of 12. Shortly after, I became interested in <strong>Data Science</strong> and <strong>Artificial Intelligence</strong>, which I'm still learning.</p>
       <p>I was also interested in <strong>Web Development</strong> and <strong>Communications</strong>; I learned <em>front-end</em> and <em>back-end</em> technologies that allowed me to create <u>exciting projects</u>.</p>
     </div>
+
   </div>
 
 
   <fieldset id="interests">
+
     <legend>Interests</legend>
 
     <ul>
@@ -30,10 +35,12 @@ import Skill from "@/components/Skill.astro"
       <li><Icon name="simple-icons:windows95" />Retrocomputing</li>
       <li><Icon name="mdi:nintendo-game-boy" />Video Games & Modding</li>
     </ul>
+
   </fieldset>
 
 
   <div id="skill-set">
+    
     <h1 class="title-section"><a href="#skill-set"><Icon name="carbon:skill-level-advanced" />Skill Set</a></h1>
 
     <fieldset id="front-end">
@@ -108,6 +115,8 @@ import Skill from "@/components/Skill.astro"
     </fieldset>
 
   </div>
+
+
 </section>
 
 
@@ -224,7 +233,7 @@ import Skill from "@/components/Skill.astro"
 #skill-set
   display grid
   justify-content center
-  gap 1.5em
+  gap 2em
   margin-top 2em
   > h1:first-child
     text-align center
@@ -240,15 +249,14 @@ import Skill from "@/components/Skill.astro"
     flex-wrap wrap
     align-items center
     justify-content space-evenly
-    gap 1em
+    gap .6em 1em
+    padding .75em
     border-radius 8px
     box-shadow 1px 1px 4px black
     fieldset  // Nested fieldsets
       background rgba(5, 10, 15, .5)
       border thin solid rgb(30, 40, 40)
-      $px = .5em
-      padding 1em $px .5em $px
-      margin 0
+      margin .25em 0
       > legend
         display flex
         align-items center
@@ -258,9 +266,8 @@ import Skill from "@/components/Skill.astro"
           width 1.5em
   > fieldset  // First level fieldset children
     background rgba(5, 15, 20, .5)
-    padding .75em
     border thin solid darkslategray
-    margin 0 -.25em
+    margin 0 -.3em
     scroll-margin-top .5em
     > legend
       font-size clamp(1.1em, 5.5vw, 1.5em)
