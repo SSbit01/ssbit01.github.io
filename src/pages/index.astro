@@ -13,7 +13,10 @@ import type { Person, WithContext } from "schema-dts"
 
 const metaData = {
   title: "Stefan Samson (SSbit01)",
-  description: "A young self-taught developer who loves to learn and try out the latest technologies."
+  summary: "A young self-taught enthusiast who tries to code the cosmos and explore absolutely everything.",
+  get description() {
+    return `Welcome to Stefan Samson's personal website, ${this.summary.toLowerCase()}`
+  }
 }
 
 const { email: { title: email }, ...profiles } = links
@@ -24,7 +27,7 @@ const jsonLd: WithContext<Person> = {
   "@type": "Person",
   name: "Stefan Samson",
   alternateName: "SSbit01",
-  description: metaData.description,
+  description: metaData.summary,
   email,
   sameAs: Object.values(profiles).map(({ href }) => href)
 }
@@ -55,7 +58,7 @@ if (Astro.site) {
 
     <!-- Open Graph -->
     <meta property="og:title" content={metaData.title} />
-    <meta property="og:description" content={metaData.description} />
+    <meta property="og:description" content={metaData.summary} />
     <meta property="og:type" content="profile" />
     <meta property="profile:first_name" content="Stefan" />
     <meta property="profile:last_name" content="Samson" />
