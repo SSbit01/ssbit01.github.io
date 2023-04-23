@@ -17,13 +17,21 @@ const metaData = {
 
 <html lang="en">
 
-  <head>
+  <head prefix="og: https://ogp.me/ns# profile: https://ogp.me/ns/profile#">
+
+    <!-- Common head tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <title>{metaData.title}</title>
     <meta name="description" content={metaData.description} />
     {Astro.site && <link rel="canonical" href={Astro.site} />}
-    <meta charset="UTF-8" />
 
+    <!-- Open Graph -->
     <meta property="og:title" content={metaData.title} />
     <meta property="og:description" content={metaData.description} />
     <meta property="og:type" content="profile" />
@@ -36,11 +44,14 @@ const metaData = {
       <meta property="og:image" content={`${Astro.site}images/og.png`} />
     )}
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="color-scheme" content="dark light" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={metaData.title} />
+    <meta name="twitter:description" content={metaData.description} />
+    {Astro.site && <meta name="twitter:image" content={`${Astro.site}images/2-1.png`} />}
+    
+    <!-- Other meta tags -->
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
   </head>
 
