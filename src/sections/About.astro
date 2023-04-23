@@ -30,10 +30,11 @@ import Skill from "@/components/Skill.astro"
     <ul>
       <li><Icon name="mdi:code-braces" />Coding</li>
       <li><Icon name="mdi:robot-angry" />Artificial Intelligence</li>
-      <li><Icon name="eos-icons:atom-electron" />Physics</li>
-      <li><Icon name="mdi:telescope" />Astronomy</li>
       <li><Icon name="simple-icons:windows95" />Retrocomputing</li>
       <li><Icon name="mdi:nintendo-game-boy" />Video Games & Modding</li>
+      <li><Icon name="eos-icons:atom-electron" />Physics</li>
+      <li><Icon name="mdi:telescope" />Astronomy</li>
+      <li><Icon name="mdi:dinosaur-pixel" />Paleontology</li>
     </ul>
 
   </fieldset>
@@ -41,7 +42,7 @@ import Skill from "@/components/Skill.astro"
 
   <div id="skill-set">
     
-    <h1 class="title-section"><a href="#skill-set"><Icon name="carbon:skill-level-advanced" />Skill Set</a></h1>
+    <h1 class="title-section"><a href="#skill-set"><Icon name="carbon:skill-level-advanced" />Coding Skill Set</a></h1>
 
     <fieldset id="front-end">
       <legend><a href="#front-end"><Icon name="eva:browser-fill" />Front-End</a></legend>
@@ -123,7 +124,7 @@ import Skill from "@/components/Skill.astro"
 
 <style lang="stylus">
 .title-section
-  font-size clamp(1.5em, 9vw, 2em)
+  font-size clamp(1.4em, 8vw, 2em)
   > a:first-child
     position relative
     color mediumseagreen
@@ -141,7 +142,7 @@ import Skill from "@/components/Skill.astro"
       height 3px
       background mediumturquoise
       border-radius 2px
-      transition transform .15s
+      transition transform .25s
     &::after
       content "#"
       position absolute
@@ -182,7 +183,7 @@ import Skill from "@/components/Skill.astro"
     translate 0 -.5em
 
 #about-summary
-  max-width 50em
+  max-width 55em
   > h1:first-child
     margin 0
   > p
@@ -202,14 +203,12 @@ import Skill from "@/components/Skill.astro"
 
 #interests
   background rgba(5, 10, 15, .75)
-  max-width 70em
+  max-width 75em
   padding-top .75em
   border thin solid darkslategray
   border-radius 8px
   box-shadow 1px 1px 4px black
-  margin-top .5em
-  margin-right auto
-  margin-left auto
+  margin .5em auto
   > legend:first-child
     color aquamarine
     font-size 1.2em
@@ -218,7 +217,7 @@ import Skill from "@/components/Skill.astro"
     display flex
     flex-wrap wrap
     justify-content space-evenly
-    gap .6em 1em
+    gap .75em 1em
     padding 0
     margin 0
     > li
@@ -268,7 +267,7 @@ import Skill from "@/components/Skill.astro"
     background rgba(5, 15, 20, .5)
     border thin solid darkslategray
     margin 0 -.3em
-    scroll-margin-top .5em
+    scroll-margin-top 1em
     > legend
       font-size clamp(1.1em, 5.5vw, 1.5em)
       > a:first-child  
@@ -292,7 +291,7 @@ import Skill from "@/components/Skill.astro"
           height 2px
           background mediumturquoise
           border-radius 2px
-          transition transform .2s
+          transition transform .25s
         &:hover, &:focus
           color mediumspringgreen
         &:active::before
@@ -309,7 +308,7 @@ import Skill from "@/components/Skill.astro"
   #about-summary > h1:first-child
     text-align center
 
-@media (max-width 580px)
+@media (max-width 450px)
   #interests > ul
     flex-direction column
 </style>
