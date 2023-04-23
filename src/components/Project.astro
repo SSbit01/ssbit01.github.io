@@ -50,8 +50,8 @@ const { name, tags, source, website } = Astro.props,
 figure
   position relative
   text-align center
-  margin 0
   box-shadow inset 0 0 4px darkslategray
+  margin 0
   overflow hidden
   transition opacity 1s, box-shadow .2s
   &:hover, &:focus
@@ -63,7 +63,7 @@ figure
       opacity 0
       scale .9
   &:focus
-    box-shadow inset 0 0 2px 2px darkslategray
+    box-shadow inset 0 0 4px 2px steelblue
   > img
     vertical-align top  // PREVENTS EXTRA WHITE SPACE
     aspect-ratio 16 / 9
@@ -73,24 +73,26 @@ figure
   > figcaption
     display flex
     flex-direction column
-    gap 1em
+    gap clamp(.75em, 2vw, 1em)
     position absolute
     inset 0
     transform-origin bottom
+    font-size clamp(.9em, 3.4vw, 1em)
     padding 1em
     overflow auto
     transition .4s
     > h2:first-child
       font-size clamp(1.5em, 5.75vw, 3em)
       margin-top auto
-      margin-bottom 0
+      margin-bottom .1em
     > ul
       list-style none
       display flex
       flex-wrap wrap
       align-items center
       justify-content center
-      gap .6em
+      gap .75em
+      font-size clamp(.85em, 2vw, 1em)
       padding-left 0
       margin .25em 0
       > li
@@ -134,12 +136,4 @@ figure
     &:active
       background rgba(10, 15, 20, .5)
       box-shadow 0 0 8px
-
-
-@media(max-width 430px)
-  figure > figcaption
-    font-size .9em
-    gap .6em
-    > ul
-      font-size .85em
 </style>
