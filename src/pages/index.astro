@@ -1,4 +1,6 @@
 ---
+import * as links from "@/data/links"
+
 import HomeSection from "@/sections/Home.astro"
 import AboutSection from "@/sections/About.astro"
 import ProjectsSection from "@/sections/Projects.astro"
@@ -6,10 +8,30 @@ import ContactSection from "@/sections/Contact.astro"
 import NavBar from "@/components/NavBar.astro"
 import Footer from "@/sections/Footer.astro"
 
+import type { Person, WithContext } from "schema-dts"
+
 
 const metaData = {
   title: "Stefan Samson (SSbit01)",
-  description: "Stefan Samson's personal website"
+  description: "A young self-taught developer who loves to learn and try out the latest technologies."
+}
+
+const { email: { title: email }, ...profiles } = links
+
+
+const jsonLd: WithContext<Person> = { 
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Stefan Samson",
+  alternateName: "SSbit01",
+  description: metaData.description,
+  email,
+  sameAs: Object.values(profiles).map(({ href }) => href)
+}
+
+if (Astro.site) {
+  jsonLd.url = Astro.site.toString()
+  jsonLd.image = `${Astro.site}images/me.webp`
 }
 ---
 
@@ -71,6 +93,10 @@ const metaData = {
   </body>
 
 </html>
+
+
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
 
 
