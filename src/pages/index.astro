@@ -33,6 +33,7 @@ const jsonLd: WithContext<Person> = {
 }
 
 if (Astro.site) {
+  jsonLd["@id"] = `${Astro.site}#identity`
   jsonLd.url = Astro.site.toString()
   jsonLd.image = `${Astro.site}images/me.webp`
 }
