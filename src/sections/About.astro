@@ -135,11 +135,11 @@ import Skill from "@/components/Skill.astro"
       position absolute
       background mediumaquamarine
       right 0
-      bottom 0
+      bottom -4px
       left 0
       transform scaleX(0)
       transform-origin right
-      height 3px
+      height 2px
       background mediumturquoise
       border-radius 2px
       transition transform .25s
@@ -249,11 +249,11 @@ import Skill from "@/components/Skill.astro"
     align-items center
     justify-content space-evenly
     gap .6em 1em
-    padding .75em
     border-radius 8px
     box-shadow 1px 1px 4px black
     fieldset  // Nested fieldsets
       background rgba(5, 10, 15, .5)
+      padding .75em
       border thin solid rgb(30, 40, 40)
       margin .25em 0
       > legend
@@ -265,6 +265,7 @@ import Skill from "@/components/Skill.astro"
           width 1.5em
   > fieldset  // First level fieldset children
     background rgba(5, 15, 20, .5)
+    padding 1em .75em
     border thin solid darkslategray
     margin 0 -.3em
     scroll-margin-top 1em
@@ -284,7 +285,7 @@ import Skill from "@/components/Skill.astro"
           background mediumaquamarine
           position absolute
           right 0
-          bottom 0
+          bottom -3px
           left 0
           transform scaleX(0)
           transform-origin right
