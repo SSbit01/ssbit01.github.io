@@ -200,6 +200,20 @@ import Skill from "@/components/Skill.astro"
         color deepskyblue
       &:active
         text-shadow 0 0 4px
+    &:last-child::after
+      content ""
+      display inline-block
+      vertical-align sub
+      width .2em
+      height 1em
+      background lightcyan
+      box-shadow 0 0 3px lightcyan
+      border-radius 2px
+      margin-left .35em
+      animation 1s infinite step-end caret
+      @keyframes caret
+        50%
+          opacity 0
 
 #interests
   background rgba(5, 10, 15, .75)
