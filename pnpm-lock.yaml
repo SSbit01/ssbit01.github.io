@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@fontsource/jura':
+    specifier: ^4.5.13
+    version: 4.5.13
   astro:
     specifier: ^2.3.0
     version: 2.3.0(stylus@0.59.0)
@@ -554,6 +557,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/jura@4.5.13:
+    resolution: {integrity: sha512-7y2F0nF4zEi2Cs3K98jo87VWG6sR8tKwysmLGQ4rrSOwQN5FjeH9LcgYqXm8o5OxYTJNtsvtBNSgBzjd2Nigrw==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
