@@ -69,7 +69,7 @@ figure
     aspect-ratio 16 / 9
     width 48em
     max-width 100%
-    transition .2s
+    transition filter .2s
   > figcaption
     display flex
     flex-direction column
@@ -80,7 +80,8 @@ figure
     font-size clamp(.9em, 3.4vw, 1em)
     padding 1rem
     overflow auto
-    transition .4s
+    transition-property visibility, opacity, scale
+    transition-duration .4s
     > h2:first-child
       font-size clamp(1.5em, 5.75vw, 3em)
       margin-top auto
@@ -129,7 +130,7 @@ figure
     color gold
     padding .2em
     border-radius 50%
-    transition .2s
+    transition background .2s, box-shadow .2s
     &:hover
       background rgba(0, 5, 10, .25)
       box-shadow 0 0 3px
