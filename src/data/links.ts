@@ -37,7 +37,7 @@ export const linkedin: Profile = {
 
 export const email: Profile = {
   title: "ss42701@outlook.com",
-  icon: "dashicons:email-alt",
+  icon: "clarity:email-solid",
   get href() {
     return `mailto:${this.title}`
   }
