@@ -1,7 +1,7 @@
 ---
 import "@fontsource/jura"
 
-import * as links from "@/data/links"
+import * as profiles from "@/data/profiles"
 
 import HomeSection from "@/sections/Home.astro"
 import AboutSection from "@/sections/About.astro"
@@ -21,7 +21,7 @@ const metaData = {
   }
 }
 
-const { email: { title: email }, ...profiles } = links
+const { email: { title: email }, ...restProfiles } = profiles
 
 
 const jsonLd: WithContext<Person> = { 
@@ -31,7 +31,7 @@ const jsonLd: WithContext<Person> = {
   alternateName: "SSbit01",
   description: metaData.summary,
   email,
-  sameAs: Object.values(profiles).map(({ href }) => href)
+  sameAs: Object.values(restProfiles).map(({ href }) => href)
 }
 
 if (Astro.site) {
