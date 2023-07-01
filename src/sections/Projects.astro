@@ -96,7 +96,7 @@ import Project from "@/components/Project.astro"
 #more-projects-details
   margin-top 3em
   > summary:first-child
-    background mediumaquamarine
+    background rgb(90, 180, 150)
     color black
     font-size 1.5em
     text-align center
@@ -108,8 +108,10 @@ import Project from "@/components/Project.astro"
     margin 0 $mx 2rem $mx
     cursor pointer
     user-select none
-    transition .15s
+    transition-property background, box-shadow, scale
+    transition-duration .15s
     &:hover
+      background mediumaquamarine
       box-shadow 0 0 8px mediumspringgreen
     &:active
       scale .95
@@ -118,7 +120,9 @@ import Project from "@/components/Project.astro"
   &[open]
     > summary:first-child
       color mediumaquamarine
-      background rgba(0, 0, 5, .5)
+      background rgb(10, 15, 25)
+      &:hover
+        background rgb(15, 20, 30)
 
 #other-projects
   display flex
