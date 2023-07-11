@@ -38,7 +38,7 @@ const { name, tags, source, website } = Astro.props,
     {Astro.slots.has("default") && <div class="description"><slot /></div>}
     
     <div class="links">
-      <a href={source} target="_blank" rel="noreferrer noopener" title="Source Code"><Icon name="fluent:code-24-filled" /></a>
+      <a href={source} target="_blank" rel="noreferrer noopener" title="Source"><Icon name="fluent:code-24-filled" /></a>
       <a href={website} target="_blank" rel="noreferrer noopener" title="Website"><Icon name="lucide:external-link" /></a>
     </div>
   </figcaption>
@@ -123,18 +123,35 @@ figure
   justify-content space-evenly
   margin auto 0
   > a
-    font-size clamp(2em, 7vw, 3em)
-    $side = 1em
-    width $side
-    height $side
+    display: flex
+    flex-direction: column
+    align-items center
+    text-decoration none
     color gold
-    padding .2em
-    border-radius 50%
-    transition background .2s, box-shadow .2s
+    > svg:first-child
+      $side = clamp(2em, 7vw, 3em)
+      width $side
+      height $side
+      filter drop-shadow(0 0 4px black)
+      translate 0 .5em
+      transition filter .2s, translate .2s
+    &::after
+      content attr(title)
+      font-size .75em
+      opacity 0
+      text-shadow 0 0 .25em black
+      margin 0
+      transition text-shadow .2s, opacity .2s
     &:hover
-      background rgba(0, 5, 10, .25)
-      box-shadow 0 0 3px
+      > svg:first-child
+        translate 0
+      &::after
+        opacity 1
     &:active
-      background rgba(10, 15, 20, .5)
-      box-shadow 0 0 8px
+      > svg:first-child
+        filter drop-shadow(0 0 .25em)
+        translate 0 -.25em
+      &::after
+        opacity 1
+        text-shadow 0 0 .25em
 </style>
