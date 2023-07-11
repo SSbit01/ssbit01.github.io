@@ -9,48 +9,84 @@ import Project from "@/components/Project.astro"
 <section id="projects">
   <h1 class="section-header">These are some of my best personal projects<Icon name="ph:smiley-wink-fill" /></h1>
 
-  <div id="featured-projects">
-    <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.ssbit01.repl.co/">
-      <p>A platform where users can create and join chat rooms without creating an account.</p>
-      <p>It makes use of <strong>WebSockets</strong>.</p>
-    </Project>
-    <Project name="Voting App" tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]} source="https://github.com/SSbit01/voting-app" website="https://voting-app-ssbit01.vercel.app/">
-      <p>A platform where users can create polls and everyone can vote in them</p>
-    </Project>
-    <Project name="HandyVoid" tags={["Nuxt", "TypeScript", "Vue", "Stylus", "PWA", "i18n"]} source="https://github.com/HandyVoid/HandyVoidium" website="https://www.handyvoid.com/">
-      <p>A platform that offers a comprehensive set of tools for a wide range of tasks.</p>
-      <p>It aims to provide users with a single platform where they can find all the tools they need without having to navigate through multiple websites.</p>
-    </Project>
-    <Project name="Image Search Abstraction Layer" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.ssbit01.repl.co/">
-      <p>Image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank">Pixabay API</a></p>
-    </Project>
-    <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV">
-      <p>My own implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Conway's Game Of Life</a>.</p>
-      <p>This is one of my favorite projects &lt;3</p>
-    </Project>
-  </div>
+  <ul class="project-list">
+    <li>
+      <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.ssbit01.repl.co/">
+        <p>A platform where users can create and join chat rooms without creating an account.</p>
+        <p>It makes use of <strong>WebSockets</strong>.</p>
+      </Project>
+    </li>
+    <li>
+      <Project name="Voting App" tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]} source="https://github.com/SSbit01/voting-app" website="https://voting-app-ssbit01.vercel.app/">
+        <p>A platform where users can create polls and everyone can vote in them</p>
+      </Project>
+    </li>
+    <li>
+      <Project name="HandyVoid" tags={["Nuxt", "TypeScript", "Vue", "Stylus", "PWA", "i18n"]} source="https://github.com/HandyVoid/HandyVoidium" website="https://www.handyvoid.com/">
+        <p>A platform that offers a comprehensive set of tools for a wide range of tasks.</p>
+        <p>It aims to provide users with a single platform where they can find all the tools they need without having to navigate through multiple websites.</p>
+      </Project>
+    </li>
+    <li>
+      <Project name="Image Search Abstraction Layer" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.ssbit01.repl.co/">
+        <p>Image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank">Pixabay API</a></p>
+      </Project>
+    </li>
+    <li>
+      <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV">
+        <p>My own implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Conway's Game Of Life</a>.</p>
+        <p>This is one of my favorite projects &lt;3</p>
+      </Project>
+    </li>
+  </ul>
 
   <details id="more-projects-details">
     <summary>Other Projects</summary>
-    <div id="other-projects">
-      <Project name="Wikipedia Viewer" tags={["Pug", "Bootstrap", "Wikipedia"]} source="https://codepen.io/ssbit01/pen/dyNJwxv" website="https://codepen.io/ssbit01/full/dyNJwxv" />
-      <Project name="Scatterplot: Doping in Professional Bicycle Racing" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/qBaorjO" website="https://codepen.io/ssbit01/full/qBaorjO" />
-      <Project name="Bar Chart: U.S. GDP" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/poEdPWW" website="https://codepen.io/ssbit01/full/poEdPWW" />
-      <Project name="Choropleth Map: U.S. Educational Attainment" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/gOwZzEZ" website="https://codepen.io/ssbit01/full/gOwZzEZ" />
-      <Project name="Heatmap: Monthly Global Land-Surface Temperature" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/eYdKxMO" website="https://codepen.io/ssbit01/full/eYdKxMO" />
-      <Project name="Recipe Box" tags={["Vue", "Local Storage"]} source="https://codepen.io/ssbit01/pen/poeZmRq" website="https://codepen.io/ssbit01/full/poeZmRq">
-        <p>Users can store recipes in the browser's <strong>local storage</strong></p>
-      </Project>
-      <Project name="Rock Paper Scissors (Lizard Spock)" tags={["Vue", "Font Awesome"]} source="https://codepen.io/ssbit01/pen/xxjpVoR" website="https://codepen.io/ssbit01/full/xxjpVoR" />
-      <Project name="25 + 5 Clock" tags={["React"]} source="https://codepen.io/ssbit01/pen/QWKGEVQ" website="https://codepen.io/ssbit01/full/QWKGEVQ" />
-      <Project name="Markdown Previewer" tags={["React"]} source="https://codepen.io/ssbit01/pen/vYKbwRZ" website="https://codepen.io/ssbit01/full/vYKbwRZ" />
-      <Project name="Simon Game" tags={["React"]} source="https://codepen.io/ssbit01/pen/poePVeV" website="https://codepen.io/ssbit01/full/poePVeV" />
-      <Project name="Random Quote Machine" tags={["Bootstrap", "jQuery"]} source="https://codepen.io/ssbit01/pen/JjGZmrd" website="https://codepen.io/ssbit01/full/JjGZmrd" />
-      <Project name="Password Generator" tags={["Bootstrap", "Vanilla JavaScript"]} source="https://codepen.io/ssbit01/pen/RwVOaKw" website="https://codepen.io/ssbit01/full/RwVOaKw" />
-      <Project name="Intro to Python" tags={["HTML", "CSS"]} source="https://codepen.io/ssbit01/pen/RwNzXrB" website="https://codepen.io/ssbit01/full/RwNzXrB">
-        <p>Basic <strong>Python</strong> documentation</p>
-      </Project>
-    </div>
+    <ul class="project-list">
+      <li>
+        <Project name="Wikipedia Viewer" tags={["Pug", "Bootstrap", "Wikipedia"]} source="https://codepen.io/ssbit01/pen/dyNJwxv" website="https://codepen.io/ssbit01/full/dyNJwxv" />
+      </li>
+      <li>
+        <Project name="Scatterplot: Doping in Professional Bicycle Racing" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/qBaorjO" website="https://codepen.io/ssbit01/full/qBaorjO" />
+      </li>
+      <li>
+        <Project name="Bar Chart: U.S. GDP" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/poEdPWW" website="https://codepen.io/ssbit01/full/poEdPWW" />
+      </li>
+      <li>
+        <Project name="Choropleth Map: U.S. Educational Attainment" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/gOwZzEZ" website="https://codepen.io/ssbit01/full/gOwZzEZ" />
+      </li>
+      <li>
+        <Project name="Heatmap: Monthly Global Land-Surface Temperature" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/eYdKxMO" website="https://codepen.io/ssbit01/full/eYdKxMO" />
+      </li>
+      <li>
+        <Project name="Recipe Box" tags={["Vue", "Local Storage"]} source="https://codepen.io/ssbit01/pen/poeZmRq" website="https://codepen.io/ssbit01/full/poeZmRq">
+          <p>Users can store recipes in the browser's <strong>local storage</strong></p>
+        </Project>
+      </li>
+      <li>
+        <Project name="Rock Paper Scissors (Lizard Spock)" tags={["Vue", "Font Awesome"]} source="https://codepen.io/ssbit01/pen/xxjpVoR" website="https://codepen.io/ssbit01/full/xxjpVoR" />
+      </li>
+      <li>
+        <Project name="25 + 5 Clock" tags={["React"]} source="https://codepen.io/ssbit01/pen/QWKGEVQ" website="https://codepen.io/ssbit01/full/QWKGEVQ" />
+      </li>
+      <li>
+        <Project name="Markdown Previewer" tags={["React"]} source="https://codepen.io/ssbit01/pen/vYKbwRZ" website="https://codepen.io/ssbit01/full/vYKbwRZ" />
+      </li>
+      <li>
+        <Project name="Simon Game" tags={["React"]} source="https://codepen.io/ssbit01/pen/poePVeV" website="https://codepen.io/ssbit01/full/poePVeV" />
+      </li>
+      <li>
+        <Project name="Random Quote Machine" tags={["Bootstrap", "jQuery"]} source="https://codepen.io/ssbit01/pen/JjGZmrd" website="https://codepen.io/ssbit01/full/JjGZmrd" />
+      </li>
+      <li>
+        <Project name="Password Generator" tags={["Bootstrap", "Vanilla JavaScript"]} source="https://codepen.io/ssbit01/pen/RwVOaKw" website="https://codepen.io/ssbit01/full/RwVOaKw" />
+      </li>
+      <li>
+        <Project name="Intro to Python" tags={["HTML", "CSS"]} source="https://codepen.io/ssbit01/pen/RwNzXrB" website="https://codepen.io/ssbit01/full/RwNzXrB">
+          <p>Basic <strong>Python</strong> documentation</p>
+        </Project>
+      </li>
+    </ul>
   </details>
 
   <div id="profiles-container">
@@ -78,7 +114,8 @@ import Project from "@/components/Project.astro"
   font-size clamp(1.5em, 6.4vw, 2em)
   line-height 1.5
   gap .3em
-  margin 0 .75em
+  $mx = .75em
+  margin 0 $mx 1em $mx
   > svg
     display inline-block
     vertical-align sub
@@ -86,12 +123,14 @@ import Project from "@/components/Project.astro"
     color skyblue
     margin 0 .3em
 
-#featured-projects
+.project-list
+  list-style none
   display flex
   flex-wrap wrap
   align-items center
   justify-content center
-  margin-top 2.5em
+  padding 0
+  margin 0
 
 #more-projects-details
   margin-top 3em
@@ -115,21 +154,12 @@ import Project from "@/components/Project.astro"
       box-shadow 0 0 8px mediumspringgreen
     &:active
       scale .95
-  &:not([open]) > #other-projects
-    opacity 0
   &[open]
     > summary:first-child
       color mediumaquamarine
       background rgb(10, 15, 25)
       &:hover
         background rgb(15, 20, 30)
-
-#other-projects
-  display flex
-  flex-wrap wrap
-  align-items center
-  justify-content center
-  transition opacity .4s
 
 #profiles-container
   text-align center
