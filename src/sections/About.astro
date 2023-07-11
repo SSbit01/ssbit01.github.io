@@ -10,7 +10,10 @@ import Skill from "@/components/Skill.astro"
 
   <div id="about-me">
 
-    <img src="/images/me.webp" alt="Avatar" loading="lazy" id="avatar" />
+    <figure id="avatar">
+      <img src="https://avatars.githubusercontent.com/u/59541034" alt="Avatar" loading="lazy" />
+      <figcaption>GitHub Picture</figcaption>
+    </figure>
     
     <div id="about-summary">
       <h1 class="title-section"><a href="#about-me">About Me</a></h1>
@@ -172,15 +175,22 @@ import Skill from "@/components/Skill.astro"
   padding-top 2em
 
 #avatar
-  width 18em
-  max-width 100%
-  border-radius 50%
-  box-shadow 0 0 8px teal
-  transition box-shadow .2s, translate .15s
-  &:hover
-    box-shadow 0 0 12px 2px springgreen
-  &:active
-    translate 0 -.5em
+  margin 0
+  > img:first-of-type
+    width 18em
+    max-width 100%
+    border-radius 50%
+    box-shadow 0 0 8px teal
+    transition box-shadow .2s, translate .15s
+    &:hover
+      box-shadow 0 0 12px 2px springgreen
+    &:active
+      translate 0 -.5em
+  > figcaption:last-of-type
+    text-align center
+    color gainsboro
+    font-size .75em
+    margin-top 1em
 
 #about-summary
   max-width 55em

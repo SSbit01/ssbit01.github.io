@@ -31,13 +31,13 @@ const jsonLd: WithContext<Person> = {
   alternateName: "SSbit01",
   description: metaData.summary,
   email,
+  image: "https://avatars.githubusercontent.com/u/59541034",
   sameAs: Object.values(restProfiles).map(({ href }) => href)
 }
 
 if (Astro.site) {
   jsonLd["@id"] = `${Astro.site}#identity`
   jsonLd.url = Astro.site.toString()
-  jsonLd.image = `${Astro.site}images/me.webp`
 }
 ---
 
