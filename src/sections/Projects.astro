@@ -136,6 +136,7 @@ import Project from "@/components/Project.astro"
 #more-projects-details
   margin-top 3em
   > summary:first-child
+    list-style none
     background rgb(90, 180, 150)
     color black
     font-size clamp(1.5em, 5vw, 2em)
@@ -150,6 +151,12 @@ import Project from "@/components/Project.astro"
     user-select none
     transition-property background, box-shadow, scale
     transition-duration .15s
+    &::before
+      content ">"
+      display inline-block
+      font-weight bolder
+      margin-right .25em
+      transition transform .15s
     &:hover
       background mediumaquamarine
       box-shadow 0 0 8px mediumspringgreen
@@ -159,6 +166,8 @@ import Project from "@/components/Project.astro"
     > summary:first-child
       color mediumaquamarine
       background rgb(10, 15, 25)
+      &::before
+        transform rotate(90deg) translateX(2px)
       &:hover
         background rgb(15, 20, 30)
 
