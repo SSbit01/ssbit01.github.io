@@ -196,19 +196,19 @@ import Project from "@/components/Project.astro"
   > li
     > a:first-child
       display inline-block
-      color teal
-      padding .3em .4em
+      color lightseagreen
+      padding .5em
       transition .15s
       &:hover
-        color lightseagreen
-        background rgba(0, 5, 10, .6)
-        > svg
-          transform translateY(-5%)
-      &:active
         color mediumaquamarine
         > svg
-          filter drop-shadow(0 0 3px teal)
+          transform translateY(-5%)
+          filter drop-shadow(0 0 2px teal)
+      &:active
+        color aquamarine
+        > svg
+          filter drop-shadow(0 0 4px teal)
       > svg
         width 3em
-        transition transform .2s
+        transition transform .2s, filter .2s
 </style>
