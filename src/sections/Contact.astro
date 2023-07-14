@@ -19,9 +19,6 @@ import { linkedin, email } from "@/data/profiles"
 
 <style lang="stylus">
 #contact
-  display flex
-  flex-direction column
-  align-items center
   background rgb(10, 20, 30) linear-gradient(135deg, rgb(0, 10, 20), rgb(10, 25, 30))
   $px = 1em
   padding 1.5em $px 5em $px
@@ -34,18 +31,18 @@ import { linkedin, email } from "@/data/profiles"
 #contact-text
   font-size clamp(1em, 1.5vw, 1.2em)
   line-height 1.5
-  text-align justify
+  text-align center
   color gainsboro
 
 #contact-list
   list-style none
-  display grid
   justify-content center
+  max-width max-content
   padding-left 0
   border-radius 8px
   box-shadow 0 0 4px rgb(25, 50, 100)
   overflow hidden
-  margin-bottom 0
+  margin auto
   > li > a:first-child
     display inline-block
     color dodgerblue
