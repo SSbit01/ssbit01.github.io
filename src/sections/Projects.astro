@@ -6,6 +6,16 @@ import Project from "@/components/Project.astro"
 
 
 
+<script>
+document.getElementById("more-projects-details")?.addEventListener("toggle", function(event) {
+  if (event.target?.getAttribute("open") !== null) {
+    event.target?.scrollIntoView(true)
+  }
+})
+</script>
+
+
+
 <section id="projects">
   <h1 class="section-header">These are some of my best personal projects<Icon name="ph:smiley-wink-fill" /></h1>
 
@@ -135,6 +145,7 @@ import Project from "@/components/Project.astro"
 
 #more-projects-details
   margin-top 3em
+  scroll-margin-top 2em
   > summary:first-child
     list-style none
     background rgb(90, 180, 150)
