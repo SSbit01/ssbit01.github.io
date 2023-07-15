@@ -2,6 +2,8 @@
 import { Icon } from "astro-icon"
 import { github, replit, codepen, freecododecamp } from "@/data/profiles"
 import Project from "@/components/Project.astro"
+
+const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
 ---
 
 
@@ -22,13 +24,13 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
   <ul class="project-list">
     <li>
       <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.ssbit01.repl.co/">
-        <p>A platform where users can create and join chat rooms without creating an account.</p>
-        <p>It makes use of <strong>WebSockets</strong>.</p>
+        <p>A platform that allows users to create and join chat rooms without creating an account.</p>
+        <p>It uses <strong>WebSockets</strong> to provide real-time chat functionality.</p>
       </Project>
     </li>
     <li>
       <Project name="Voting App" tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]} source="https://github.com/SSbit01/voting-app" website="https://voting-app-ssbit01.vercel.app/">
-        <p>A platform where users can create polls and everyone can vote in them</p>
+        <p>A platform where users can create polls and everyone can vote in them. It uses a <strong>MongoDB Atlas</strong> database to store users and polls.</p>
       </Project>
     </li>
     <li>
@@ -38,12 +40,13 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
     </li>
     <li>
       <Project name="Image Search Abstraction Layer" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.ssbit01.repl.co/">
-        <p>Image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank">Pixabay API</a></p>
+        <p>A simple and easy-to-use image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank">Pixabay API</a>.</p>
       </Project>
     </li>
     <li>
       <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV">
-        <p>My own implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Conway's Game Of Life</a>.</p>
+        <p>My own implementation of <a href={conwayGameOfLifeWiki} target="_blank">Conway's Game Of Life</a>.</p>
+        <p><a href={conwayGameOfLifeWiki} target="_blank">Conway's Game of Life</a> is a cellular automaton where cells live or die based on the number of live neighbors they have. It is a simple, but many complex patterns can emerge.</p>
         <p>This is one of my favorite projects &lt;3</p>
       </Project>
     </li>
@@ -71,7 +74,7 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
       </li>
       <li>
         <Project name="Recipe Box" tags={["Vue", "Local Storage"]} source="https://codepen.io/ssbit01/pen/poeZmRq" website="https://codepen.io/ssbit01/full/poeZmRq">
-          <p>An interactive project where users can store recipes in the browser's <strong>local storage</strong></p>
+          <p>An interactive page that allows users to store recipes in their browser's <strong>local storage</strong>. This means that recipes can be accessed even after reloading or exiting the browser.</p>
         </Project>
       </li>
       <li>
@@ -94,7 +97,8 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
       </li>
       <li>
         <Project name="Intro to Python" tags={["HTML", "CSS"]} source="https://codepen.io/ssbit01/pen/RwNzXrB" website="https://codepen.io/ssbit01/full/RwNzXrB">
-          <p>Basic <strong>Python</strong> documentation</p>
+          <p>My own basic <strong>Python</strong> documentation.</p>
+          <p><strong>Python</strong> is a general-purpose, high-level programming language that is known for its simple syntax and powerful libraries. It is a popular language for a wide variety of tasks, including <strong>web development</strong>, <strong>data science</strong>, and <strong>machine learning</strong>.</p>
         </Project>
       </li>
     </ul>
