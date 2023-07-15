@@ -8,12 +8,12 @@ import * as profiles from "@/data/profiles"
 <footer id="end">
   <ul id="profiles">
     {Object.values(profiles).map(({ href, title, icon }) => (
-        <li><a href={href} target="_blank" title={title}><Icon name={icon} /></a></li>
+        <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
     ))}
   </ul>
   <div id="info">
-    <p><a href="https://github.com/SSbit01/ssbit01.github.io.git" target="_blank" id="git-repository"><Icon name="mdi:git" />Repository</a></p>
-    <p>Built with <a href="https://astro.build" target="_blank">{Astro.generator}</a></p>
+    <p><a href="https://github.com/SSbit01/ssbit01.github.io.git" target="_blank" rel="noreferrer noopener" id="git-repository"><Icon name="mdi:git" />Repository</a></p>
+    <p>Built with <a href="https://astro.build" target="_blank" rel="noreferrer noopener">{Astro.generator}</a></p>
     <p>© <strong>Stefan Samson</strong></p>
   </div>
 </footer>

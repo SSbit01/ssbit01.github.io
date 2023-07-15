@@ -10,7 +10,7 @@ import { linkedin, email } from "@/data/profiles"
   <p id="contact-text">You can get in touch with me at <u>any time</u>; I'm interested in new opportunities. If you have any questions, don't hesitate to ask me:</p>
   <ul id="contact-list">
     {[linkedin, email].map(({ href, title, icon }) => (
-      <li><a href={href} target="_blank" title={title}><Icon name={icon} /></a></li>
+      <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
     ))}
   </ul>
 </section>

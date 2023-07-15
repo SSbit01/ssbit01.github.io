@@ -40,13 +40,13 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
     </li>
     <li>
       <Project name="Image Search Abstraction Layer" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.ssbit01.repl.co/">
-        <p>A simple and easy-to-use image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank">Pixabay API</a>.</p>
+        <p>A simple and easy-to-use image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank" rel="noreferrer noopener">Pixabay API</a>.</p>
       </Project>
     </li>
     <li>
       <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV">
-        <p>My own implementation of <a href={conwayGameOfLifeWiki} target="_blank">Conway's Game Of Life</a>.</p>
-        <p><a href={conwayGameOfLifeWiki} target="_blank">Conway's Game of Life</a> is a cellular automaton where cells live or die based on the number of live neighbors they have. It is a simple, but many complex patterns can emerge.</p>
+        <p>My own implementation of <a href={conwayGameOfLifeWiki} target="_blank" rel="noreferrer noopener">Conway's Game Of Life</a>.</p>
+        <p><a href={conwayGameOfLifeWiki} target="_blank" rel="noreferrer noopener">Conway's Game of Life</a> is a cellular automaton where cells live or die based on the number of live neighbors they have. It is a simple, but many complex patterns can emerge.</p>
         <p>This is one of my favorite projects &lt;3</p>
       </Project>
     </li>
@@ -108,7 +108,7 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
     <h2>See more on my <mark>profiles</mark></h2>
     <ul id="profiles">
       {[github, replit, codepen, freecododecamp].map(({ href, title, icon }) => (
-         <li><a href={href} target="_blank" title={title}><Icon name={icon} /></a></li>
+         <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
       ))}
     </ul>
   </div>
