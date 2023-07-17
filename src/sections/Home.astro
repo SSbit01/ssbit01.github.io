@@ -8,9 +8,7 @@ import { Icon } from "astro-icon"
   <div id="intro">
     <h1>Hello World, I'm <a href="#about" id="me">Stefan Samson</a></h1>
     <h2 id="headline">An <mark>enthusiast</mark> coder of the <mark>cosmos</mark></h2>
-    <a href="#about" title="There are some beautiful things ;)" id="scroll-down">
-      Scroll Down<Icon name="ph:arrow-fat-line-down-duotone" id="scroll-down-icon" />
-    </a>
+    <a href="#about" title="There are some beautiful things below ;)" id="scroll-down"><Icon name="icon-park-outline:double-down" /></a>
   </div>
 </section>
 
@@ -115,25 +113,18 @@ import { Icon } from "astro-icon"
         opacity 0
 
 #scroll-down
-  display inline-flex
-  gap .25em
-  color steelblue
-  text-decoration none
-  padding .3em .5em
-  border thin solid transparent
-  border-radius 4px
-  transition-property color, background, border-color
-  transition-duration .15s
-  &:hover
-    color dodgerblue
-    background rgba(10, 15, 20, .9)
+  display inline-block
+  width clamp(3em, 9vmin, 4em)
+  color mediumaquamarine
+  filter drop-shadow(0 0 4px teal)
+  margin-top .5em
+  animation 1s infinite bounce
+  transition color .2s, filter .2s
+  @keyframes bounce
+    50%
+      transform translateY(25%)
+  &:hover, &:active
+    color aquamarine
   &:active
-    color deepskyblue
-    border-color currentColor
-  &-icon
-    width 1em
-    animation 1s infinite bounce
-    @keyframes bounce
-      50%
-        transform translateY(25%)
+    filter drop-shadow(0 0 8px lightseagreen)
 </style>
