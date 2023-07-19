@@ -18,7 +18,7 @@
     "@fontsource/jura": "^5.0.5",
     "astro": "^2.8.5",
     "astro-compress": "1.1.49",
-    "astro-icon": "^0.8.1"
+    "astro-iconify": "^1.2.0"
   },
   "devDependencies": {
     "schema-dts": "^1.1.2",

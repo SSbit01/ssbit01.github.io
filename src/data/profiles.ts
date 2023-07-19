@@ -20,7 +20,7 @@ export const replit: Profile = {
 export const codepen: Profile = {
   href: "https://codepen.io/ssbit01",
   title: "CodePen",
-  icon: "ph:codepen-logo-duotone"
+  icon: "teenyicons:codepen-solid"
 }
 
 export const freecododecamp: Profile = {
