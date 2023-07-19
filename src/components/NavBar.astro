@@ -73,10 +73,11 @@ if (navBarEl) {
   transform-origin bottom
   // CSS Variable
   --scroll-indicator 100%
-  animation 2s ease popup
-  @keyframes popup
-    from, 50%
+  animation 1.75s ease navbar-anim1
+  @keyframes navbar-anim1
+    from, 75%
       opacity 0
+      transform translateY(100%)
   &::before
     content ""
     position absolute
@@ -87,9 +88,9 @@ if (navBarEl) {
     background gold
     box-shadow 0 2px 3px black
     z-index 1
-    animation 2.5s ease fill
+    animation 2.75s ease fill
     @keyframes fill
-      from, 50%
+      from, 65%
         width 0
   > a
     flex 1
