@@ -119,12 +119,15 @@ import { Icon } from "astro-iconify"
   filter drop-shadow(0 0 4px teal)
   margin-top .5em
   animation 1s infinite bounce
-  transition color .2s, filter .2s
+  transition-property color, filter, scale, animation
+  transition-duration .2s
   @keyframes bounce
     50%
-      transform translateY(25%)
+      opacity .5
   &:hover, &:active
     color aquamarine
+    animation none
   &:active
     filter drop-shadow(0 0 8px lightseagreen)
+    scale .9
 </style>
