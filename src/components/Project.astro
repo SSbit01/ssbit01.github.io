@@ -54,15 +54,15 @@ figure
   margin 0
   overflow hidden
   transition opacity 1s, box-shadow .2s
-  &:hover, &:focus
+  &:hover, &:focus-within
     > img
       filter blur(8px) opacity(.5) brightness(.75)
-  &:not(:hover):not(:focus)
+  &:not(:hover):not(:focus-within)
     > figcaption
       visibility hidden
       opacity 0
       scale .9
-  &:focus
+  &:focus-within
     box-shadow inset 0 0 4px 2px rgb(150, 25, 25)
   > img
     vertical-align top  // PREVENTS EXTRA WHITE SPACE
