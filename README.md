@@ -1,5 +1,5 @@
-# ![favicon](./public/favicon.ico) ***Stefan Samson*** *(SSbit01)*
+# Portfolio :fire: *Stefan Samson*
 
-This is my personal website :-)
+This is my personal website :grin:
 
 Built with [Astro.js](https://astro.build/), an **outstanding framework**!
