@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-iconify"
 import Skill from "@/components/Skill.astro"
+import { resume } from "@/data/profiles"
 ---
 
 
@@ -41,6 +42,9 @@ import Skill from "@/components/Skill.astro"
     </ul>
 
   </fieldset>
+
+
+  <a href={resume.href} target="_blank" class="resume-link"><Icon name={resume.icon} />{resume.title}<Icon name="iconamoon:link-external-duotone" /></a>
 
 
   <div id="skill-set">
@@ -119,6 +123,9 @@ import Skill from "@/components/Skill.astro"
     </fieldset>
 
   </div>
+
+
+  <a href={resume.href} target="_blank" class="resume-link"><Icon name={resume.icon} />{resume.title}<Icon name="iconamoon:link-external-duotone" /></a>
 
 
 </section>
@@ -255,6 +262,35 @@ import Skill from "@/components/Skill.astro"
       > svg
         color lightseagreen
         width 1.5em
+
+.resume-link
+  text-decoration none
+  display flex
+  align-items center
+  gap .5em
+  color mediumaquamarine
+  background rgb(10, 15, 20)
+  font-size 1.25em
+  max-width max-content
+  padding .75em
+  border-radius .5em
+  box-shadow 0 0 4px mediumaquamarine
+  transition-property color, background, box-shadow, scale
+  transition-duration .15s
+  > svg
+    width 1.25em
+    &:last-of-type
+      margin-left .25em
+  &:hover
+    color black
+    background mediumaquamarine
+  &:active
+    scale .95
+  &:first-of-type
+    margin 2em auto
+  &:last-of-type
+    margin auto
+    margin-top 3em
 
 #skill-set
   display grid

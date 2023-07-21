@@ -42,3 +42,9 @@ export const email: Profile = {
     return `mailto:${this.title}`
   }
 }
+
+export const resume: Profile = {
+  href: "/resume-fullstackdev-phone-censored.pdf",
+  title: "Résumé (CV)",
+  icon: "pepicons-print:cv"
+}
