@@ -28,7 +28,7 @@ const { name, tags, source, website } = Astro.props,
     <h2>{name}</h2>
 
     {tags?.length && (
-      <ul>
+      <ul class="tags">
         {tags.map(tag => (
           <li>{toTag(tag)}</li>
         ))}
@@ -89,21 +89,22 @@ figure
       text-shadow 0 0 4px black
       margin-top auto
       margin-bottom .1em
-    > ul
-      list-style none
-      display flex
-      flex-wrap wrap
-      align-items center
-      justify-content center
-      gap .75em
-      font-size clamp(.85em, 2vw, 1em)
-      padding-left 0
-      margin .25em 0
-      > li
-        background rgba(0, 5, 10, .75)
-        padding .2em .4em
-        border-radius 16px
-        box-shadow 0 0 3px 2px crimson
+
+.tags
+  list-style none
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  gap .75em
+  font-size clamp(.85em, 2vw, 1em)
+  padding-left 0
+  margin .25em 0
+  > li
+    background rgba(0, 5, 10, .75)
+    padding .2em .4em
+    border-radius 16px
+    box-shadow 0 0 3px 2px crimson
 
 .description
   display grid
