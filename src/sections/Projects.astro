@@ -10,7 +10,7 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
 
 <script>
 document.getElementById("more-projects-details")?.addEventListener("toggle", function(event) {
-  if (event.target?.getAttribute("open") !== null) {
+  if (event.target?.hasAttribute("open")) {
     event.target?.scrollIntoView(true)
   }
 })
