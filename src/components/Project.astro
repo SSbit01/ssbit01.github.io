@@ -25,7 +25,7 @@ const { name, tags, source, website } = Astro.props,
   <img src={`/images/projects/${id}.webp`} alt="" loading="lazy" draggable={false} />
   
   <figcaption>
-    <h2>{name}</h2>
+    <h2 class="project-title">{name}</h2>
 
     {tags?.length && (
       <ul class="tags">
@@ -84,11 +84,13 @@ figure
     overflow auto
     transition-property visibility, opacity, scale
     transition-duration .4s
-    > h2:first-child
-      font-size clamp(1.5em, 5.75vw, 3em)
-      text-shadow 0 0 4px black
-      margin-top auto
-      margin-bottom .1em
+
+.project-title
+  color mediumspringgreen
+  font-size clamp(1.5em, 5.75vw, 3em)
+  text-shadow 0 0 6px black
+  margin-top auto
+  margin-bottom .1em
 
 .tags
   list-style none
@@ -96,15 +98,16 @@ figure
   flex-wrap wrap
   align-items center
   justify-content center
-  gap .75em
+  gap .5em .75em
   font-size clamp(.85em, 2vw, 1em)
   padding-left 0
   margin .25em 0
   > li
-    background rgba(0, 5, 10, .75)
-    padding .2em .4em
-    border-radius 16px
-    box-shadow 0 0 3px 2px crimson
+    color aquamarine
+    text-shadow 0 0 6px black
+    &::before
+      color lightseagreen
+      content "#"
 
 .description
   display grid
@@ -116,7 +119,7 @@ figure
     color turquoise
     text-decoration none
     transition text-shadow .2s
-    &:hover
+    &:hover, &:active
       text-decoration underline
     &:active
       text-shadow 0 0 4px
@@ -127,15 +130,16 @@ figure
   justify-content space-evenly
   margin auto 0
   > a
+    text-decoration none
     display: flex
     flex-direction: column
     align-items center
-    text-decoration none
-    color gold
+    color yellow
     > svg:first-child
       $side = clamp(2em, 7vw, 3em)
       width $side
       height $side
+      color gold
       filter drop-shadow(0 0 4px black)
       translate 0 .5em
       transition filter .2s, translate .2s
