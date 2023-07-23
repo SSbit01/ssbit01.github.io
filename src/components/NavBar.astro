@@ -104,7 +104,8 @@ if (navBarEl) {
     text-decoration none
     backdrop-filter blur(2px)
     padding .5em
-    transition .15s
+    transition-property color, background, font-weight
+    transition-duration .15s
     &::after
       content attr(title)
       transition font-size .15s
