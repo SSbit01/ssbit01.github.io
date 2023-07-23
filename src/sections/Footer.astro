@@ -33,22 +33,35 @@ import * as profiles from "@/data/profiles"
   flex-wrap wrap
   align-items center
   justify-content center
-  gap .25em .5em
+  gap .75em
   padding-left 0
   margin-top 0
   > li > a:first-child
+    text-decoration none
     display inline-block
+    position relative
     color rgb(120, 150, 160)
     padding .5em
     border-radius 50%
     transition-property background, color
     transition-duration .2s
+    &::after
+      content attr(title)
+      position absolute
+      bottom -.75em
+      left 50%
+      font-size .75em
+      opacity 0
+      transform translateX(-50%)
+      transition opacity .2s
     > svg:first-child
       vertical-align middle
       width 3em
       transition filter .15s, translate .2s
     &:hover
       color paleturquoise
+      &::after
+        opacity 1
       > svg:first-child
         filter drop-shadow(0 0 2px darkturquoise)
         translate 0 -.25em

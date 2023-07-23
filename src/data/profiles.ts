@@ -45,6 +45,6 @@ export const email: Profile = {
 
 export const resume: Profile = {
   href: "/resume-fullstackdev-phone-censored.pdf",
-  title: "Résumé (CV)",
+  title: "Résumé",
   icon: "pepicons-print:cv"
 }
