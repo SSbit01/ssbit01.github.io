@@ -23,9 +23,7 @@ import { Icon } from "astro-iconify"
       icon: "ic:baseline-contact-mail"
     },
   ].map(({ name, icon }) => (
-    <a href={`#${name.toLowerCase()}`} title={name}>
-      <Icon name={icon} />
-    </a>
+    <a href={`#${name.toLowerCase()}`}><Icon name={icon} /><span class="nav-text">{name}</span></a>
   ))}
 </nav>
 
@@ -106,8 +104,7 @@ if (navBarEl) {
     padding .5em
     transition-property color, background, font-weight
     transition-duration .15s
-    &::after
-      content attr(title)
+    .nav-text
       transition font-size .15s
     &.active
       color black
@@ -137,12 +134,10 @@ if (navBarEl) {
       align-items center
       gap 0
       font-size .75em
-      &::after
+      .nav-text
         font-size 0
-      > span
-        display none
       > svg
         width 2.5em
-    &:hover > a::after
+    &:hover > a .nav-text
       font-size 1em
 </style>
