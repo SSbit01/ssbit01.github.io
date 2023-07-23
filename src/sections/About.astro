@@ -44,7 +44,7 @@ import { resume } from "@/data/profiles"
   </fieldset>
 
 
-  <a href={resume.href} target="_blank" class="resume-link"><Icon name={resume.icon} />{resume.title}<Icon name="iconamoon:link-external-duotone" /></a>
+  <a href={resume.href} target="_blank" id="resume-link"><Icon name={resume.icon} />{resume.title}<Icon name="iconamoon:link-external-duotone" /></a>
 
 
   <div id="skill-set">
@@ -123,9 +123,6 @@ import { resume } from "@/data/profiles"
     </fieldset>
 
   </div>
-
-
-  <a href={resume.href} target="_blank" class="resume-link"><Icon name={resume.icon} />{resume.title}<Icon name="iconamoon:link-external-duotone" /></a>
 
 
 </section>
@@ -263,7 +260,7 @@ import { resume } from "@/data/profiles"
         color lightseagreen
         width 1.5em
 
-.resume-link
+#resume-link
   text-decoration none
   display flex
   align-items center
@@ -288,9 +285,6 @@ import { resume } from "@/data/profiles"
     scale .95
   &:first-of-type
     margin 2em auto
-  &:last-of-type
-    margin auto
-    margin-top 3em
 
 #skill-set
   display grid
