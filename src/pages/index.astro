@@ -1,7 +1,7 @@
 ---
 import "@fontsource/jura"
 
-import * as profiles from "@/data/profiles"
+import * as sameAs from "@/data/sameAs"
 
 import NavBar from "@/components/NavBar.astro"
 
@@ -22,7 +22,7 @@ const metaData = {
   }
 }
 
-const { email: { title: email }, ...restProfiles } = profiles
+const { email: { title: email }, resume, ...profiles } = sameAs
 
 
 const jsonLd: WithContext<Person> = { 
@@ -33,12 +33,13 @@ const jsonLd: WithContext<Person> = {
   description: metaData.summary,
   email,
   image: "https://avatars.githubusercontent.com/u/59541034",
-  sameAs: Object.values(restProfiles).map(({ href }) => href)
+  sameAs: Object.values(profiles).map(({ href }) => href)
 }
 
 if (Astro.site) {
   jsonLd["@id"] = `${Astro.site}#identity`
   jsonLd.url = Astro.site.toString()
+  jsonLd.mainEntityOfPage = `${jsonLd.url.replace(/\/$/, "")}${resume.href}`
 }
 ---
 
