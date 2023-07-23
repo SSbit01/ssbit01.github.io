@@ -69,6 +69,7 @@ if (navBarEl) {
   display flex
   position sticky
   bottom 0
+  border-top thin solid darkslategray
   z-index 2
   transform-origin bottom
   // CSS Variable
@@ -111,19 +112,19 @@ if (navBarEl) {
       color black
       background mediumaquamarine
       font-weight bold
-      box-shadow 0 0 4px lightblue
       &:hover
         background rgb(115, 230, 190)
       &:active
         background aquamarine
-        box-shadow 0 0 8px lightblue
     &:not(.active)
-      color white
+      color gainsboro
       background rgba(10, 15, 20, .9)
       &:hover
-        background rgba(25, 30, 35, .9)
+        color white
+        background rgba(20, 25, 30, .9)
       &:active
-        background rgba(30, 40, 45, .9)
+        color white
+        background rgba(25, 30, 35, .9)
     > svg
       width 1.2em
 
