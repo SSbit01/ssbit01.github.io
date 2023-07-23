@@ -91,7 +91,7 @@ import { Icon } from "astro-iconify"
   &:active
     user-select none
     &::after
-      background rgb(120, 220, 200)
+      background aquamarine
       box-shadow 0 0 12px mediumaquamarine
 
 #headline
@@ -115,8 +115,8 @@ import { Icon } from "astro-iconify"
 #scroll-down
   display inline-block
   width clamp(3em, 9vmin, 4em)
-  color mediumaquamarine
-  filter drop-shadow(0 0 4px teal)
+  color cadetblue
+  filter drop-shadow(0 0 3px darkslateblue)
   margin-top .5em
   animation 1s infinite bounce
   transition-property color, filter, scale
@@ -124,9 +124,11 @@ import { Icon } from "astro-iconify"
   @keyframes bounce
     50%
       transform translateY(20%)
-  &:hover, &:active
-    color aquamarine
+  &:hover
+    color mediumaquamarine
+    filter drop-shadow(0 0 3px teal)
   &:active
-    filter drop-shadow(0 0 8px lightseagreen)
+    color aquamarine
+    filter drop-shadow(0 0 4px lightseagreen)
     scale .9
 </style>
