@@ -54,16 +54,17 @@ import { linkedin, email } from "@/data/sameAs"
     padding .5em .75em
     transition color .15s, background .15s
     > svg:first-child
+      color teal
       width 3em
       vertical-align middle
       margin-right .5em
-      transition filter .2s, transform .2s
-    &:hover
+      transition color .15s, filter .2s, transform .2s
+    &:hover, &:active
       color black
       background mediumaquamarine
       > svg:first-child
+        color black
         transform translateY(-.25em)
     &:active
-      color black
-      background aquamarine
+      background aquamarine !important
 </style>
