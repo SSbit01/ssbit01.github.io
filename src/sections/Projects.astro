@@ -191,7 +191,7 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
 
 #profiles-container
   text-align center
-  $mx = .75em
+  $mx = 1em
   margin 2.5em $mx 0 $mx
   > h2:first-child
     font-size clamp(1.5em, 7vw, 2em)
@@ -202,6 +202,7 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
 #profiles
   list-style none
   display flex
+  flex-wrap wrap
   align-items center
   justify-content center
   background rgba(0, 5, 10, .3)
@@ -227,6 +228,6 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
         > svg
           filter drop-shadow(0 0 4px teal)
       > svg
-        width 3em
+        width clamp(2.5em, 10vw, 3em)
         transition transform .2s, filter .2s
 </style>
