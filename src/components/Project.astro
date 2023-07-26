@@ -137,9 +137,8 @@ figure
     align-items center
     color yellow
     > svg:first-child
-      $side = clamp(2em, 7vw, 3em)
-      width $side
-      height $side
+      width clamp(2em, 7vw, 3em)
+      height @width
       color gold
       filter drop-shadow(0 0 4px black)
       translate 0 .5em
