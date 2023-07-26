@@ -13,7 +13,7 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
 
   const el = event.target as HTMLDetailsElement
 
-  if (el.hasAttribute("open")) {
+  if (el.open) {
     el.scrollIntoView(true)
   }
 
