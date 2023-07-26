@@ -32,13 +32,17 @@ import { resume } from "@/data/sameAs"
     <legend>Interests</legend>
 
     <ul>
-      <li><Icon name="mdi:code-braces" />Coding</li>
-      <li><Icon name="mdi:robot-angry" />Artificial Intelligence</li>
-      <li><Icon name="simple-icons:windows95" />Retrocomputing</li>
-      <li><Icon name="solar:gamepad-minimalistic-bold-duotone" />Video Games & Modding</li>
-      <li><Icon name="eos-icons:atom-electron" />Physics</li>
-      <li><Icon name="solar:planet-bold-duotone" />Astronomy</li>
-      <li><Icon name="game-icons:dinosaur-bones" />Paleontology</li>
+      {[
+        { icon: "mdi:code-braces", text: "Coding" },
+        { icon: "mdi:robot-angry", text: "Artificial Intelligence" },
+        { icon: "simple-icons:windows95", text: "Retrocomputing" },
+        { icon: "solar:gamepad-minimalistic-bold-duotone", text: "Video Games & Modding" },
+        { icon: "eos-icons:atom-electron", text: "Physics" },
+        { icon: "solar:planet-bold-duotone", text: "Astronomy" },
+        { icon: "game-icons:dinosaur-bones", text: "Paleontology" }
+      ].map(({ icon, text }) => (
+        <li><Icon name={icon} />{text}</li>
+      ))}
     </ul>
 
   </fieldset>

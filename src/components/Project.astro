@@ -38,8 +38,12 @@ const { name, tags, source, website } = Astro.props,
     {Astro.slots.has("default") && <div class="description"><slot /></div>}
     
     <div class="links">
-      <a href={source} target="_blank" rel="noreferrer noopener" title="Source"><Icon name="fluent:code-24-filled" /></a>
-      <a href={website} target="_blank" rel="noreferrer noopener" title="Website"><Icon name="lucide:external-link" /></a>
+      {[
+        { href: source, title: "Source", icon: "fluent:code-24-filled" },
+        { href: website, title: "Website", icon: "lucide:external-link" }
+      ].map(({ href, title, icon }) => (
+        <a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a>
+      ))}
     </div>
   </figcaption>
 </figure>
