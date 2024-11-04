@@ -46,5 +46,5 @@ export const email: SameAs = {
 export const resume: SameAs = {
   href: "/resume-fullstackdev-no-phone.pdf",
   title: "Résumé",
-  icon: "pepicons-print:cv"
+  icon: "ph:read-cv-logo-duotone"
 }
