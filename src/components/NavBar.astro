@@ -1,0 +1,144 @@
+---
+import { Icon } from "astro-iconify"
+---
+
+
+
+<nav id="navbar">
+  {[
+    {
+      name: "Home",
+      icon: "ph:house-duotone"
+    },
+    {
+      name: "About",
+      icon: "bi:person-lines-fill"
+    },
+    {
+      name: "Projects",
+      icon: "ph:code-duotone"
+    },
+    {
+      name: "Contact",
+      icon: "ic:baseline-contact-mail"
+    },
+  ].map(({ name, icon }) => (
+    <a href={`#${name.toLowerCase()}`}><Icon name={icon} /><span class="nav-text">{name}</span></a>
+  ))}
+</nav>
+
+
+
+<script>
+const navBarEl = document.getElementById("navbar")
+
+
+if (navBarEl) {
+  const navLinkEls = Array.from(navBarEl.children),
+        sectionEls = Array.from(document.querySelectorAll<HTMLElement>(navLinkEls.map(a => a.getAttribute("href")).join(",")))
+
+  
+  function onScroll() {
+    // Scroll Indicator
+    navBarEl?.style.setProperty("--scroll-indicator", document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100 + "%")
+    
+    // Nav-Link Active
+    const id = sectionEls.find(({ offsetTop, offsetHeight }) => (scrollY + innerHeight - (navBarEl?.offsetHeight || 0) - 3) <= (offsetTop + offsetHeight))?.id,
+          activeNavClass = "active"
+
+    navLinkEls.forEach(a => {
+      if (id && a.getAttribute("href")?.includes(id)) {
+        a.classList.add(activeNavClass)
+      } else {
+        a.classList.remove(activeNavClass)
+      }
+    })
+  }
+
+  new ResizeObserver(onScroll).observe(document.body, { box: "border-box" })  // Trigger onScroll when document height changes
+  window.addEventListener("scroll", onScroll)
+}
+</script>
+
+
+
+<style lang="stylus">
+#navbar
+  display flex
+  position sticky
+  bottom 0
+  border-top thin solid darkslategray
+  z-index 2
+  transform-origin bottom
+  // CSS Variable
+  --scroll-indicator 100%
+  animation 1.75s ease navbar-anim1
+  @keyframes navbar-anim1
+    from, 75%
+      opacity 0
+      transform translateY(100%)
+  &::before
+    content ""
+    position absolute
+    $height-bar = 3px  // Variable
+    top -($height-bar)
+    height $height-bar
+    width var(--scroll-indicator)
+    background gold
+    box-shadow 0 2px 3px black
+    z-index 1
+    animation 2.75s ease fill
+    @keyframes fill
+      from, 65%
+        width 0
+  > a
+    flex 1
+    display flex
+    align-items flex-end
+    justify-content center
+    gap .25em
+    font-size clamp(1em, 4.5vw, 1.5em)
+    text-transform capitalize
+    text-decoration none
+    backdrop-filter blur(2px)
+    padding .5em
+    transition-property color, background, font-weight
+    transition-duration .15s
+    .nav-text
+      transition font-size .15s
+    &.active
+      color black
+      background mediumaquamarine
+      font-weight bold
+      &:hover
+        background rgb(115, 230, 190)
+      &:active
+        background aquamarine
+    &:not(.active)
+      color gainsboro
+      background rgba(10, 15, 20, .9)
+      &:hover
+        color white
+        background rgba(20, 25, 30, .9)
+      &:active
+        color white
+        background rgba(25, 30, 35, .9)
+    > svg
+      width 1.2em
+
+
+@media (max-width 675px)
+  #navbar
+    > a
+      flex-direction column
+      align-items center
+      gap 0
+      font-size .75em
+      padding .75em
+      .nav-text
+        font-size 0
+      > svg
+        width 2.5em
+    &:hover > a .nav-text
+      font-size 1em
+</style>

@@ -1,0 +1,351 @@
+---
+import { Icon } from "astro-iconify"
+import Skill from "@/components/Skill.astro"
+---
+
+
+
+<section id="about">
+
+
+  <div id="about-container">
+
+    <figure id="avatar">
+      <img src="https://avatars.githubusercontent.com/u/59541034" alt="Avatar" loading="lazy" draggable="false" />
+      <figcaption>GitHub Picture</figcaption>
+    </figure>
+    
+    <div id="about-me">
+      <h1 class="title-section"><a href="#about-me">About Me</a></h1>
+      <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a simple enthusiast coder of the cosmos.</p>
+      <p>My curiosity for <strong>science</strong> and <strong>technology</strong> led me to learn <em>C</em> and <em>Python</em> as my first programming languages. Shortly after, I became interested in <strong>Data Science</strong>, <strong>Artificial Intelligence</strong> and <strong>Physics</strong>.</p>
+      <p>I also have a keen interest in <strong>Web Development</strong>, <strong>Cryptography</strong> and <strong>Communications</strong>.</p>
+    </div>
+
+  </div>
+
+
+  <fieldset id="interests">
+
+    <legend>Interests</legend>
+
+    <ul>
+      {[
+        { icon: "mdi:code-braces", text: "Coding" },
+        { icon: "hugeicons:artificial-intelligence-02", text: "Artificial Intelligence" },
+        { icon: "mdi:microsoft-windows-classic", text: "Retrocomputing" },
+        { icon: "ph:game-controller-duotone", text: "Video Games & Modding" },
+        { icon: "eos-icons:atom-electron", text: "Physics" },
+        { icon: "ph:planet-duotone", text: "Astronomy" },
+        { icon: "file-icons:fossil", text: "Paleontology" }
+      ].map(({ icon, text }) => (
+        <li><Icon name={icon} />{text}</li>
+      ))}
+    </ul>
+
+  </fieldset>
+
+
+  <div id="skill-set">
+    
+    <h1 class="title-section"><a href="#skill-set"><Icon name="carbon:skill-level-advanced" />Coding Skill Set</a></h1>
+
+    <fieldset id="front-end">
+      <legend><a href="#front-end"><Icon name="eva:browser-fill" />Front-End</a></legend>
+      <fieldset>
+        <legend>Structuring</legend>
+        <Skill icon="vscode-icons:file-type-html">HTML5</Skill>
+        <Skill icon="vscode-icons:file-type-pug">Pug</Skill>
+      </fieldset>
+      <fieldset>
+        <legend>Styling</legend>
+        <Skill icon="vscode-icons:file-type-css">CSS</Skill>
+        <Skill icon="logos:sass">Sass</Skill>
+        <Skill icon="vscode-icons:file-type-stylus">Stylus</Skill>
+        <Skill icon="devicon:bootstrap">Bootstrap</Skill>
+        <Skill icon="logos:tailwindcss-icon">Tailwind CSS</Skill>
+      </fieldset>
+      <fieldset>
+        <legend>Programming</legend>
+        <Skill icon="skill-icons:javascript">JavaScript</Skill>
+        <Skill icon="skill-icons:typescript">TypeScript</Skill>
+        <fieldset>
+          <legend>Frameworks / Libraries</legend>
+          <Skill icon="logos:react">React</Skill>
+          <Skill icon="logos:vue">Vue</Skill>
+          <Skill icon="logos:svelte-icon">Svelte</Skill>
+          <Skill icon="logos:redux">Redux</Skill>
+          <Skill icon="devicon:jquery">jQuery</Skill>
+          <Skill icon="logos:d3">D3.js</Skill>
+        </fieldset>
+      </fieldset>
+    </fieldset>
+
+    <fieldset id="back-end">
+      <legend><a href="#back-end"><Icon name="clarity:rack-server-solid" />Back-End</a></legend>
+      <Skill icon="vscode-icons:file-type-java">Java</Skill>
+      <Skill icon="logos:spring-icon">Spring</Skill>
+      <Skill icon="logos:nodejs-icon-alt">Node.js</Skill>
+      <Skill icon="vscode-icons:file-type-deno">Deno</Skill>
+      <Skill icon="logos:bun">Bun</Skill>
+      <Skill icon="logos:cloudflare-workers-icon">Cloudflare Workers</Skill>
+      <Skill icon="simple-icons:express">Express</Skill>
+      <Skill icon="logos:hono">Hono</Skill>
+      <Skill icon="logos:supabase-icon">Supabase</Skill>
+      <fieldset>
+        <legend><Icon name="ph:database-duotone" />Databases</legend>
+        <Skill icon="devicon:mongodb">MongoDB</Skill>
+        <Skill icon="logos:mysql-icon">MySQL</Skill>
+        <Skill icon="logos:postgresql">PostgreSQL</Skill>
+      </fieldset>
+    </fieldset>
+
+    <fieldset id="all-in-one-web">
+      <legend><a href="#all-in-one-web">All-In-One Web Frameworks</a></legend>
+      <Skill icon="logos:nextjs-icon">Next.js</Skill>
+      <Skill icon="logos:nuxt-icon">Nuxt</Skill>
+      <Skill icon="logos:svelte-icon">SvelteKit</Skill>
+      <Skill icon="vscode-icons:file-type-astro">Astro</Skill>
+    </fieldset>
+
+    <fieldset id="communications">
+      <legend><a href="#communications"><Icon name="fluent:communication-16-filled" />Communications</a></legend>
+      <Skill icon="material-symbols:http">REST API</Skill>
+      <Skill icon="logos:graphql">GraphQL</Skill>
+      <Skill icon="logos:websocket">WebSocket</Skill>
+      <Skill icon="simple-icons:socketdotio">Socket.IO</Skill>
+    </fieldset>
+
+    <fieldset id="testing">
+      <legend><a href="#testing"><Icon name="file-icons:test-js" />Testing</a></legend>
+      <Skill icon="logos:bun">Bun</Skill>
+      <Skill icon="material-icon-theme:vitest">Vitest</Skill>
+      <Skill icon="logos:mocha">Mocha</Skill>
+      <Skill icon="logos:chai">Chai</Skill>
+    </fieldset>
+
+    <fieldset id="data-analysis">
+      <legend><a href="#data-analysis"><Icon name="ep:data-analysis" />Data Analysis & AI</a></legend>
+      <Skill icon="logos:python">Python</Skill>
+      <Skill icon="logos:numpy">NumPy</Skill>
+      <Skill icon="simple-icons:pandas">Pandas</Skill>
+      <Skill icon="logos:matplotlib-icon">Matplotlib</Skill>
+      <Skill icon="logos:seaborn-icon">Seaborn</Skill>
+      <Skill icon="logos:d3">D3.js</Skill>
+      <Skill icon="devicon:tensorflow">Tensorflow</Skill>
+      <Skill icon="devicon:keras">Keras</Skill>
+    </fieldset>
+
+  </div>
+
+
+</section>
+
+
+
+<style lang="stylus">
+.title-section
+  font-size clamp(1.4em, 8vw, 2em)
+  > a:first-child
+    position relative
+    color mediumseagreen
+    text-decoration none
+    transition color .15s
+    &::before
+      content ""
+      position absolute
+      right 0
+      bottom -4px
+      left 0
+      transform scaleX(0)
+      transform-origin right
+      height 2px
+      background mediumturquoise
+      border-radius 2px
+      transition transform .25s
+    &::after
+      content "#"
+      position absolute
+      right -1em
+      color darkslategray
+      opacity 0
+      transition opacity .15s
+    &:hover, &:focus
+      color mediumspringgreen
+      &::after
+        opacity 1
+    &:active::before
+      transform scaleX(1)
+      transform-origin left
+
+#about
+  background rgb(10, 15, 20) linear-gradient(135deg, rgb(25, 35, 40), rgb(10, 15, 20))
+  $px = 1em
+  padding 0 $px 5em $px
+  border-bottom thin solid mediumspringgreen
+
+#about-container
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  gap 1.5em 2em
+  padding-top 2em
+
+#avatar
+  margin 0
+  > img:first-of-type
+    width 18em
+    max-width 100%
+    border-radius 50%
+    box-shadow 0 0 8px teal
+    user-select none
+    transition box-shadow .2s, translate .15s
+    &:hover
+      box-shadow 0 0 12px 2px springgreen
+    &:active
+      translate 0 -.5em
+  > figcaption:last-of-type
+    text-align center
+    color gainsboro
+    font-size .75em
+    margin-top 1em
+
+#about-me
+  max-width 55em
+  scroll-margin-top 1em
+  > h1:first-child
+    text-align center
+    margin 0
+  > p
+    font-size clamp(1em, 3vw, 1.1em)
+    line-height 1.5
+    strong, em
+      color aquamarine
+    u
+      text-decoration-color mediumaquamarine
+    a
+      color dodgerblue
+      transition color .15s, text-shadow .15s
+      &:hover
+        color deepskyblue
+      &:active
+        text-shadow 0 0 4px
+    &:last-child::after
+      content ""
+      display inline-block
+      vertical-align sub
+      width .2em
+      height 1em
+      background lightcyan
+      box-shadow 0 0 3px lightcyan
+      border-radius 2px
+      margin-left .35em
+      animation 1s infinite step-end caret
+      @keyframes caret
+        50%
+          opacity 0
+
+#interests
+  background rgba(5, 10, 15, .75)
+  max-width 75em
+  padding-top .75em
+  border thin solid darkslategray
+  border-radius 8px
+  box-shadow 1px 1px 4px black
+  margin .5em auto
+  > legend:first-child
+    color aquamarine
+    font-size 1.25em
+  > ul
+    list-style none
+    display flex
+    flex-wrap wrap
+    justify-content space-evenly
+    gap .75em 1em
+    padding 0
+    margin 0
+    > li
+      display flex
+      align-items center
+      gap .4em
+      color cadetblue
+      > svg
+        color lightseagreen
+        width 1.5em
+
+#skill-set
+  display grid
+  justify-content center
+  gap 2em
+  margin-top 2em
+  > h1:first-child
+    text-align center
+    margin-bottom -.25em
+    > a
+      display inline-flex
+      align-items center
+      gap .25em
+      > svg:first-child
+        width 1em
+  fieldset  // All fieldsets
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content space-evenly
+    gap 1em
+    border-radius 8px
+    box-shadow 1px 1px 4px black
+    fieldset  // Nested fieldsets
+      background rgba(5, 10, 15, .5)
+      padding .75em
+      border thin solid rgb(30, 40, 40)
+      margin .25em 0
+      > legend
+        display flex
+        align-items center
+        gap .25em
+        color lightgray
+        svg
+          width 1.5em
+  > fieldset  // First level fieldset children
+    background rgba(5, 15, 20, .5)
+    padding 1em .75em
+    border thin solid darkslategray
+    margin 0 -.25em
+    scroll-margin-top 1em
+    > legend
+      font-size clamp(1.1em, 5.8vw, 1.5em)
+      > a:first-child  
+        display inline-flex
+        align-items flex-end
+        gap .25em
+        position relative
+        color lightseagreen
+        text-decoration none
+        transition color .15s
+        &::before
+          content ""
+          color black
+          position absolute
+          right 0
+          bottom -3px
+          left 0
+          transform scaleX(0)
+          transform-origin right
+          height 2px
+          background mediumturquoise
+          border-radius 2px
+          transition transform .25s
+        &:hover, &:active
+          color aquamarine
+        &:active::before
+          transform scaleX(1)
+          transform-origin left
+        > svg:first-child
+          width 1.25em
+
+@media (max-width 500px)
+  #interests > ul
+    flex-direction column
+</style>

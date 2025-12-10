@@ -1,0 +1,89 @@
+---
+import "@fontsource/jura"
+---
+
+
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <title>404 (Not Found)</title>
+
+  </head>
+
+
+  <body>
+
+    <hgroup class="header-group">
+      <h1>404</h1>
+      <p>Yes, that's an <strong>error</strong></p>
+    </hgroup>
+
+    <p class="message">This is not the page you are looking for. It seems you have entered a wormhole and ended up in the wrong dimension.</p>
+
+    <a class="go-back" href="/">Head Back Now!</a>
+
+  </body>
+
+</html>
+
+
+
+<style lang="stylus">
+body
+  font-family Jura, Calibri, Arial, sans-serif
+  background rgb(5, 15, 25)
+  text-align center
+  margin 3em 1em
+
+.header-group
+  > h1
+    font-size 8em
+    color mediumaquamarine
+    text-shadow 0 0 6px
+    margin 0
+  > p
+    color crimson
+    margin 0
+
+.message
+  max-width 35em
+  font-size 1.5em
+  line-height 1.5
+  margin 1em auto
+
+.go-back
+  text-decoration none
+  position relative
+  font-size 1.5em
+  white-space nowrap
+  color cadetblue
+  background inherit
+  transition-property color, text-shadow
+  transition-duration .2s
+  &::after
+    content ""
+    position absolute
+    right 0
+    bottom -2px
+    left 0
+    transform scaleX(0)
+    transform-origin center
+    height 2px
+    background mediumturquoise
+    border-radius 2px
+    transition transform .2s
+  &:hover::after
+    transform scaleX(1)
+  &:active
+    color lightseagreen
+    text-shadow 0 0 4px
+</style>

@@ -1,0 +1,237 @@
+---
+import { Icon } from "astro-iconify"
+import { github, replit, codepen, freecododecamp } from "@/data/social"
+import Project from "@/components/Project.astro"
+
+const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+---
+
+
+
+<script>
+document.getElementById("more-projects-details")?.addEventListener("toggle", function(event) {
+
+  const el = event.target as HTMLDetailsElement
+
+  if (el.open) {
+    el.scrollIntoView(true)
+  }
+
+})
+</script>
+
+
+
+<section id="projects">
+  <h1 class="section-header">These are some of my projects</h1>
+
+  <ul class="project-list">
+    <li>
+      <Project name="Simple Chat Rooms" tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]} source="https://github.com/SSbit01/Simple-Chat-Rooms" website="https://simple-chat-rooms.onrender.com/">
+        <p>A platform that allows users to create and join chat rooms without creating an account.</p>
+        <p>It uses <strong>WebSockets</strong> to provide real-time chat functionality.</p>
+      </Project>
+    </li>
+    <li>
+      <Project name="Voting App" tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]} source="https://github.com/SSbit01/voting-app" website="https://voting-app-iota.vercel.app/">
+        <p>A platform where users can create polls and everyone can vote in them.</p>
+        <p>It uses a <strong>MongoDB Atlas</strong> database to store users and polls.</p>
+      </Project>
+    </li>
+    <li>
+      <Project name="HandyVoid" tags={["Nuxt", "TypeScript", "Vue", "Stylus", "PWA", "i18n"]} source="https://github.com/HandyVoid/HandyVoidium" website="https://www.handyvoid.com/">
+        <p>A multilingual platform that offers a comprehensive set of tools for a wide range of tasks. It aims to provide users with a single platform where they can find all the tools they need without having to navigate through multiple websites.</p>
+      </Project>
+    </li>
+    <li>
+      <Project name="ISAL" tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]} source="https://github.com/SSbit01/Image-Search-Abstraction-Layer" website="https://image-search-abstraction-layer.onrender.com/">
+        <p>A simple and easy-to-use image search website that makes use of the <a href="https://pixabay.com/api/docs/" target="_blank" rel="noreferrer noopener">Pixabay API</a>.</p>
+        <p>It can store search strings in a <strong>MongoDB Atlas</strong> database.</p>
+      </Project>
+    </li>
+    <li>
+      <Project name="Game Of Life" tags={["Vue", "Stylus"]} source="https://codepen.io/ssbit01/pen/YzZRQNV" website="https://codepen.io/ssbit01/full/YzZRQNV">
+        <p>My own implementation of <a href={conwayGameOfLifeWiki} target="_blank" rel="noreferrer noopener">Conway's Game Of Life</a>.</p>
+        <p><a href={conwayGameOfLifeWiki} target="_blank" rel="noreferrer noopener">Conway's Game of Life</a> is a cellular automaton where cells live or die based on the number of live neighbors they have. It is a simple, but many complex patterns can emerge.</p>
+        <p>This is one of my favorite projects &lt;3</p>
+      </Project>
+    </li>
+  </ul>
+
+  <details id="more-projects-details">
+    <summary>Other Projects</summary>
+    <ul class="project-list">
+      <li>
+        <Project name="Wikipedia Viewer" tags={["Pug", "Bootstrap", "Vanilla JavaScript", "Wikipedia"]} source="https://codepen.io/ssbit01/pen/dyNJwxv" website="https://codepen.io/ssbit01/full/dyNJwxv">
+          <p>A simple project that lets you search and browse Wikipedia articles with ease. You can enter a keyword or a phrase and get a list of matching results, or you can click the random button and get a surprise article. It's fast, responsive and elegant. Try it out and discover something new on Wikipedia!</p>
+        </Project>
+      </li>
+      <li>
+        <Project name="Scatterplot: Doping in Professional Bicycle Racing" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/qBaorjO" website="https://codepen.io/ssbit01/full/qBaorjO" />
+      </li>
+      <li>
+        <Project name="Bar Chart: U.S. GDP" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/poEdPWW" website="https://codepen.io/ssbit01/full/poEdPWW" />
+      </li>
+      <li>
+        <Project name="Choropleth Map: U.S. Educational Attainment" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/gOwZzEZ" website="https://codepen.io/ssbit01/full/gOwZzEZ" />
+      </li>
+      <li>
+        <Project name="Heatmap: Monthly Global Land-Surface Temperature" tags={["D3.js"]} source="https://codepen.io/ssbit01/pen/eYdKxMO" website="https://codepen.io/ssbit01/full/eYdKxMO" />
+      </li>
+      <li>
+        <Project name="Recipe Box" tags={["Vue", "Local Storage"]} source="https://codepen.io/ssbit01/pen/poeZmRq" website="https://codepen.io/ssbit01/full/poeZmRq">
+          <p>An interactive page that allows users to store recipes in their browser's <strong>local storage</strong>. This means that recipes can be accessed even after reloading or exiting the browser.</p>
+        </Project>
+      </li>
+      <li>
+        <Project name="Rock Paper Scissors (Lizard Spock)" tags={["Vue", "Font Awesome"]} source="https://codepen.io/ssbit01/pen/xxjpVoR" website="https://codepen.io/ssbit01/full/xxjpVoR" />
+      </li>
+      <li>
+        <Project name="25 + 5 Clock" tags={["React"]} source="https://codepen.io/ssbit01/pen/QWKGEVQ" website="https://codepen.io/ssbit01/full/QWKGEVQ" />
+      </li>
+      <li>
+        <Project name="Markdown Previewer" tags={["React"]} source="https://codepen.io/ssbit01/pen/vYKbwRZ" website="https://codepen.io/ssbit01/full/vYKbwRZ" />
+      </li>
+      <li>
+        <Project name="Simon Game" tags={["React"]} source="https://codepen.io/ssbit01/pen/poePVeV" website="https://codepen.io/ssbit01/full/poePVeV" />
+      </li>
+      <li>
+        <Project name="Random Quote Machine" tags={["Bootstrap", "jQuery"]} source="https://codepen.io/ssbit01/pen/JjGZmrd" website="https://codepen.io/ssbit01/full/JjGZmrd" />
+      </li>
+      <li>
+        <Project name="Password Generator" tags={["Bootstrap", "Vanilla JavaScript"]} source="https://codepen.io/ssbit01/pen/RwVOaKw" website="https://codepen.io/ssbit01/full/RwVOaKw" />
+      </li>
+      <li>
+        <Project name="Intro to Python" tags={["HTML", "CSS"]} source="https://codepen.io/ssbit01/pen/RwNzXrB" website="https://codepen.io/ssbit01/full/RwNzXrB">
+          <p>My own basic <strong>Python</strong> documentation.</p>
+          <p><strong>Python</strong> is a general-purpose, high-level programming language that is known for its simple syntax and powerful libraries. It is a popular language for a wide variety of tasks, including <strong>web development</strong>, <strong>data science</strong>, and <strong>machine learning</strong>.</p>
+        </Project>
+      </li>
+    </ul>
+  </details>
+
+  <div id="profiles-container">
+    <h2>See more on my <mark>profiles</mark></h2>
+    <ul id="profiles">
+      {[github, replit, codepen, freecododecamp].map(({ href, title, icon }) => (
+         <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+
+
+<style lang="stylus">
+#projects
+  background rgb(15, 25, 35)
+  padding-top 2.75em
+  padding-bottom 5em
+  border-bottom thin solid mediumspringgreen
+
+.section-header
+  color darkturquoise
+  text-align center
+  font-size clamp(1.5em, 6.4vw, 2em)
+  line-height 1.5
+  gap .3em
+  $mx = .75em
+  margin 0 $mx 1.25em $mx
+  > svg
+    display inline-block
+    vertical-align sub
+    width 1.25em
+    color turquoise
+    margin 0 .3em
+
+.project-list
+  list-style none
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  max-width 96em
+  padding 0
+  margin auto
+
+#more-projects-details
+  margin-top 3em
+  scroll-margin-top 2em
+  > summary:first-child
+    list-style none
+    background mediumaquamarine
+    color black
+    font-size clamp(1.5em, 7vw, 2em)
+    text-align center
+    max-width max-content
+    padding .25em .5em
+    border-radius 8px
+    box-shadow 0 0 3px teal
+    $mx = auto
+    margin 0 $mx 2rem $mx
+    cursor pointer
+    user-select none
+    transition-property background, box-shadow, scale
+    transition-duration .15s
+    &::before
+      content ">"
+      display inline-block
+      font-weight bolder
+      margin-right .25em
+      transition transform .15s
+    &:hover
+      background aquamarine
+      box-shadow 0 0 8px mediumspringgreen
+    &:active
+      scale .95
+  &[open]
+    > summary:first-child
+      color mediumaquamarine
+      background rgb(10, 15, 25)
+      &::before
+        transform rotate(90deg) translateX(1px)
+      &:hover
+        background rgb(20, 25, 35)
+
+#profiles-container
+  text-align center
+  $mx = 1em
+  margin 2.5em $mx 0 $mx
+  > h2:first-child
+    font-size clamp(1.5em, 7vw, 2em)
+    > mark
+      color mediumspringgreen
+      background none
+
+#profiles
+  list-style none
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  background rgba(0, 5, 10, .3)
+  max-width max-content
+  padding-left 0
+  border-radius 16px
+  box-shadow 0 0 4px darkcyan
+  margin auto
+  overflow hidden  // border-radius overlaps in children
+  > li
+    > a:first-child
+      display inline-block
+      color teal
+      padding .5em
+      transition .15s
+      &:hover
+        color mediumaquamarine
+        > svg
+          transform translateY(-5%)
+          filter drop-shadow(0 0 2px teal)
+      &:active
+        color aquamarine
+        > svg
+          filter drop-shadow(0 0 4px teal)
+      > svg
+        width clamp(2.5em, 12vw, 3em)
+        transition transform .2s, filter .2s
+</style>

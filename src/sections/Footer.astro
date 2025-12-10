@@ -1,0 +1,92 @@
+---
+import { Icon } from "astro-iconify"
+import * as sameAs from "@/data/social"
+---
+
+
+
+<footer id="end">
+  <ul id="profiles">
+    {Object.values(sameAs).map(({ href, title, icon }) => (
+        <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
+    ))}
+  </ul>
+  <div id="info">
+    <p><a href="https://github.com/SSbit01/ssbit01.github.io.git" target="_blank" rel="noreferrer noopener" id="git-repository"><Icon name="mdi:git" />Repository</a></p>
+    <p>Built with <a href="https://astro.build" target="_blank" rel="noreferrer noopener">{Astro.generator}</a></p>
+    <p>© <strong>Stefan Samson</strong></p>
+  </div>
+</footer>
+
+
+
+<style lang="stylus">
+#end
+  background rgb(15, 20, 25) linear-gradient(45deg, rgb(15, 20, 25), rgb(10, 15, 20))
+  $px = 1em
+  padding 2.25em $px 3em $px
+  border-top thin solid darkslategray
+
+#profiles
+  list-style none
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  gap 1.25em
+  padding-left 0
+  margin-top 0
+  > li > a:first-child
+    text-decoration none
+    display inline-block
+    position relative
+    color rgb(120, 150, 160)
+    padding .5em
+    border-radius 50%
+    transition-property background, color
+    transition-duration .2s
+    &::after
+      content attr(title)
+      position absolute
+      bottom -.75em
+      left 50%
+      font-size .75em
+      opacity 0
+      transform translateX(-50%)
+      transition opacity .2s
+    > svg:first-child
+      vertical-align middle
+      width 3em
+      transition filter .15s, translate .2s
+    &:hover
+      color paleturquoise
+      &::after
+        opacity 1
+      > svg:first-child
+        filter drop-shadow(0 0 2px darkturquoise)
+        translate 0 -.25em
+    &:focus
+      color turquoise
+
+#info
+  color lightgray
+  text-align center
+  margin-top 2em
+  > p > a
+    color lightseagreen
+    text-decoration none
+    transition color .15s, text-shadow .15s
+    &:hover, &:active
+      color aquamarine
+      text-decoration underline
+    &:active
+      text-shadow 0 0 4px
+
+#git-repository
+  display inline-flex
+  align-items flex-end
+  font-size 1.5em
+  gap .25em
+  > svg
+    width 1.25em
+</style>

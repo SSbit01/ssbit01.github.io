@@ -1,0 +1,72 @@
+---
+import { Icon } from "astro-iconify"
+import { linkedin, email } from "@/data/social"
+---
+
+
+
+<section id="contact">
+  <h1 class="section-header">Contact me</h1>
+  <p id="contact-text">You can get in touch with me at <u>any time</u>; I'm interested in new opportunities. If you have any questions, don't hesitate to ask me:</p>
+  <ul id="contact-list">
+    {[linkedin, email].map(({ href, title, icon }) => (
+      <li><a href={href} target="_blank" rel="noreferrer noopener"><Icon name={icon} />{title}</a></li>
+    ))}
+  </ul>
+</section>
+
+
+
+<style lang="stylus">
+#contact
+  background rgb(10, 20, 30) linear-gradient(135deg, rgb(0, 10, 20), rgb(10, 25, 30))
+  $px = 1em
+  padding 1.5em $px 5em $px
+
+.section-header
+  font-size clamp(2.5em, 12vw, 3em)
+  text-align center
+  margin 0
+
+#contact-text
+  font-size clamp(1em, 1.5vw, 1.2em)
+  line-height 1.5
+  text-align center
+  color gainsboro
+  u
+    text-decoration-color darkturquoise
+
+#contact-list
+  list-style none
+  justify-content center
+  max-width max-content
+  padding-left 0
+  border-radius 8px
+  box-shadow 0 0 4px teal
+  overflow hidden
+  margin auto
+  > li > a:first-child
+    text-decoration none
+    display inline-block
+    color lightseagreen
+    background rgb(0, 10, 20)
+    width 100%
+    font-weight bold
+    box-sizing border-box
+    padding .5em .75em
+    transition color .15s, background .15s
+    > svg:first-child
+      color teal
+      width 3em
+      vertical-align middle
+      margin-right .5em
+      transition color .15s, filter .2s, transform .2s
+    &:hover, &:active
+      color black
+      background mediumaquamarine
+      > svg:first-child
+        color black
+        transform translateY(-.25em)
+    &:active
+      background aquamarine !important
+</style>

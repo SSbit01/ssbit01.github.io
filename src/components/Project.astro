@@ -1,0 +1,169 @@
+---
+import { Icon } from "astro-iconify"
+
+
+interface Props {
+  name: string
+  tags?: string[]
+  source: string
+  website?: string
+}
+
+
+function toTag(str: string) {
+  return str.toLowerCase().replaceAll(/\W/g, "-")
+}
+
+
+const { name, tags, source, website } = Astro.props,
+      id = toTag(name)
+---
+
+
+
+<figure class="project" tabindex="1">
+  <img src={`/images/projects/${id}.webp`} alt="" loading="lazy" draggable={false} />
+  
+  <figcaption>
+    <h2 class="project-title">{name}</h2>
+
+    {tags?.length && (
+      <ul class="tags">
+        {tags.map(tag => (
+          <li>{toTag(tag)}</li>
+        ))}
+      </ul>
+    )}
+
+    {Astro.slots.has("default") && <div class="description"><slot /></div>}
+    
+    <div class="links">
+      {[
+        { href: source, title: "Source", icon: "fluent:code-24-filled" },
+        { href: website, title: "Website", icon: "lucide:external-link" }
+      ].map(({ href, title, icon }) => (
+        <a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a>
+      ))}
+    </div>
+  </figcaption>
+</figure>
+
+
+
+<style lang="stylus">
+.project
+  position relative
+  text-align center
+  box-shadow inset 0 0 4px darkslategray, 0 0 1px darkcyan
+  margin 0
+  overflow hidden
+  transition box-shadow .2s
+  > img
+    vertical-align top  // PREVENTS EXTRA WHITE SPACE
+    aspect-ratio 16 / 9
+    width 48em
+    max-width 100%
+    user-select none
+    transition filter .2s
+  > figcaption
+    display flex
+    flex-direction column
+    gap clamp(.75em, 2vw, 1em)
+    position absolute
+    inset 0
+    transform-origin bottom
+    font-size clamp(.9em, 3.4vw, 1em)
+    padding clamp(1rem, 5vw, 2rem)
+    padding-bottom clamp(1.25rem, 5vw, 2rem)
+    overflow auto
+    transition-property visibility, opacity, scale
+    transition-duration .4s
+  &:hover, &:focus-within
+    > img
+      filter blur(8px) brightness(.3)
+  &:not(:hover):not(:focus-within)
+    > figcaption
+      visibility hidden
+      opacity 0
+      scale .9
+  &:focus-within
+    outline none
+    box-shadow inset 0 0 1px 4px mediumspringgreen
+
+.project-title
+  color rgb(200, 255, 225)
+  font-size clamp(1.5em, 5.75vw, 3em)
+  text-shadow 0 0 6px teal
+  margin-top auto
+  margin-bottom 0
+
+.tags
+  list-style none
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  gap .5em .75em
+  font-size clamp(.85em, 2vw, 1em)
+  padding-left 0
+  > li
+    color aquamarine
+    text-shadow 0 0 6px black
+    &::before
+      color lightseagreen
+      content "#"
+
+.description
+  display grid
+  gap .5em
+  line-height 1.5
+  margin-top .5em
+  > :global(p)
+    margin 0
+  :global(a)
+    color turquoise
+    text-decoration none
+    transition text-shadow .2s
+    &:hover, &:active
+      text-decoration underline
+    &:active
+      text-shadow 0 0 4px
+
+.links
+  display flex
+  align-items center
+  justify-content space-evenly
+  margin auto 0
+  > a
+    text-decoration none
+    display: flex
+    flex-direction: column
+    align-items center
+    color yellow
+    > svg:first-child
+      width clamp(2em, 7vw, 3em)
+      height @width
+      color gold
+      filter drop-shadow(0 0 4px black)
+      translate 0 .5em
+      transition filter .2s, translate .2s
+    &::after
+      content attr(title)
+      font-size .75em
+      opacity 0
+      text-shadow 0 0 .25em black
+      margin 0
+      transition text-shadow .2s, opacity .2s
+    &:hover
+      > svg:first-child
+        translate 0
+      &::after
+        opacity 1
+    &:active
+      > svg:first-child
+        filter drop-shadow(0 0 .25em)
+        translate 0 -.25em
+      &::after
+        opacity 1
+        text-shadow 0 0 .25em
+</style>

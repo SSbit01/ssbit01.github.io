@@ -1,0 +1,28 @@
+{
+  "name": "ssbit01-portfolio",
+  "homepage": "https://github.com/SSbit01/ssbit01.github.io",
+  "bugs": {
+    "url": "https://github.com/SSbit01/ssbit01.github.io/issues"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Stefan Samson <ss42701@outlook.com> (https://ssbit01.github.io/)",
+  "repository": "github:SSbit01/ssbit01.github.io",
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@fontsource/jura": "^5.2.7",
+    "astro": "^5.16.4",
+    "astro-iconify": "^1.2.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "schema-dts": "^1.1.5",
+    "stylus": "^0.64.0"
+  },
+  "private": true
+}

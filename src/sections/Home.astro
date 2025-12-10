@@ -1,0 +1,135 @@
+---
+import { Icon } from "astro-iconify"
+---
+
+
+
+<section id="home">
+  <div id="intro">
+    <h1>Hello World, I'm <a href="#about" id="me">Stefan Samson</a></h1>
+    <h2 id="headline">An <mark>enthusiast</mark> coder of the <mark>cosmos</mark></h2>
+    <a href="#about" title="There are some beautiful things below ;)" id="scroll-down"><Icon name="icon-park-outline:double-down" /></a>
+  </div>
+</section>
+
+
+
+<style lang="stylus">
+#home
+  display grid
+  color mediumspringgreen
+  background rgb(10, 15, 20) linear-gradient(135deg, rgb(30, 50, 60), rgb(10, 20, 30), rgb(10, 15, 20), rgb(20, 20, 10), rgb(30, 30, 15))
+  background-size 400% 400%
+  min-height 100vh
+  border-bottom thin solid
+  animation 40s ease infinite dynamic-bg
+  @keyframes dynamic-bg
+    50%
+      background-position 100% 100%
+
+#intro
+  transform-origin top
+  text-align center
+  font-size clamp(.9em, 5.2vmin, 1.5em)
+  $px = 1.5rem
+  padding 0 $px 5em $px
+  margin auto
+  animation 1.75s ease home
+  @keyframes home
+    from, 50%
+      background seagreen
+      opacity 0
+      border-radius 4em
+      pointer-events none
+  mark
+    position relative
+    white-space nowrap
+    color aquamarine
+    background inherit
+    font-style italic
+    &::after
+      content ""
+      position absolute
+      right 0
+      bottom 0
+      left 0
+      transform scaleX(0)
+      transform-origin center
+      height 2px
+      background mediumturquoise
+      border-radius 2px
+      transition transform .15s
+    &:hover::after
+      transform scaleX(1)
+  > h1:first-child
+    font-size clamp(2em, 10vmin, 2.5em)
+    line-height 1.25
+
+#me
+  position relative
+  white-space nowrap
+  font-style italic
+  color aquamarine
+  text-shadow 0 0 3px
+  text-decoration underline double paleturquoise
+  text-decoration-thickness 2px
+  text-underline-offset 4px
+  &::after
+    content "SSbit01"
+    position absolute
+    inset 0
+    color black
+    background mediumaquamarine
+    font-weight normal
+    transform scaleX(0)
+    transform-origin right
+    border-radius 4px
+    box-shadow 0 0 8px teal
+    transition background .15s, transform .2s, box-shadow .2s
+  &:hover::after
+    transform scaleX(1)
+    transform-origin left
+  &:active
+    user-select none
+    &::after
+      background aquamarine
+      box-shadow 0 0 12px mediumaquamarine
+
+#headline
+  color lightseagreen
+  line-height 1.25
+  &::after
+    content ""
+    display inline-block
+    vertical-align sub
+    width .2em
+    height 1em
+    background lightcyan
+    box-shadow 0 0 6px lightcyan
+    border-radius 2px
+    margin 0 .35em
+    animation 1s infinite step-end caret
+    @keyframes caret
+      50%
+        opacity 0
+
+#scroll-down
+  display inline-block
+  width clamp(3em, 9vmin, 4em)
+  color cadetblue
+  filter drop-shadow(0 0 3px darkslateblue)
+  margin-top .5em
+  animation 1s infinite bounce
+  transition-property color, filter, scale
+  transition-duration .2s
+  @keyframes bounce
+    50%
+      transform translateY(20%)
+  &:hover
+    color mediumaquamarine
+    filter drop-shadow(0 0 3px teal)
+  &:active
+    color aquamarine
+    filter drop-shadow(0 0 4px lightseagreen)
+    scale .9
+</style>
