@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-iconify"
-import { github, replit, codepen, freecododecamp } from "@/data/social"
 import Project from "@/components/Project.astro"
 
 const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
@@ -110,14 +108,6 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
     </ul>
   </details>
 
-  <div id="profiles-container">
-    <h2>See more on my <mark>profiles</mark></h2>
-    <ul id="profiles">
-      {[github, replit, codepen, freecododecamp].map(({ href, title, icon }) => (
-         <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
-      ))}
-    </ul>
-  </div>
 </section>
 
 
@@ -192,46 +182,4 @@ document.getElementById("more-projects-details")?.addEventListener("toggle", fun
         transform rotate(90deg) translateX(1px)
       &:hover
         background rgb(20, 25, 35)
-
-#profiles-container
-  text-align center
-  $mx = 1em
-  margin 2.5em $mx 0 $mx
-  > h2:first-child
-    font-size clamp(1.5em, 7vw, 2em)
-    > mark
-      color mediumspringgreen
-      background none
-
-#profiles
-  list-style none
-  display flex
-  flex-wrap wrap
-  align-items center
-  justify-content center
-  background rgba(0, 5, 10, .3)
-  max-width max-content
-  padding-left 0
-  border-radius 16px
-  box-shadow 0 0 4px darkcyan
-  margin auto
-  overflow hidden  // border-radius overlaps in children
-  > li
-    > a:first-child
-      display inline-block
-      color teal
-      padding .5em
-      transition .15s
-      &:hover
-        color mediumaquamarine
-        > svg
-          transform translateY(-5%)
-          filter drop-shadow(0 0 2px teal)
-      &:active
-        color aquamarine
-        > svg
-          filter drop-shadow(0 0 4px teal)
-      > svg
-        width clamp(2.5em, 12vw, 3em)
-        transition transform .2s, filter .2s
 </style>

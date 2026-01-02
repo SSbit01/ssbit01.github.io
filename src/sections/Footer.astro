@@ -5,7 +5,7 @@ import * as sameAs from "@/data/social"
 
 
 
-<footer id="end">
+<footer id="contact">
   <ul id="profiles">
     {Object.values(sameAs).map(({ href, title, icon }) => (
         <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
@@ -21,7 +21,7 @@ import * as sameAs from "@/data/social"
 
 
 <style lang="stylus">
-#end
+#contact
   background rgb(15, 20, 25) linear-gradient(45deg, rgb(15, 20, 25), rgb(10, 15, 20))
   $px = 1em
   padding 2.25em $px 3em $px
