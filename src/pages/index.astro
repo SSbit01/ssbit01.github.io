@@ -1,47 +1,44 @@
 ---
-import { Font } from 'astro:assets';
-import * as social from "#src/data/social"
-import NavBar from "#src/components/NavBar.astro"
-import HomeSection from "#src/sections/Home.astro"
-import AboutSection from "#src/sections/About.astro"
-import ProjectsSection from "#src/sections/Projects.astro"
-import Footer from "#src/sections/Footer.astro"
-import type { Person, WithContext } from "schema-dts"
-
+import { Font } from "astro:assets";
+import * as social from "#src/data/social";
+import NavBar from "#src/components/NavBar.astro";
+import HomeSection from "#src/sections/Home.astro";
+import AboutSection from "#src/sections/About.astro";
+import ProjectsSection from "#src/sections/Projects.astro";
+import Footer from "#src/sections/Footer.astro";
+import type { Person, WithContext } from "schema-dts";
 
 const metaData = {
   title: "Stefan Samson (SSbit01)",
   summary: "A young self-taught enthusiast who tries to code the cosmos and explore absolutely everything.",
   get description() {
-    return `Welcome to Stefan Samson's personal website, ${this.summary.toLowerCase()}`
+    return `Welcome to Stefan Samson's personal website, ${this.summary.toLowerCase()}`;
   }
-}
+};
 
-const { email: { title: email }, ...profiles } = social
+const {
+  email: { title: email },
+  ...profiles
+} = social;
 
-
-const jsonLd: WithContext<Person> = { 
+const jsonLd: WithContext<Person> = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Stefan Samson",
-  alternateName: "SSbit01",
-  description: metaData.summary,
+  "name": "Stefan Samson",
+  "alternateName": "SSbit01",
+  "description": metaData.summary,
   email,
-  image: "https://avatars.githubusercontent.com/u/59541034",
-  sameAs: Object.values(profiles).map(({ href }) => href)
-}
+  "image": "https://avatars.githubusercontent.com/u/59541034",
+  "sameAs": Object.values(profiles).map(({ href }) => href)
+};
 
 if (Astro.site) {
-  jsonLd.url = Astro.site.toString()
+  jsonLd.url = Astro.site.toString();
 }
 ---
 
-
-
 <html lang="en">
-
   <head prefix="og: https://ogp.me/ns# profile: https://ogp.me/ns/profile#">
-
     <!-- Common head tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -62,29 +59,30 @@ if (Astro.site) {
     <meta property="profile:last_name" content="Samson" />
     <meta property="profile:username" content="SSbit01" />
     <meta property="profile:gender" content="male" />
-    {Astro.site && (
-      <meta property="og:url" content={Astro.site} />
-      <meta property="og:image" content={`${Astro.site}images/og.png`} />
-    )}
+    {
+      Astro.site && (
+        <>
+          <meta property="og:url" content={Astro.site} />
+          <meta property="og:image" content={`${Astro.site}images/og.png`} />
+        </>
+      )
+    }
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={metaData.title} />
     <meta name="twitter:description" content={metaData.description} />
     {Astro.site && <meta name="twitter:image" content={`${Astro.site}images/2-1.png`} />}
-    
+
     <!-- Other meta tags -->
     <meta name="generator" content={Astro.generator} />
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <Font cssVariable="--font-jura" preload />
-
   </head>
 
-
   <body>
-
     <main>
       <HomeSection />
       <AboutSection />
@@ -93,23 +91,19 @@ if (Astro.site) {
 
     <NavBar />
     <Footer />
-
   </body>
-
 </html>
 
-
-
 <style lang="scss" is:global>
-html {
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
 
-body {
-  color: white;
-  background: black;
-  font-family: var(--font-jura), Calibri, Avenir, Helvetica, Arial, sans-serif;
-  margin: 0;
-}
+  body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: var(--font-jura), Calibri, Avenir, Helvetica, Arial, sans-serif;
+  }
 </style>

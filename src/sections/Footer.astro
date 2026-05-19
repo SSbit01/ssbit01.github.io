@@ -1,117 +1,128 @@
 ---
-import { Icon } from "astro-iconify"
+import { Icon } from "astro-iconify";
 
-import * as sameAs from "#src/data/social"
+import * as sameAs from "#src/data/social";
 ---
-
-
 
 <footer id="contact">
   <ul id="profiles">
-    {Object.values(sameAs).map(({ href, title, icon }) => (
-        <li><a href={href} target="_blank" rel="noreferrer noopener" title={title}><Icon name={icon} /></a></li>
-    ))}
+    {
+      Object.values(sameAs).map(({ href, title, icon }) => (
+        <li>
+          <a href={href} target="_blank" rel="noreferrer noopener" title={title}>
+            <Icon name={icon} />
+          </a>
+        </li>
+      ))
+    }
   </ul>
   <div id="info">
-    <p><a href="https://github.com/SSbit01/ssbit01.github.io.git" target="_blank" rel="noreferrer noopener" id="git-repository"><Icon name="mdi:git" />Repository</a></p>
+    <p>
+      <a href="https://github.com/SSbit01/ssbit01.github.io.git" target="_blank" rel="noreferrer noopener" id="git-repository"
+        ><Icon name="mdi:git" />Repository</a
+      >
+    </p>
     <p>Built with <a href="https://astro.build" target="_blank" rel="noreferrer noopener">Astro</a></p>
     <p>© <strong>Stefan Samson</strong></p>
   </div>
 </footer>
 
-
-
 <style lang="scss">
-#contact {
-  background: rgb(15, 20, 25) linear-gradient(45deg, rgb(15, 20, 25), rgb(10, 15, 20));
-  $px: 1em;
-  padding: 2.25em $px 3em $px;
-  border-top: thin solid darkslategray;
-}
+  #contact {
+    background: rgb(15, 20, 25) linear-gradient(45deg, rgb(15, 20, 25), rgb(10, 15, 20));
+    $px: 1em;
+    border-top: thin solid darkslategray;
+    padding: 2.25em $px 3em $px;
+  }
 
-#profiles {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25em;
-  padding-left: 0;
-  margin-top: 0;
+  #profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25em;
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none;
 
-  > li > a:first-child {
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    color: rgb(120, 150, 160);
-    padding: .5em;
-    border-radius: 50%;
-    transition-property: background, color;
-    transition-duration: .2s;
-
-    &::after {
-      content: attr(title);
-      position: absolute;
-      bottom: -.75em;
-      left: 50%;
-      font-size: .75em;
-      opacity: 0;
-      transform: translateX(-50%);
-      transition: opacity .2s;
-    }
-
-    > svg:first-child {
-      vertical-align: middle;
-      width: 3em;
-      transition: filter .15s, translate .2s;
-    }
-
-    &:hover {
-      color: paleturquoise;
+    > li > a:first-child {
+      display: inline-block;
+      position: relative;
+      transition-duration: 0.2s;
+      transition-property: background, color;
+      border-radius: 50%;
+      padding: 0.5em;
+      color: rgb(120, 150, 160);
+      text-decoration: none;
 
       &::after {
-        opacity: 1;
+        position: absolute;
+        bottom: -0.75em;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.2s;
+        content: attr(title);
+        font-size: 0.75em;
       }
+
       > svg:first-child {
-        filter: drop-shadow(0 0 2px darkturquoise);
-        translate: 0 -.25em;
+        vertical-align: middle;
+        transition:
+          filter 0.15s,
+          translate 0.2s;
+        width: 3em;
+      }
+
+      &:hover {
+        color: paleturquoise;
+
+        &::after {
+          opacity: 1;
+        }
+        > svg:first-child {
+          translate: 0 -0.25em;
+          filter: drop-shadow(0 0 2px darkturquoise);
+        }
+      }
+
+      &:focus {
+        color: turquoise;
       }
     }
+  }
 
-    &:focus {
-      color: turquoise;
+  #info {
+    margin-top: 2em;
+    color: lightgray;
+    text-align: center;
+
+    > p > a {
+      transition:
+        color 0.15s,
+        text-shadow 0.15s;
+      color: lightseagreen;
+      text-decoration: none;
+
+      &:hover,
+      &:active {
+        color: aquamarine;
+        text-decoration: underline;
+      }
+      &:active {
+        text-shadow: 0 0 4px;
+      }
     }
   }
-}
 
-#info {
-  color: lightgray;
-  text-align: center;
-  margin-top: 2em;
+  #git-repository {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 0.25em;
+    font-size: 1.5em;
 
-  > p > a {
-    color: lightseagreen;
-    text-decoration: none;
-    transition: color .15s, text-shadow .15s;
-
-    &:hover, &:active {
-      color: aquamarine;
-      text-decoration: underline;
-    }
-    &:active {
-      text-shadow: 0 0 4px;
+    > svg {
+      width: 1.25em;
     }
   }
-}
-
-#git-repository {
-  display: inline-flex;
-  align-items: flex-end;
-  font-size: 1.5em;
-  gap: .25em;
-
-  > svg {
-    width: 1.25em;
-  }
-}
 </style>

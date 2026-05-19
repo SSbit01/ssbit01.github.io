@@ -1,54 +1,55 @@
 ---
-import { Icon } from "astro-iconify"
+import { Icon } from "astro-iconify";
 
-import Skill from "#src/components/Skill.astro"
+import Skill from "#src/components/Skill.astro";
 ---
 
-
-
 <section id="about">
-
-
   <div id="about-container">
-
     <figure id="avatar">
       <img src="https://avatars.githubusercontent.com/u/59541034" alt="Avatar" loading="lazy" draggable="false" />
       <figcaption>GitHub Picture</figcaption>
     </figure>
-    
+
     <div id="about-me">
       <h1 class="title-section"><a href="#about-me">About Me</a></h1>
       <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a simple enthusiast coder of the cosmos.</p>
-      <p>My curiosity for <strong>science</strong> and <strong>technology</strong> led me to learn <em>C</em> and <em>Python</em> as my first programming languages. Shortly after, I became interested in <strong>Data Science</strong>, <strong>Artificial Intelligence</strong> and <strong>Physics</strong>.</p>
-      <p>I also have a keen interest in <strong>Web Development</strong>, <strong>Cryptography</strong> and <strong>Communications</strong>.</p>
+      <p>
+        My curiosity for <strong>science</strong> and <strong>technology</strong> led me to learn <em>C</em> and <em>Python</em> as my first programming
+        languages. Shortly after, I became interested in <strong>Data Science</strong>, <strong>Artificial Intelligence</strong> and <strong
+          >Physics</strong
+        >.
+      </p>
+      <p>
+        I also have a keen interest in <strong>Web Development</strong>, <strong>Cryptography</strong> and <strong>Communications</strong>.
+      </p>
     </div>
-
   </div>
 
-
   <fieldset id="interests">
-
     <legend>Interests</legend>
 
     <ul>
-      {[
-        { icon: "mdi:code-braces", text: "Coding" },
-        { icon: "hugeicons:artificial-intelligence-02", text: "Artificial Intelligence" },
-        { icon: "mdi:microsoft-windows-classic", text: "Retrocomputing" },
-        { icon: "ph:game-controller-duotone", text: "Video Games & Modding" },
-        { icon: "eos-icons:atom-electron", text: "Physics" },
-        { icon: "ph:planet-duotone", text: "Astronomy" },
-        { icon: "file-icons:fossil", text: "Paleontology" }
-      ].map(({ icon, text }) => (
-        <li><Icon name={icon} />{text}</li>
-      ))}
+      {
+        [
+          { icon: "mdi:code-braces", text: "Coding" },
+          { icon: "hugeicons:artificial-intelligence-02", text: "Artificial Intelligence" },
+          { icon: "mdi:microsoft-windows-classic", text: "Retrocomputing" },
+          { icon: "ph:game-controller-duotone", text: "Video Games & Modding" },
+          { icon: "eos-icons:atom-electron", text: "Physics" },
+          { icon: "ph:planet-duotone", text: "Astronomy" },
+          { icon: "file-icons:fossil", text: "Paleontology" }
+        ].map(({ icon, text }) => (
+          <li>
+            <Icon name={icon} />
+            {text}
+          </li>
+        ))
+      }
     </ul>
-
   </fieldset>
 
-
   <div id="skill-set">
-    
     <h1 class="title-section"><a href="#skill-set"><Icon name="carbon:skill-level-advanced" />Coding Skill Set</a></h1>
 
     <fieldset id="front-end">
@@ -130,249 +131,251 @@ import Skill from "#src/components/Skill.astro"
       <Skill icon="devicon:keras">Keras</Skill>
       <Skill icon="logos:d3">D3.js</Skill>
     </fieldset>
-
   </div>
-
-
 </section>
 
-
-
 <style lang="scss">
-.title-section {
-  font-size: clamp(1.4em, 8vw, 2em);
-  > a:first-child {
-    position: relative;
-    color: mediumseagreen;
-    text-decoration: none;
-    transition: color .15s;
-    &::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: -4px;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: right;
-      height: 2px;
-      background: mediumturquoise;
-      border-radius: 2px;
-      transition: transform .25s;
-    }
-    &::after {
-      content: "#";
-      position: absolute;
-      right: -1em;
-      color: darkslategray;
-      opacity: 0;
-      transition: opacity .15s;
-    }
-    &:hover, &:focus {
-      color: mediumspringgreen;
+  .title-section {
+    font-size: clamp(1.4em, 8vw, 2em);
+    > a:first-child {
+      position: relative;
+      transition: color 0.15s;
+      color: mediumseagreen;
+      text-decoration: none;
+      &::before {
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.25s;
+        border-radius: 2px;
+        background: mediumturquoise;
+        height: 2px;
+        content: "";
+      }
       &::after {
-        opacity: 1;
+        position: absolute;
+        right: -1em;
+        opacity: 0;
+        transition: opacity 0.15s;
+        content: "#";
+        color: darkslategray;
+      }
+      &:hover,
+      &:focus {
+        color: mediumspringgreen;
+        &::after {
+          opacity: 1;
+        }
+      }
+      &:active::before {
+        transform: scaleX(1);
+        transform-origin: left;
       }
     }
-    &:active::before {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
   }
-}
 
-#about {
-  background: rgb(10, 15, 20) linear-gradient(135deg, rgb(25, 35, 40), rgb(10, 15, 20));
-  $px: 1em;
-  padding: 0 $px 5em $px;
-  border-bottom: thin solid mediumspringgreen;
-}
-
-#about-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5em 2em;
-  padding-top: 2em;
-}
-
-#avatar {
-  margin: 0;
-  > img:first-of-type {
-    width: 18em;
-    max-width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 8px teal;
-    user-select: none;
-    transition: box-shadow .2s, translate .15s;
-    &:hover {
-      box-shadow: 0 0 12px 2px springgreen;
-    }
-    &:active {
-      translate: 0 -.5em;
-    }
+  #about {
+    background: rgb(10, 15, 20) linear-gradient(135deg, rgb(25, 35, 40), rgb(10, 15, 20));
+    $px: 1em;
+    border-bottom: thin solid mediumspringgreen;
+    padding: 0 $px 5em $px;
   }
-  > figcaption:last-of-type {
-    text-align: center;
-    color: gainsboro;
-    font-size: .75em;
-    margin-top: 1em;
-  }
-}
 
-#about-me {
-  max-width: 55em;
-  scroll-margin-top: 1em;
-  > h1:first-child {
-    text-align: center;
+  #about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em 2em;
+    padding-top: 2em;
+  }
+
+  #avatar {
     margin: 0;
-  }
-  > p {
-    font-size: clamp(1em, 3vw, 1.1em);
-    line-height: 1.5;
-    strong, em {
-      color: aquamarine;
-    }
-    u {
-      text-decoration-color: mediumaquamarine;
-    }
-    a {
-      color: dodgerblue;
-      transition: color .15s, text-shadow .15s;
+    > img:first-of-type {
+      transition:
+        box-shadow 0.2s,
+        translate 0.15s;
+      box-shadow: 0 0 8px teal;
+      border-radius: 50%;
+      width: 18em;
+      max-width: 100%;
+      user-select: none;
       &:hover {
-        color: deepskyblue;
+        box-shadow: 0 0 12px 2px springgreen;
       }
       &:active {
-        text-shadow: 0 0 4px;
+        translate: 0 -0.5em;
       }
     }
-    &:last-child::after {
-      content: "";
-      display: inline-block;
-      vertical-align: sub;
-      width: .2em;
-      height: 1em;
-      background: lightcyan;
-      box-shadow: 0 0 3px lightcyan;
-      border-radius: 2px;
-      margin-left: .35em;
-      animation: 1s infinite step-end caret;
+    > figcaption:last-of-type {
+      margin-top: 1em;
+      color: gainsboro;
+      font-size: 0.75em;
+      text-align: center;
     }
   }
-}
 
-#interests {
-  background: rgba(5, 10, 15, .75);
-  max-width: 75em;
-  padding-top: .75em;
-  border: thin solid darkslategray;
-  border-radius: 8px;
-  box-shadow: 1px 1px 4px black;
-  margin: .5em auto;
-  > legend:first-child {
-    color: aquamarine;
-    font-size: 1.25em;
-  }
-  > ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: .75em 1em;
-    padding: 0;
-    margin: 0;
-    > li {
-      display: flex;
-      align-items: center;
-      gap: .4em;
-      color: cadetblue;
-      > svg {
-        color: lightseagreen;
-        width: 1.5em;
-      }
-    }
-  }
-}
-
-#skill-set {
-  display: grid;
-  justify-content: center;
-  gap: 2em;
-  margin-top: 2em;
-  > h1:first-child {
-    text-align: center;
-    margin-bottom: -.25em;
-    > a {
-      display: inline-flex;
-      align-items: center;
-      gap: .25em;
-      > svg:first-child {
-        width: 1em;
-      }
-    }
-  }
-  > fieldset {
-    $gap: 1.25em;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: $gap;
-    background: rgba(5, 15, 20, .5);
-    padding: 1em $gap;
-    border-radius: 8px;
-    border: thin solid darkslategray;
-    box-shadow: 1px 1px 4px black;
-    margin-inline: -.25em;
+  #about-me {
+    max-width: 55em;
     scroll-margin-top: 1em;
-    > legend {
-      font-size: clamp(1.1em, 5.8vw, 1.5em);
-      > a:first-child {
-        display: inline-flex;
-        align-items: flex-end;
-        gap: .25em;
-        position: relative;
-        color: lightseagreen;
-        text-decoration: none;
-        transition: color .15s;
-        &::before {
-          content: "";
-          color: black;
-          position: absolute;
-          right: 0;
-          bottom: -3px;
-          left: 0;
-          transform: scaleX(0);
-          transform-origin: right;
-          height: 2px;
-          background: mediumturquoise;
-          border-radius: 2px;
-          transition: transform .25s;
+    > h1:first-child {
+      margin: 0;
+      text-align: center;
+    }
+    > p {
+      font-size: clamp(1em, 3vw, 1.1em);
+      line-height: 1.5;
+      strong,
+      em {
+        color: aquamarine;
+      }
+      u {
+        text-decoration-color: mediumaquamarine;
+      }
+      a {
+        transition:
+          color 0.15s,
+          text-shadow 0.15s;
+        color: dodgerblue;
+        &:hover {
+          color: deepskyblue;
         }
-        &:hover, &:active {
-          color: aquamarine;
+        &:active {
+          text-shadow: 0 0 4px;
         }
-        &:active::before {
-          transform: scaleX(1);
-          transform-origin: left;
-        }
-        > svg:first-child {
-          width: 1.25em;
+      }
+      &:last-child::after {
+        display: inline-block;
+        vertical-align: sub;
+        animation: 1s infinite step-end caret;
+        margin-left: 0.35em;
+        box-shadow: 0 0 3px lightcyan;
+        border-radius: 2px;
+        background: lightcyan;
+        width: 0.2em;
+        height: 1em;
+        content: "";
+      }
+    }
+  }
+
+  #interests {
+    margin: 0.5em auto;
+    box-shadow: 1px 1px 4px black;
+    border: thin solid darkslategray;
+    border-radius: 8px;
+    background: rgba(5, 10, 15, 0.75);
+    padding-top: 0.75em;
+    max-width: 75em;
+    > legend:first-child {
+      color: aquamarine;
+      font-size: 1.25em;
+    }
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 0.75em 1em;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      > li {
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        color: cadetblue;
+        > svg {
+          width: 1.5em;
+          color: lightseagreen;
         }
       }
     }
   }
-}
 
-@keyframes caret {
-  50% {
-    opacity: 0;
+  #skill-set {
+    display: grid;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 2em;
+    > h1:first-child {
+      margin-bottom: -0.25em;
+      text-align: center;
+      > a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25em;
+        > svg:first-child {
+          width: 1em;
+        }
+      }
+    }
+    > fieldset {
+      $gap: 1.25em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: $gap;
+      margin-inline: -0.25em;
+      box-shadow: 1px 1px 4px black;
+      border: thin solid darkslategray;
+      border-radius: 8px;
+      background: rgba(5, 15, 20, 0.5);
+      padding: 1em $gap;
+      scroll-margin-top: 1em;
+      > legend {
+        font-size: clamp(1.1em, 5.8vw, 1.5em);
+        > a:first-child {
+          display: inline-flex;
+          position: relative;
+          align-items: flex-end;
+          gap: 0.25em;
+          transition: color 0.15s;
+          color: lightseagreen;
+          text-decoration: none;
+          &::before {
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.25s;
+            border-radius: 2px;
+            background: mediumturquoise;
+            height: 2px;
+            content: "";
+            color: black;
+          }
+          &:hover,
+          &:active {
+            color: aquamarine;
+          }
+          &:active::before {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+          > svg:first-child {
+            width: 1.25em;
+          }
+        }
+      }
+    }
   }
-}
 
-@media (max-width: 500px) {
-  #interests > ul {
-    flex-direction: column;
+  @keyframes caret {
+    50% {
+      opacity: 0;
+    }
   }
-}
+
+  @media (max-width: 500px) {
+    #interests > ul {
+      flex-direction: column;
+    }
+  }
 </style>
