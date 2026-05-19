@@ -77,6 +77,8 @@ if (Astro.site) {
     <!-- Other meta tags -->
     <meta name="generator" content={Astro.generator} />
 
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <Font cssVariable="--font-jura" preload />
 
   </head>
@@ -96,10 +98,6 @@ if (Astro.site) {
   </body>
 
 </html>
-
-
-
-<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
 
 
