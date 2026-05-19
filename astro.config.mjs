@@ -47,8 +47,7 @@ export default defineConfig({
         "img-src 'self' blob: data: https://avatars.githubusercontent.com",
         "object-src 'none'",
         "upgrade-insecure-requests"
-      ],
-      enabled: true
+      ]
     }
   },
 
