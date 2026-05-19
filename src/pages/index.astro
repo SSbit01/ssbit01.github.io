@@ -32,7 +32,6 @@ const jsonLd: WithContext<Person> = {
 }
 
 if (Astro.site) {
-  jsonLd["@id"] = `${Astro.site}#identity`
   jsonLd.url = Astro.site.toString()
 }
 ---
