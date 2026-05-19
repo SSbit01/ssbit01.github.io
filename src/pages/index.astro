@@ -1,15 +1,11 @@
 ---
-import "@fontsource/jura"
-
-import * as social from "@/data/social"
-
-import NavBar from "@/components/NavBar.astro"
-
-import HomeSection from "@/sections/Home.astro"
-import AboutSection from "@/sections/About.astro"
-import ProjectsSection from "@/sections/Projects.astro"
-import Footer from "@/sections/Footer.astro"
-
+import { Font } from 'astro:assets';
+import * as social from "#src/data/social"
+import NavBar from "#src/components/NavBar.astro"
+import HomeSection from "#src/sections/Home.astro"
+import AboutSection from "#src/sections/About.astro"
+import ProjectsSection from "#src/sections/Projects.astro"
+import Footer from "#src/sections/Footer.astro"
 import type { Person, WithContext } from "schema-dts"
 
 
@@ -81,6 +77,8 @@ if (Astro.site) {
     <!-- Other meta tags -->
     <meta name="generator" content={Astro.generator} />
 
+    <Font cssVariable="--font-jura" preload />
+
   </head>
 
 
@@ -105,14 +103,16 @@ if (Astro.site) {
 
 
 
-<style lang="stylus" is:global>
-html
-  scrollbar-width thin
-  scroll-behavior smooth
+<style lang="scss" is:global>
+html {
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
 
-body
-  color white
-  background black
-  font-family Jura, Calibri, Avenir, Helvetica, Arial, sans-serif
-  margin 0
+body {
+  color: white;
+  background: black;
+  font-family: var(--font-jura), Calibri, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
 </style>

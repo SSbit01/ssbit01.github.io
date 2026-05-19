@@ -178,3 +178,24 @@ Thumbs.db
 
 storybook-static/
 .sentryclirc
+
+
+########################################################################
+# Extras
+########################################################################
+
+# License files
+/LICENSE
+/LICENSES
+*LICENSE*
+*LICENSES*
+/license
+/licenses
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+pnpm-workspace.yaml

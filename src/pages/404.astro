@@ -1,7 +1,6 @@
 ---
-import "@fontsource/jura"
+import { Font } from 'astro:assets';
 ---
-
 
 
 <html lang="en">
@@ -16,6 +15,8 @@ import "@fontsource/jura"
     <link rel="shortcut icon" href="/favicon.ico" />
 
     <title>404 (Not Found)</title>
+
+    <Font cssVariable="--font-jura" preload />
 
   </head>
 
@@ -37,53 +38,65 @@ import "@fontsource/jura"
 
 
 
-<style lang="stylus">
-body
-  font-family Jura, Calibri, Arial, sans-serif
-  background rgb(5, 15, 25)
-  text-align center
-  margin 3em 1em
+<style lang="scss">
+body {
+  font-family: var(--font-jura), Calibri, Arial, sans-serif;
+  background: rgb(5, 15, 25);
+  text-align: center;
+  margin: 3em 1em;
+}
 
-.header-group
-  > h1
-    font-size 8em
-    color mediumaquamarine
-    text-shadow 0 0 6px
-    margin 0
-  > p
-    color crimson
-    margin 0
+.header-group {
+  > h1 {
+    font-size: 8em;
+    color: mediumaquamarine;
+    text-shadow: 0 0 6px;
+    margin: 0;
+  }
+  > p {
+    color: crimson;
+    margin: 0;
+  }
+}
 
-.message
-  max-width 35em
-  font-size 1.5em
-  line-height 1.5
-  margin 1em auto
+.message {
+  max-width: 35em;
+  font-size: 1.5em;
+  line-height: 1.5;
+  margin: 1em auto;
+}
 
-.go-back
-  text-decoration none
-  position relative
-  font-size 1.5em
-  white-space nowrap
-  color cadetblue
-  background inherit
-  transition-property color, text-shadow
-  transition-duration .2s
-  &::after
-    content ""
-    position absolute
-    right 0
-    bottom -2px
-    left 0
-    transform scaleX(0)
-    transform-origin center
-    height 2px
-    background mediumturquoise
-    border-radius 2px
-    transition transform .2s
-  &:hover::after
-    transform scaleX(1)
-  &:active
-    color lightseagreen
-    text-shadow 0 0 4px
+.go-back {
+  text-decoration: none;
+  position: relative;
+  font-size: 1.5em;
+  white-space: nowrap;
+  color: cadetblue;
+  background: inherit;
+  transition-property: color, text-shadow;
+  transition-duration: .2s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    height: 2px;
+    background: mediumturquoise;
+    border-radius: 2px;
+    transition: transform .2s;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &:active {
+    color: lightseagreen;
+    text-shadow: 0 0 4px;
+  }
+}
 </style>
