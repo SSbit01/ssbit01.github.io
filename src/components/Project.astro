@@ -16,7 +16,7 @@ const { name, tags, source, website } = Astro.props,
   id = toTag(name);
 ---
 
-<figure class="project">
+<figure class="project" tabindex="0">
   <img src={`/images/projects/${id}.webp`} alt="" loading="lazy" draggable={false} />
 
   <figcaption>
@@ -61,8 +61,8 @@ const { name, tags, source, website } = Astro.props,
     transition: box-shadow 0.2s;
     margin: 0;
     box-shadow:
-      inset 0 0 4px darkslategray,
-      0 0 1px darkcyan;
+      inset 0 0 4px #2f4f4f,
+      0 0 1px #008b8b;
     overflow: hidden;
     text-align: center;
 
@@ -107,16 +107,16 @@ const { name, tags, source, website } = Astro.props,
 
     &:focus-within {
       outline: none;
-      box-shadow: inset 0 0 1px 4px mediumspringgreen;
+      box-shadow: inset 0 0 1px 4px #00fa9a;
     }
   }
 
   .project-title {
     margin-top: auto;
     margin-bottom: 0;
-    color: rgb(200, 255, 225);
+    color: #c8ffe1;
     font-size: clamp(1.5em, 5.75vw, 3em);
-    text-shadow: 0 0 6px teal;
+    text-shadow: 0 0 6px #008080;
   }
 
   .tags {
@@ -130,12 +130,12 @@ const { name, tags, source, website } = Astro.props,
     list-style: none;
 
     > li {
-      color: aquamarine;
-      text-shadow: 0 0 6px black;
+      color: #7fffd4;
+      text-shadow: 0 0 6px #000;
 
       &::before {
         content: "#";
-        color: lightseagreen;
+        color: #20b2aa;
       }
     }
   }
@@ -152,7 +152,7 @@ const { name, tags, source, website } = Astro.props,
 
     :global(a) {
       transition: text-shadow 0.2s;
-      color: turquoise;
+      color: #40e0d0;
       text-decoration: none;
 
       &:hover,
@@ -175,19 +175,19 @@ const { name, tags, source, website } = Astro.props,
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: yellow;
+      color: #ff0;
       text-decoration: none;
 
       > svg:first-child {
         $size: clamp(2em, 7vw, 3em);
         translate: 0 0.5em;
-        filter: drop-shadow(0 0 4px black);
+        filter: drop-shadow(0 0 4px #000);
         transition:
           filter 0.2s,
           translate 0.2s;
         width: $size;
         height: $size;
-        color: gold;
+        color: #ffd700;
       }
 
       &::after {
@@ -198,7 +198,7 @@ const { name, tags, source, website } = Astro.props,
         margin: 0;
         content: attr(title);
         font-size: 0.75em;
-        text-shadow: 0 0 0.25em black;
+        text-shadow: 0 0 0.25em #000;
       }
 
       &:hover {

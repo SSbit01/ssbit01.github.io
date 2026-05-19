@@ -140,7 +140,7 @@ import Skill from "#src/components/Skill.astro";
     > a:first-child {
       position: relative;
       transition: color 0.15s;
-      color: mediumseagreen;
+      color: #3cb371;
       text-decoration: none;
       &::before {
         position: absolute;
@@ -151,7 +151,7 @@ import Skill from "#src/components/Skill.astro";
         transform-origin: right;
         transition: transform 0.25s;
         border-radius: 2px;
-        background: mediumturquoise;
+        background: #48d1cc;
         height: 2px;
         content: "";
       }
@@ -161,11 +161,11 @@ import Skill from "#src/components/Skill.astro";
         opacity: 0;
         transition: opacity 0.15s;
         content: "#";
-        color: darkslategray;
+        color: #2f4f4f;
       }
       &:hover,
       &:focus {
-        color: mediumspringgreen;
+        color: #00fa9a;
         &::after {
           opacity: 1;
         }
@@ -178,9 +178,9 @@ import Skill from "#src/components/Skill.astro";
   }
 
   #about {
-    background: rgb(10, 15, 20) linear-gradient(135deg, rgb(25, 35, 40), rgb(10, 15, 20));
+    background: #0a0f14 linear-gradient(135deg, #192328, #0a0f14);
     $px: 1em;
-    border-bottom: thin solid mediumspringgreen;
+    border-bottom: thin solid #00fa9a;
     padding: 0 $px 5em $px;
   }
 
@@ -199,13 +199,13 @@ import Skill from "#src/components/Skill.astro";
       transition:
         box-shadow 0.2s,
         translate 0.15s;
-      box-shadow: 0 0 8px teal;
+      box-shadow: 0 0 8px #008080;
       border-radius: 50%;
       width: 18em;
       max-width: 100%;
       user-select: none;
       &:hover {
-        box-shadow: 0 0 12px 2px springgreen;
+        box-shadow: 0 0 12px 2px #00ff7f;
       }
       &:active {
         translate: 0 -0.5em;
@@ -213,7 +213,7 @@ import Skill from "#src/components/Skill.astro";
     }
     > figcaption:last-of-type {
       margin-top: 1em;
-      color: gainsboro;
+      color: #dcdcdc;
       font-size: 0.75em;
       text-align: center;
     }
@@ -231,18 +231,18 @@ import Skill from "#src/components/Skill.astro";
       line-height: 1.5;
       strong,
       em {
-        color: aquamarine;
+        color: #7fffd4;
       }
       u {
-        text-decoration-color: mediumaquamarine;
+        text-decoration-color: #66cdaa;
       }
       a {
         transition:
           color 0.15s,
           text-shadow 0.15s;
-        color: dodgerblue;
+        color: #1e90ff;
         &:hover {
-          color: deepskyblue;
+          color: #00bfff;
         }
         &:active {
           text-shadow: 0 0 4px;
@@ -253,9 +253,9 @@ import Skill from "#src/components/Skill.astro";
         vertical-align: sub;
         animation: 1s infinite step-end caret;
         margin-left: 0.35em;
-        box-shadow: 0 0 3px lightcyan;
+        box-shadow: 0 0 3px #e0ffff;
         border-radius: 2px;
-        background: lightcyan;
+        background: #e0ffff;
         width: 0.2em;
         height: 1em;
         content: "";
@@ -265,14 +265,14 @@ import Skill from "#src/components/Skill.astro";
 
   #interests {
     margin: 0.5em auto;
-    box-shadow: 1px 1px 4px black;
-    border: thin solid darkslategray;
+    box-shadow: 1px 1px 4px #000000;
+    border: thin solid #2f4f4f;
     border-radius: 8px;
-    background: rgba(5, 10, 15, 0.75);
+    background: #050a0fbf;
     padding-top: 0.75em;
     max-width: 75em;
     > legend:first-child {
-      color: aquamarine;
+      color: #7fffd4;
       font-size: 1.25em;
     }
     > ul {
@@ -287,10 +287,10 @@ import Skill from "#src/components/Skill.astro";
         display: flex;
         align-items: center;
         gap: 0.4em;
-        color: cadetblue;
+        color: #5f9ea0;
         > svg {
           width: 1.5em;
-          color: lightseagreen;
+          color: #20b2aa;
         }
       }
     }
@@ -321,10 +321,10 @@ import Skill from "#src/components/Skill.astro";
       align-items: center;
       gap: $gap;
       margin-inline: -0.25em;
-      box-shadow: 1px 1px 4px black;
-      border: thin solid darkslategray;
+      box-shadow: 1px 1px 4px #000000;
+      border: thin solid #2f4f4f;
       border-radius: 8px;
-      background: rgba(5, 15, 20, 0.5);
+      background: #050f1480;
       padding: 1em $gap;
       scroll-margin-top: 1em;
       > legend {
@@ -335,7 +335,7 @@ import Skill from "#src/components/Skill.astro";
           align-items: flex-end;
           gap: 0.25em;
           transition: color 0.15s;
-          color: lightseagreen;
+          color: #20b2aa;
           text-decoration: none;
           &::before {
             position: absolute;
@@ -346,14 +346,14 @@ import Skill from "#src/components/Skill.astro";
             transform-origin: right;
             transition: transform 0.25s;
             border-radius: 2px;
-            background: mediumturquoise;
+            background: #48d1cc;
             height: 2px;
             content: "";
-            color: black;
+            color: #000000;
           }
           &:hover,
           &:active {
-            color: aquamarine;
+            color: #7fffd4;
           }
           &:active::before {
             transform: scaleX(1);

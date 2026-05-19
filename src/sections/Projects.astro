@@ -218,15 +218,15 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
 
 <style lang="scss">
   #projects {
-    border-bottom: thin solid mediumspringgreen;
-    background: rgb(15, 25, 35);
+    border-bottom: thin solid #00fa9a;
+    background: #0f1923;
     padding-top: 2.75em;
     padding-bottom: 5em;
   }
 
   .section-header {
     gap: 0.3em;
-    color: darkturquoise;
+    color: #00ced1;
     font-size: clamp(1.5em, 6.4vw, 2em);
     line-height: 1.5;
     text-align: center;
@@ -237,7 +237,7 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       vertical-align: sub;
       margin: 0 0.3em;
       width: 1.25em;
-      color: turquoise;
+      color: #40e0d0;
     }
   }
 
@@ -256,12 +256,12 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
     margin-top: 3em;
     scroll-margin-top: 2em;
     > summary:first-child {
-      box-shadow: 0 0 3px teal;
+      box-shadow: 0 0 3px #008080;
       border-radius: 8px;
-      background: mediumaquamarine;
+      background: #66cdaa;
       padding: 0.25em 0.5em;
       max-width: max-content;
-      color: black;
+      color: #000000;
       font-size: clamp(1.5em, 7vw, 2em);
       list-style: none;
       text-align: center;
@@ -279,8 +279,8 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
         font-weight: 500;
       }
       &:hover {
-        box-shadow: 0 0 8px mediumspringgreen;
-        background: aquamarine;
+        box-shadow: 0 0 8px #00fa9a;
+        background: #7fffd4;
       }
       &:active {
         scale: 0.95;
@@ -288,13 +288,13 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
     }
     &[open] {
       > summary:first-child {
-        background: rgb(10, 15, 25);
-        color: mediumaquamarine;
+        background: #0a0f19;
+        color: #66cdaa;
         &::before {
           transform: rotate(90deg) translateX(1px);
         }
         &:hover {
-          background: rgb(20, 25, 35);
+          background: #141923;
         }
       }
     }

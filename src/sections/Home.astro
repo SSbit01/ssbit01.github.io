@@ -15,10 +15,10 @@ import { Icon } from "astro-iconify";
     display: grid;
     animation: 40s ease infinite dynamic-bg;
     border-bottom: thin solid;
-    background: rgb(10, 15, 20) linear-gradient(135deg, rgb(30, 50, 60), rgb(10, 20, 30), rgb(10, 15, 20), rgb(20, 20, 10), rgb(30, 30, 15));
+    background: #0a0f14 linear-gradient(135deg, #1e323c, #0a141e, #0a0f14, #14140a, #1e1e0f);
     background-size: 400% 400%;
     min-height: 100vh;
-    color: mediumspringgreen;
+    color: #00fa9a;
   }
 
   #intro {
@@ -33,7 +33,7 @@ import { Icon } from "astro-iconify";
     mark {
       position: relative;
       background: inherit;
-      color: aquamarine;
+      color: #7fffd4;
       font-style: italic;
       white-space: nowrap;
       &::after {
@@ -45,7 +45,7 @@ import { Icon } from "astro-iconify";
         transform-origin: center;
         transition: transform 0.15s;
         border-radius: 2px;
-        background: mediumturquoise;
+        background: #48d1cc;
         height: 2px;
         content: "";
       }
@@ -61,9 +61,9 @@ import { Icon } from "astro-iconify";
 
   #me {
     position: relative;
-    color: aquamarine;
+    color: #7fffd4;
     font-style: italic;
-    text-decoration: underline double paleturquoise;
+    text-decoration: underline double #afeeee;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
     text-shadow: 0 0 3px;
@@ -77,11 +77,11 @@ import { Icon } from "astro-iconify";
         transform 0.2s,
         box-shadow 0.2s;
       inset: 0;
-      box-shadow: 0 0 8px teal;
+      box-shadow: 0 0 8px #008080;
       border-radius: 4px;
-      background: mediumaquamarine;
+      background: #66cdaa;
       content: "SSbit01";
-      color: black;
+      color: #000000;
       font-weight: 400;
     }
     &:hover::after {
@@ -91,23 +91,23 @@ import { Icon } from "astro-iconify";
     &:active {
       user-select: none;
       &::after {
-        box-shadow: 0 0 12px mediumaquamarine;
-        background: aquamarine;
+        box-shadow: 0 0 12px #66cdaa;
+        background: #7fffd4;
       }
     }
   }
 
   #headline {
-    color: lightseagreen;
+    color: #20b2aa;
     line-height: 1.25;
     &::after {
       display: inline-block;
       vertical-align: sub;
       animation: 1s infinite step-end caret;
       margin: 0 0.35em;
-      box-shadow: 0 0 6px lightcyan;
+      box-shadow: 0 0 6px #e0ffff;
       border-radius: 2px;
-      background: lightcyan;
+      background: #e0ffff;
       width: 0.2em;
       height: 1em;
       content: "";
@@ -116,21 +116,21 @@ import { Icon } from "astro-iconify";
 
   #scroll-down {
     display: inline-block;
-    filter: drop-shadow(0 0 3px darkslateblue);
+    filter: drop-shadow(0 0 3px #483d8b);
     animation: 1s infinite bounce;
     transition-duration: 0.2s;
     transition-property: color, filter, scale;
     margin-top: 0.5em;
     width: clamp(3em, 9vmin, 4em);
-    color: cadetblue;
+    color: #5f9ea0;
     &:hover {
-      filter: drop-shadow(0 0 3px teal);
-      color: mediumaquamarine;
+      filter: drop-shadow(0 0 3px #008080);
+      color: #66cdaa;
     }
     &:active {
       scale: 0.9;
-      filter: drop-shadow(0 0 4px lightseagreen);
-      color: aquamarine;
+      filter: drop-shadow(0 0 4px #20b2aa);
+      color: #7fffd4;
     }
   }
 
@@ -145,7 +145,7 @@ import { Icon } from "astro-iconify";
     50% {
       opacity: 0;
       border-radius: 4em;
-      background: seagreen;
+      background: #2e8b57;
       pointer-events: none;
     }
   }

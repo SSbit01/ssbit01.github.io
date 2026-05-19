@@ -75,7 +75,7 @@ import { Icon } from "astro-iconify";
     transform-origin: bottom;
     z-index: 2;
     animation: 1.75s ease navbar-anim1;
-    border-top: thin solid darkslategray;
+    border-top: thin solid #2f4f4f;
 
     &::before {
       position: absolute;
@@ -84,8 +84,8 @@ import { Icon } from "astro-iconify";
       top: -$height-bar;
       z-index: 1;
       animation: 2.75s ease fill;
-      box-shadow: 0 2px 3px black;
-      background: gold;
+      box-shadow: 0 2px 3px #000;
+      background: #ffd700;
       width: var(--scroll-indicator);
       height: $height-bar;
     }
@@ -109,29 +109,29 @@ import { Icon } from "astro-iconify";
       }
 
       &.active {
-        background: mediumaquamarine;
-        color: black;
+        background: #66cdaa;
+        color: #000;
         font-weight: 500;
 
         &:hover {
-          background: rgb(115, 230, 190);
+          background: #73e6be;
         }
         &:active {
-          background: aquamarine;
+          background: #7fffd4;
         }
       }
 
       &:not(.active) {
-        background: rgba(10, 15, 20, 0.9);
-        color: gainsboro;
+        background: #0a0f14e6;
+        color: #dcdcdc;
 
         &:hover {
-          background: rgba(20, 25, 30, 0.9);
-          color: white;
+          background: #14191ee6;
+          color: #fff;
         }
         &:active {
-          background: rgba(25, 30, 35, 0.9);
-          color: white;
+          background: #191e23e6;
+          color: #fff;
         }
       }
 
@@ -142,7 +142,7 @@ import { Icon } from "astro-iconify";
   }
 
   @keyframes navbar-anim1 {
-    from,
+    0%,
     75% {
       transform: translateY(100%);
       opacity: 0;
@@ -150,7 +150,7 @@ import { Icon } from "astro-iconify";
   }
 
   @keyframes fill {
-    from,
+    0%,
     65% {
       width: 0;
     }
