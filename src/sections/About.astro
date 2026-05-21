@@ -13,15 +13,15 @@ import Skill from "#src/components/Skill.astro";
 
     <div id="about-me">
       <h1 class="title-section"><a href="#about-me">About Me</a></h1>
-      <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a simple enthusiast coder of the cosmos.</p>
+      <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a simple enthusiast coder.</p>
       <p>
         My curiosity for <strong>science</strong> and <strong>technology</strong> led me to learn <em>C</em> and <em>Python</em> as my first programming
-        languages. Shortly after, I became interested in <strong>Data Science</strong>, <strong>Artificial Intelligence</strong> and <strong
-          >Physics</strong
-        >.
+        languages.
       </p>
       <p>
-        I also have a keen interest in <strong>Web Development</strong>, <strong>Cryptography</strong> and <strong>Communications</strong>.
+        Subsequently, I've expanded my knowledge in <strong>web development & optimization</strong>, <strong>authentication systems</strong>, <strong
+          >security</strong
+        > and <strong>search engine optimization (SEO)</strong>.
       </p>
     </div>
   </div>
@@ -119,16 +119,12 @@ import Skill from "#src/components/Skill.astro";
     </fieldset>
 
     <fieldset id="data-analysis">
-      <legend><a href="#data-analysis"><Icon name="ep:data-analysis" />Data Analysis & AI</a></legend>
-      <Skill icon="logos:r-lang">R</Skill>
-      <Skill icon="vscode-icons:file-type-matlab">MATLAB</Skill>
+      <legend><a href="#data-analysis"><Icon name="ep:data-analysis" />Data Analysis</a></legend>
       <Skill icon="logos:python">Python</Skill>
       <Skill icon="logos:numpy">NumPy</Skill>
       <Skill icon="simple-icons:pandas">Pandas</Skill>
       <Skill icon="logos:matplotlib-icon">Matplotlib</Skill>
       <Skill icon="logos:seaborn-icon">Seaborn</Skill>
-      <Skill icon="devicon:tensorflow">Tensorflow</Skill>
-      <Skill icon="devicon:keras">Keras</Skill>
       <Skill icon="logos:d3">D3.js</Skill>
     </fieldset>
   </div>
@@ -201,7 +197,7 @@ import Skill from "#src/components/Skill.astro";
         translate 0.15s;
       box-shadow: 0 0 8px #008080;
       border-radius: 50%;
-      width: 18em;
+      width: 12em;
       max-width: 100%;
       user-select: none;
       &:hover {
@@ -214,7 +210,7 @@ import Skill from "#src/components/Skill.astro";
     > figcaption:last-of-type {
       margin-top: 1em;
       color: #dcdcdc;
-      font-size: 0.75em;
+      font-size: 0.875em;
       text-align: center;
     }
   }
@@ -223,8 +219,7 @@ import Skill from "#src/components/Skill.astro";
     max-width: 55em;
     scroll-margin-top: 1em;
     > h1:first-child {
-      margin: 0;
-      text-align: center;
+      margin-block-start: 0;
     }
     > p {
       font-size: clamp(1em, 3vw, 1.1em);
@@ -328,12 +323,12 @@ import Skill from "#src/components/Skill.astro";
       padding: 1em $gap;
       scroll-margin-top: 1em;
       > legend {
-        font-size: clamp(1.1em, 5.8vw, 1.5em);
+        font-size: clamp(1em, 5.75vw, 1.5em);
         > a:first-child {
           display: inline-flex;
           position: relative;
           align-items: flex-end;
-          gap: 0.25em;
+          gap: 0.375em;
           transition: color 0.15s;
           color: #20b2aa;
           text-decoration: none;
