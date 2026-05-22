@@ -1,7 +1,5 @@
 ---
 import Project from "#src/components/Project.astro";
-
-const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life";
 ---
 
 <script>
@@ -19,55 +17,46 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
 
   <ul class="project-list">
     <li>
-      <Project
-        name="Voting App"
-        tags={["TypeScript", "Next.js", "Tailwind CSS", "Headless UI", "PWA", "Mongoose"]}
-        source="https://github.com/SSbit01/voting-app"
-        website="https://voting-app-iota.vercel.app/"
-      >
-        <p>A platform where users can create polls and everyone can vote in them.</p>
-        <p>It uses a <strong>MongoDB Atlas</strong> database to store users and polls.</p>
+      <Project name="Voting App" source="https://github.com/SSbit01/voting-app" website="https://voting-app-iota.vercel.app/">
+        <p>
+          A full-stack polling platform where users can create and participate in community driven polls. Built with Next.js and Tailwind
+          CSS, the application uses MongoDB for data persistence and features advanced modal based interactions.
+        </p>
       </Project>
     </li>
     <li>
-      <Project
-        name="HandyVoid"
-        tags={["Nuxt", "TypeScript", "Vue", "Stylus", "PWA", "i18n"]}
-        source="https://github.com/HandyVoid/HandyVoidium"
-        website="https://www.handyvoid.com/"
-      >
+      <Project name="HandyVoid" source="https://github.com/HandyVoid/HandyVoidium" website="https://www.handyvoid.com/">
         <p>
-          A multilingual platform that offers a comprehensive set of tools for a wide range of tasks. It aims to provide users with a single
-          platform where they can find all the tools they need without having to navigate through multiple websites.
+          A multilingual platform built with Nuxt.js that offers a comprehensive set of tools for a wide range of tasks. It aims to provide
+          users with a single platform where they can find all the tools they need without having to navigate through multiple websites.
         </p>
       </Project>
     </li>
     <li>
       <Project
         name="Simple Chat Rooms"
-        tags={["TypeScript", "Vue", "Pinia", "Stylus", "PWA", "Express", "Socket.IO"]}
         source="https://github.com/SSbit01/Simple-Chat-Rooms"
         website="https://simple-chat-rooms.onrender.com/"
       >
-        <p>A platform that allows users to create and join chat rooms without creating an account.</p>
-        <p>It uses <strong>WebSockets</strong> to provide real-time chat functionality.</p>
+        <p>
+          A real-time chat platform that allows users to create and join chat rooms without requiring an account. Built with Vue and
+          Node.js, it uses Socket.IO to enable real-time communication.
+        </p>
+        <p><strong>Note:</strong> Due to the free tier limitations of Render, it may take a few seconds to wake up the platform.</p>
       </Project>
     </li>
     <li>
       <Project
         name="ISAL"
-        tags={["Express", "Pug", "Bootstrap", "Mongoose", "Pixabay API"]}
         source="https://github.com/SSbit01/Image-Search-Abstraction-Layer"
         website="https://image-search-abstraction-layer.onrender.com/"
       >
         <p>
-          A simple and easy-to-use image search website that makes use of the <a
-            href="https://pixabay.com/api/docs/"
-            target="_blank"
-            rel="noreferrer noopener">Pixabay API</a
-          >.
+          An intuitive image search website powered by the <a href="https://pixabay.com/api/docs/" target="_blank" rel="noreferrer noopener"
+            >Pixabay API</a
+          >. Built with Express, Pug and Bootstrap.
         </p>
-        <p>It can store search strings in a <strong>MongoDB Atlas</strong> database.</p>
+        <p><strong>Note:</strong> Due to the free tier limitations of Render, it may take a few seconds to wake up the platform.</p>
       </Project>
     </li>
   </ul>
@@ -76,38 +65,35 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
     <summary>Other Projects</summary>
     <ul class="project-list">
       <li>
-      <Project
-        name="Game Of Life"
-        tags={["Vue", "Stylus"]}
-        source="https://codepen.io/ssbit01/pen/YzZRQNV"
-        website="https://codepen.io/ssbit01/full/YzZRQNV"
-      >
-        <p>My own implementation of <a href={conwayGameOfLifeWiki} target="_blank" rel="noreferrer noopener">Conway's Game Of Life</a>.</p>
-        <p>
-          <a href={conwayGameOfLifeWiki} target="_blank" rel="noreferrer noopener">Conway's Game of Life</a> is a cellular automaton where cells
-          live or die based on the number of live neighbors they have. It is a simple, but many complex patterns can emerge.
-        </p>
-        <p>This is one of my favorite projects &lt;3</p>
-      </Project>
-    </li>
+        <Project
+          name="Game Of Life"
+          tags={["Vue", "Stylus"]}
+          source="https://codepen.io/ssbit01/pen/YzZRQNV"
+          website="https://codepen.io/ssbit01/full/YzZRQNV"
+        >
+          <p>
+            My own implementation of <a
+              href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+              target="_blank"
+              rel="noreferrer noopener">Conway's Game Of Life</a
+            > built with Vue.
+          </p>
+        </Project>
+      </li>
       <li>
         <Project
           name="Wikipedia Viewer"
-          tags={["Pug", "Bootstrap", "Vanilla JavaScript", "Wikipedia"]}
           source="https://codepen.io/ssbit01/pen/dyNJwxv"
           website="https://codepen.io/ssbit01/full/dyNJwxv"
         >
           <p>
-            A simple project that lets you search and browse Wikipedia articles with ease. You can enter a keyword or a phrase and get a
-            list of matching results, or you can click the random button and get a surprise article. It's fast, responsive and elegant. Try
-            it out and discover something new on Wikipedia!
+            A fast, response & elegant page that lets you search and browse Wikipedia articles with ease. Built with Bootstrap and JavaScript.
           </p>
         </Project>
       </li>
       <li>
         <Project
           name="Scatterplot: Doping in Professional Bicycle Racing"
-          tags={["D3.js"]}
           source="https://codepen.io/ssbit01/pen/qBaorjO"
           website="https://codepen.io/ssbit01/full/qBaorjO"
         />
@@ -115,7 +101,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Bar Chart: U.S. GDP"
-          tags={["D3.js"]}
           source="https://codepen.io/ssbit01/pen/poEdPWW"
           website="https://codepen.io/ssbit01/full/poEdPWW"
         />
@@ -123,7 +108,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Choropleth Map: U.S. Educational Attainment"
-          tags={["D3.js"]}
           source="https://codepen.io/ssbit01/pen/gOwZzEZ"
           website="https://codepen.io/ssbit01/full/gOwZzEZ"
         />
@@ -131,7 +115,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Heatmap: Monthly Global Land-Surface Temperature"
-          tags={["D3.js"]}
           source="https://codepen.io/ssbit01/pen/eYdKxMO"
           website="https://codepen.io/ssbit01/full/eYdKxMO"
         />
@@ -139,7 +122,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Simon Game"
-          tags={["React"]}
           source="https://codepen.io/ssbit01/pen/poePVeV"
           website="https://codepen.io/ssbit01/full/poePVeV"
         />
@@ -147,7 +129,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Random Quote Machine"
-          tags={["Bootstrap", "jQuery"]}
           source="https://codepen.io/ssbit01/pen/JjGZmrd"
           website="https://codepen.io/ssbit01/full/JjGZmrd"
         />
@@ -155,7 +136,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Password Generator"
-          tags={["Bootstrap", "Vanilla JavaScript"]}
           source="https://codepen.io/ssbit01/pen/RwVOaKw"
           website="https://codepen.io/ssbit01/full/RwVOaKw"
         />
@@ -163,7 +143,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="25 + 5 Clock"
-          tags={["React"]}
           source="https://codepen.io/ssbit01/pen/QWKGEVQ"
           website="https://codepen.io/ssbit01/full/QWKGEVQ"
         />
@@ -171,7 +150,6 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Rock Paper Scissors (Lizard Spock)"
-          tags={["Vue", "Font Awesome"]}
           source="https://codepen.io/ssbit01/pen/xxjpVoR"
           website="https://codepen.io/ssbit01/full/xxjpVoR"
         />
@@ -179,16 +157,10 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
       <li>
         <Project
           name="Intro to Python"
-          tags={["HTML", "CSS"]}
           source="https://codepen.io/ssbit01/pen/RwNzXrB"
           website="https://codepen.io/ssbit01/full/RwNzXrB"
         >
           <p>My own basic <strong>Python</strong> documentation.</p>
-          <p>
-            <strong>Python</strong> is a general-purpose, high-level programming language that is known for its simple syntax and powerful libraries.
-            It is a popular language for a wide variety of tasks, including <strong>web development</strong>, <strong>data science</strong>,
-            and <strong>machine learning</strong>.
-          </p>
         </Project>
       </li>
     </ul>
@@ -224,10 +196,9 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     margin: auto;
     padding: 0;
-    max-width: 96em;
+    max-width: 90em;
     list-style: none;
   }
 
@@ -276,6 +247,12 @@ const conwayGameOfLifeWiki = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_L
           background: #141923;
         }
       }
+    }
+  }
+
+  @media (width > 35em) {
+    .project-list {
+      gap: 1.5em;
     }
   }
 </style>

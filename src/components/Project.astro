@@ -16,21 +16,11 @@ const { name, tags, source, website } = Astro.props,
   id = toTag(name);
 ---
 
-<figure class="project" tabindex="0">
+<figure class="project">
   <img src={`/images/projects/${id}.webp`} alt="Project Image" loading="lazy" draggable={false} />
 
   <figcaption>
     <h2 class="project-title">{name}</h2>
-
-    {
-      tags?.length && (
-        <ul class="tags">
-          {tags.map(tag => (
-            <li>{toTag(tag)}</li>
-          ))}
-        </ul>
-      )
-    }
 
     {
       Astro.slots.has("default") && (
@@ -57,95 +47,46 @@ const { name, tags, source, website } = Astro.props,
 
 <style lang="scss">
   .project {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
     position: relative;
     transition: box-shadow 0.2s;
     margin: 0;
-    box-shadow:
-      inset 0 0 4px #2f4f4f,
-      0 0 1px #008b8b;
+    box-shadow: 0 0 0.25em #008b8b;
     overflow: hidden;
-    text-align: center;
 
     > img {
       vertical-align: top; // PREVENTS EXTRA WHITE SPACE
-      transition: filter 0.2s;
       aspect-ratio: 16 / 9;
-      width: 48em;
       max-width: 100%;
       user-select: none;
     }
 
     > figcaption {
+      flex: 1;
       display: flex;
-      position: absolute;
       flex-direction: column;
       gap: clamp(0.75em, 2vw, 1em);
-      transform-origin: bottom;
-      transition-duration: 0.4s;
-      transition-property: visibility, opacity, scale;
-      inset: 0;
-      padding: clamp(1rem, 5vw, 2rem);
-      padding-bottom: clamp(1.25rem, 5vw, 2rem);
       overflow: auto;
-      font-size: clamp(0.9em, 3.4vw, 1em);
-    }
-
-    &:hover,
-    &:focus-within {
-      > img {
-        filter: blur(8px) brightness(0.3);
-      }
-    }
-
-    &:not(:hover):not(:focus-within) {
-      > figcaption {
-        scale: 0.9;
-        visibility: hidden;
-        opacity: 0;
-      }
-    }
-
-    &:focus-within {
-      outline: none;
-      box-shadow: inset 0 0 1px 4px #00fa9a;
+      padding: 1em;
     }
   }
 
   .project-title {
-    margin-top: auto;
-    margin-bottom: 0;
+    margin: 0;
     color: #c8ffe1;
-    font-size: clamp(1.5em, 5.75vw, 3em);
+    font-size: 1.75em;
+    text-align: center;
     text-shadow: 0 0 6px #008080;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5em 0.75em;
-    padding-left: 0;
-    font-size: clamp(0.85em, 2vw, 1em);
-    list-style: none;
-
-    > li {
-      color: #7fffd4;
-      text-shadow: 0 0 6px #000;
-
-      &::before {
-        content: "#";
-        color: #20b2aa;
-      }
-    }
   }
 
   .description {
     display: grid;
-    gap: 0.5em;
-    margin-top: 0.5em;
+    gap: 0.625em;
     line-height: 1.5;
-
+    margin-inline: auto;
     > :global(p) {
       margin: 0;
     }
@@ -169,8 +110,7 @@ const { name, tags, source, website } = Astro.props,
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: auto 0;
-
+    margin-block-start: auto;
     > a {
       display: flex;
       flex-direction: column;
@@ -179,7 +119,7 @@ const { name, tags, source, website } = Astro.props,
       text-decoration: none;
 
       > svg:first-child {
-        $size: clamp(2em, 7vw, 3em);
+        $size: clamp(2em, 7vw, 2.5em);
         translate: 0 0.5em;
         filter: drop-shadow(0 0 4px #000);
         transition:
@@ -220,6 +160,13 @@ const { name, tags, source, website } = Astro.props,
           text-shadow: 0 0 0.25em;
         }
       }
+    }
+  }
+
+  @media (width > 35em) {
+    .project {
+      max-width: 32em;
+      border-radius: 1em;
     }
   }
 </style>
