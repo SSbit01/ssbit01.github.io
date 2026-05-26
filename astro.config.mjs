@@ -49,7 +49,7 @@ export default defineConfig({
         "upgrade-insecure-requests"
       ]
     }*/
-   csp: true
+    csp: true
   },
 
   build: {

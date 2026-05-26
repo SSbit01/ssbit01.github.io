@@ -121,7 +121,8 @@ import Skill from "#src/components/Skill.astro";
 
 <style lang="scss">
   .title-section {
-    font-size: clamp(1.4em, 8vw, 2em);
+    font-size: clamp(1.375em, 8vw, 2em);
+    text-align: center;
     > a:first-child {
       position: relative;
       transition: color 0.15s;
@@ -298,20 +299,20 @@ import Skill from "#src/components/Skill.astro";
       }
     }
     > fieldset {
-      $gap: 1.25em;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
       align-items: center;
-      gap: $gap;
+      gap: 1.25em;
       margin-inline: -0.25em;
       box-shadow: 1px 1px 4px #000000;
       border: thin solid #2f4f4f;
       border-radius: 8px;
       background: #050f1480;
-      padding: 1em $gap;
+      padding: 1.25em 1em;
       scroll-margin-top: 1em;
       > legend {
+        padding: 0;
         font-size: clamp(1em, 5.75vw, 1.5em);
         > a:first-child {
           display: inline-flex;
