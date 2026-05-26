@@ -4,13 +4,55 @@ import { Icon } from "astro-iconify";
 
 <section id="home">
   <div id="intro">
-    <h1><a href="#about" id="me">Stefan Samson</a></h1>
+    <h1><a class="me" href="#about">Stefan Samson</a></h1>
     <h2 id="headline">An <mark>enthusiast</mark> coder of the <mark>cosmos</mark></h2>
     <a href="#about" id="scroll-down"><Icon name="icon-park-outline:double-down" /></a>
   </div>
 </section>
 
 <style lang="scss">
+  .me {
+    position: relative;
+    color: #7fffd4;
+    font-style: italic;
+    text-decoration: underline double #afeeee;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-shadow: 0 0 3px;
+    white-space: nowrap;
+    &::after {
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition:
+        background 0.15s,
+        transform 0.2s,
+        box-shadow 0.2s;
+      inset: 0;
+      /**
+       * Since the text is cursive is inline end
+       */
+      inset-inline-end: -0.0625em;
+      box-shadow: 0 0 8px #008080;
+      border-radius: 4px;
+      background: #66cdaa;
+      content: "SSbit01";
+      color: #000000;
+      font-weight: 400;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    &:active {
+      user-select: none;
+      &::after {
+        box-shadow: 0 0 12px #66cdaa;
+        background: #7fffd4;
+      }
+    }
+  }
+  
   #home {
     display: grid;
     animation: 40s ease infinite dynamic-bg;
@@ -56,44 +98,6 @@ import { Icon } from "astro-iconify";
     > h1:first-child {
       font-size: clamp(2em, 10vmin, 2.5em);
       line-height: 1.25;
-    }
-  }
-
-  #me {
-    position: relative;
-    color: #7fffd4;
-    font-style: italic;
-    text-decoration: underline double #afeeee;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-    text-shadow: 0 0 3px;
-    white-space: nowrap;
-    &::after {
-      position: absolute;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition:
-        background 0.15s,
-        transform 0.2s,
-        box-shadow 0.2s;
-      inset: 0;
-      box-shadow: 0 0 8px #008080;
-      border-radius: 4px;
-      background: #66cdaa;
-      content: "SSbit01";
-      color: #000000;
-      font-weight: 400;
-    }
-    &:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    &:active {
-      user-select: none;
-      &::after {
-        box-shadow: 0 0 12px #66cdaa;
-        background: #7fffd4;
-      }
     }
   }
 
