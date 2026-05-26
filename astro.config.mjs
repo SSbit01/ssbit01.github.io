@@ -1,4 +1,3 @@
-import playformCompress from "@playform/compress";
 import { defineConfig, fontProviders } from "astro/config";
 import license from "rollup-plugin-license";
 
@@ -10,17 +9,6 @@ export default defineConfig({
   site: "https://ssbit01.github.io",
 
   output: "static",
-
-  integrations: [
-    playformCompress({
-      CSS: false,
-      HTML: true,
-      Image: false,
-      JavaScript: false,
-      JSON: false,
-      SVG: false
-    })
-  ],
 
   root: ".",
 
