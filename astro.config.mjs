@@ -37,7 +37,7 @@ export default defineConfig({
     /**
      * Astro by default only sets script-src and style-src in the HTML.
      */
-    csp: {
+    /*csp: {
       directives: [
         "base-uri 'self'",
         "connect-src 'self' blob:",
@@ -48,7 +48,8 @@ export default defineConfig({
         "object-src 'none'",
         "upgrade-insecure-requests"
       ]
-    }
+    }*/
+   csp: true
   },
 
   build: {
