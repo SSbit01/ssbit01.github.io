@@ -3,7 +3,6 @@ import { Icon } from "astro-iconify";
 
 interface Props {
   name: string;
-  tags?: string[];
   source: string;
   website?: string;
 }
@@ -12,8 +11,8 @@ function toTag(str: string) {
   return str.toLowerCase().replaceAll(/\W/g, "-");
 }
 
-const { name, tags, source, website } = Astro.props,
-  id = toTag(name);
+const { name, source, website } = Astro.props;
+const id = toTag(name);
 ---
 
 <figure class="project">
@@ -31,16 +30,14 @@ const { name, tags, source, website } = Astro.props,
     }
 
     <div class="links">
-      {
-        [
-          { href: source, title: "Source", icon: "fluent:code-24-filled" },
-          { href: website, title: "Website", icon: "lucide:external-link" }
-        ].map(({ href, title, icon }) => (
-          <a href={href} target="_blank" rel="noreferrer noopener" title={title}>
-            <Icon name={icon} />
-          </a>
-        ))
-      }
+      <a href={source} target="_blank" rel="noreferrer noopener" title="Source">
+        <Icon name="fluent:code-24-filled" /><span class="link-text">Source</span>
+      </a>
+      {website && (
+        <a href={website} target="_blank" rel="noreferrer noopener" title="Website">
+          <span class="link-text">Website</span><Icon name="lucide:external-link" />
+        </a>
+      )}
     </div>
   </figcaption>
 </figure>
@@ -70,6 +67,7 @@ const { name, tags, source, website } = Astro.props,
       flex-direction: column;
       gap: clamp(0.75em, 2vw, 1em);
       padding: 1em;
+      padding-block-end: 1.5em;
       overflow: auto;
     }
   }
@@ -108,62 +106,40 @@ const { name, tags, source, website } = Astro.props,
 
   .links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    gap: 2em;
+    font-size: 1.1875em;
     margin-block-start: auto;
+    padding-block-start: 0.5em;
     > a {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      color: #ff0;
+      gap: 0.5em;
+      color: #ffd700;
       text-decoration: none;
+      transition: color 0.15s, filter 0.15s;
 
-      > svg:first-child {
-        $size: clamp(2em, 7vw, 2.5em);
-        translate: 0 0.5em;
+      > svg {
         filter: drop-shadow(0 0 4px #000);
-        transition:
-          filter 0.2s,
-          translate 0.2s;
-        width: $size;
-        height: $size;
-        color: #ffd700;
-      }
-
-      &::after {
-        opacity: 0;
-        transition:
-          text-shadow 0.2s,
-          opacity 0.2s;
-        margin: 0;
-        content: attr(title);
-        font-size: 0.75em;
-        text-shadow: 0 0 0.25em #000;
+        width: 1.25em;
       }
 
       &:hover {
-        > svg:first-child {
-          translate: 0;
-        }
-        &::after {
-          opacity: 1;
-        }
+        color: #ff0;
       }
 
       &:active {
-        > svg:first-child {
-          translate: 0 -0.25em;
-          filter: drop-shadow(0 0 0.25em);
-        }
-        &::after {
-          opacity: 1;
-          text-shadow: 0 0 0.25em;
-        }
+        filter: drop-shadow(0 0 0.25em #ffd700) !important;
       }
     }
   }
 
   @media (width > 35em) {
+    .links {
+      padding-inline: 1em;
+    }
+
     .project {
       border-radius: 1em;
       max-width: 32em;
