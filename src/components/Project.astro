@@ -33,11 +33,16 @@ const id = toTag(name);
       <a href={source} target="_blank" rel="noreferrer noopener" title="Source">
         <Icon name="fluent:code-24-filled" /><span class="link-text">Source</span>
       </a>
-      {website && (
-        <a href={website} target="_blank" rel="noreferrer noopener" title="Website">
-          <span class="link-text">Website</span><Icon name="lucide:external-link" />
-        </a>
-      )}
+      {
+        website && (
+          <a href={website} target="_blank" rel="noreferrer noopener" title="Website">
+            <>
+              <span class="link-text">Website</span>
+              <Icon name="lucide:external-link" />
+            </>
+          </a>
+        )
+      }
     </div>
   </figcaption>
 </figure>
@@ -55,9 +60,8 @@ const id = toTag(name);
     overflow: hidden;
 
     > img {
-      vertical-align: top; // PREVENTS EXTRA WHITE SPACE
       aspect-ratio: 16 / 9;
-      max-width: 100%;
+      width: 100%;
       user-select: none;
     }
 
@@ -109,16 +113,18 @@ const id = toTag(name);
     justify-content: space-between;
     align-items: center;
     gap: 2em;
-    font-size: 1.1875em;
     margin-block-start: auto;
     padding-block-start: 0.5em;
+    font-size: 1.1875em;
     > a {
       display: flex;
       align-items: center;
       gap: 0.5em;
+      transition:
+        color 0.15s,
+        filter 0.15s;
       color: #ffd700;
       text-decoration: none;
-      transition: color 0.15s, filter 0.15s;
 
       > svg {
         filter: drop-shadow(0 0 4px #000);
