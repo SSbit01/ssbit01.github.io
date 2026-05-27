@@ -12,7 +12,6 @@ import Skill from "#src/components/Skill.astro";
     </figure>
 
     <div id="about-me">
-      <h1 class="title-section"><a href="#about-me">About Me</a></h1>
       <p>I'm <strong>Stefan Samson</strong>, also known as <em><strong>SSbit01</strong></em>, a simple enthusiast coder.</p>
       <p>
         My curiosity for <strong>science</strong> and <strong>technology</strong> led me to learn <em>C</em> and <em>Python</em> as my first programming
@@ -26,13 +25,11 @@ import Skill from "#src/components/Skill.astro";
   </div>
 
   <fieldset id="interests">
-    <legend>Interests</legend>
+    <legend>Other Interests</legend>
 
     <ul>
       {
         [
-          { icon: "mdi:code-braces", text: "Coding" },
-          { icon: "hugeicons:artificial-intelligence-02", text: "Artificial Intelligence" },
           { icon: "mdi:microsoft-windows-classic", text: "Retrocomputing" },
           { icon: "ph:game-controller-duotone", text: "Video Games & Modding" },
           { icon: "eos-icons:atom-electron", text: "Physics" },
@@ -122,7 +119,6 @@ import Skill from "#src/components/Skill.astro";
 <style lang="scss">
   .title-section {
     font-size: clamp(1.375em, 8vw, 2em);
-    text-align: center;
     > a:first-child {
       position: relative;
       transition: color 0.15s;
@@ -206,11 +202,8 @@ import Skill from "#src/components/Skill.astro";
   }
 
   #about-me {
-    max-width: 55em;
+    max-width: 42em;
     scroll-margin-top: 1em;
-    > h1:first-child {
-      margin-block-start: 0;
-    }
     > p {
       font-size: clamp(1em, 3vw, 1.1em);
       line-height: 1.5;
@@ -249,13 +242,14 @@ import Skill from "#src/components/Skill.astro";
   }
 
   #interests {
-    margin: 0.5em auto;
+    margin-block: 1.75em 0;
+    margin-inline: auto;
     box-shadow: 1px 1px 4px #000000;
     border: thin solid #2f4f4f;
     border-radius: 8px;
     background: #050a0fbf;
     padding-top: 0.75em;
-    max-width: 75em;
+    max-width: 53em;
     > legend:first-child {
       color: #7fffd4;
       font-size: 1.25em;
@@ -285,10 +279,11 @@ import Skill from "#src/components/Skill.astro";
     display: grid;
     justify-content: center;
     gap: 1.5em;
-    margin-block-start: 2em;
+    margin-block-start: 3em;
+    scroll-margin-block-start: 1em;
     > h1:first-child {
-      margin-bottom: -0.25em;
       text-align: center;
+      margin: 0;
       > a {
         display: inline-flex;
         align-items: center;
