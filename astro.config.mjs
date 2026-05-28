@@ -18,7 +18,7 @@ export default defineConfig({
 
   outDir: OUT_DIR,
 
-  compressHTML: true,
+  compressHTML: "jsx",
 
   security: {
     checkOrigin: true,
@@ -35,10 +35,7 @@ export default defineConfig({
         "img-src 'self' blob: data: https://avatars.githubusercontent.com",
         "object-src 'none'",
         "upgrade-insecure-requests"
-      ],
-      styleDirective: {
-        resources: ["'self'", "'unsafe-hashes'"]
-      }
+      ]
     }
   },
 

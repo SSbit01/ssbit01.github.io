@@ -36,39 +36,40 @@ import { Icon } from "astro-iconify";
   const navBarEl = document.getElementById("navbar");
 
   if (navBarEl) {
-    const navLinkEls = Array.from(navBarEl.children),
-      sectionEls = Array.from(document.querySelectorAll<HTMLElement>(navLinkEls.map(a => a.getAttribute("href")).join(",")));
+    const activeNavClass = "active";
+    const navLinkEls = Array.from(navBarEl.children);
+    const sectionEls = document.querySelectorAll(navLinkEls.map(a => a.getAttribute("href")).join(","));
 
-    function onScroll() {
-      // Scroll Indicator
-      navBarEl?.style.setProperty(
-        "--scroll-indicator",
-        (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100 + "%"
-      );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const { id } = entry.target;
 
-      // Nav-Link Active
-      const id = sectionEls.find(
-          ({ offsetTop, offsetHeight }) => scrollY + innerHeight - (navBarEl?.offsetHeight || 0) - 3 <= offsetTop + offsetHeight
-        )?.id,
-        activeNavClass = "active";
-
-      navLinkEls.forEach(a => {
-        if (id && a.getAttribute("href")?.includes(id)) {
-          a.classList.add(activeNavClass);
+        if (entry.isIntersecting) {
+          navLinkEls.forEach((a) => {
+            if (a.getAttribute("href")?.includes(id)) {
+              a.classList.add(activeNavClass);
+            }
+          });
         } else {
-          a.classList.remove(activeNavClass);
+          navLinkEls.forEach((a) => {
+            if (a.getAttribute("href")?.includes(id)) {
+              a.classList.remove(activeNavClass);
+            }
+          });
         }
       });
-    }
+    }, {
+      root: null,
+      rootMargin: `-200px 0px -${navBarEl.offsetHeight + 100}px 0px`,
+      threshold: 0
+    });
 
-    new ResizeObserver(onScroll).observe(document.body, { box: "border-box" }); // Trigger onScroll when document height changes
-    window.addEventListener("scroll", onScroll);
+    sectionEls.forEach((section) => observer.observe(section));
   }
 </script>
 
 <style lang="scss">
   #navbar {
-    --scroll-indicator: 100%;
     display: flex;
     position: sticky;
     bottom: 0;
@@ -76,19 +77,6 @@ import { Icon } from "astro-iconify";
     z-index: 2;
     animation: 1.75s ease navbar-anim1;
     border-top: thin solid #2f4f4f;
-
-    &::before {
-      position: absolute;
-      content: "";
-      $height-bar: 3px; // Variable
-      top: -$height-bar;
-      z-index: 1;
-      animation: 2.75s ease fill;
-      box-shadow: 0 2px 3px #000;
-      background: #ffd700;
-      width: var(--scroll-indicator);
-      height: $height-bar;
-    }
 
     > a {
       display: flex;
@@ -146,13 +134,6 @@ import { Icon } from "astro-iconify";
     75% {
       transform: translateY(100%);
       opacity: 0;
-    }
-  }
-
-  @keyframes fill {
-    0%,
-    65% {
-      width: 0;
     }
   }
 
