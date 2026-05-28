@@ -7,7 +7,7 @@ export interface Social {
 export const github: Social = {
   href: "https://github.com/SSbit01",
   title: "GitHub",
-  icon: "line-md:github-twotone"
+  icon: "bi:github"
 };
 
 export const codepen: Social = {

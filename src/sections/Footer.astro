@@ -74,7 +74,7 @@ import * as sameAs from "#src/data/social";
         width: 3em;
       }
 
-      &:hover {
+      &:is(:hover, :focus-visible) {
         color: #afeeee;
 
         &::after {
@@ -88,6 +88,7 @@ import * as sameAs from "#src/data/social";
 
       &:focus {
         color: #40e0d0;
+        outline: none;
       }
     }
   }

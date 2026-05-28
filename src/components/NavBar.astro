@@ -40,31 +40,34 @@ import { Icon } from "astro-iconify";
     const navLinkEls = Array.from(navBarEl.children);
     const sectionEls = document.querySelectorAll(navLinkEls.map(a => a.getAttribute("href")).join(","));
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const { id } = entry.target;
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const { id } = entry.target;
 
-        if (entry.isIntersecting) {
-          navLinkEls.forEach((a) => {
-            if (a.getAttribute("href")?.includes(id)) {
-              a.classList.add(activeNavClass);
-            }
-          });
-        } else {
-          navLinkEls.forEach((a) => {
-            if (a.getAttribute("href")?.includes(id)) {
-              a.classList.remove(activeNavClass);
-            }
-          });
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: `-200px 0px -${navBarEl.offsetHeight + 100}px 0px`,
-      threshold: 0
-    });
+          if (entry.isIntersecting) {
+            navLinkEls.forEach(a => {
+              if (a.getAttribute("href")?.includes(id)) {
+                a.classList.add(activeNavClass);
+              }
+            });
+          } else {
+            navLinkEls.forEach(a => {
+              if (a.getAttribute("href")?.includes(id)) {
+                a.classList.remove(activeNavClass);
+              }
+            });
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: `-200px 0px -${navBarEl.offsetHeight + 100}px 0px`,
+        threshold: 0
+      }
+    );
 
-    sectionEls.forEach((section) => observer.observe(section));
+    sectionEls.forEach(section => observer.observe(section));
   }
 </script>
 
