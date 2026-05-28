@@ -13,8 +13,32 @@ import Project from "#src/components/Project.astro";
 </script>
 
 <section id="projects">
-  <h1 class="section-header">These are some of my projects</h1>
-
+  <div class="featured-project">
+    <img
+      alt="profile.rocks example"
+      class="featured-project-img"
+      draggable={false}
+      loading="lazy"
+      src="/images/projects/profile.rocks.webp"
+    />
+    <div class="featured-project-content">
+      <hgroup>
+        <h1 class="featured-project-title">profile.rocks</h1>
+        <p class="featured-project-indicator">Featured project</p>
+      </hgroup>
+      <h3 class="featured-project-slogan">The Map of Your Online Presence</h3>
+      <p>A platform that enables users to easily create profiles and micropages using Markdown. Built with <strong>Next.js</strong> (Front-End) and <strong>Bun</strong> (Back-End), it features:</p>
+      <ul class="featured-project-features">
+        <li>Secure session management</li>
+        <li>Payment processing via Polar.sh</li>
+        <li>Efficient client-side state management</li>
+      </ul>
+      <div>
+        <a class="featured-project-link" href="https://www.profile.rocks/" target="_blank" rel="noreferrer noopener">Visit website</a>
+      </div>
+    </div>
+  </div>
+  <h2 class="title-other-projects">Other projects</h2>
   <ul class="project-list">
     <li>
       <Project name="Secure OTP Server" source="https://github.com/SSbit01/secure-otp-server">
@@ -160,38 +184,15 @@ import Project from "#src/components/Project.astro";
 </section>
 
 <style lang="scss">
+  p {
+    line-height: 1.5;
+  }
+
   #projects {
     border-bottom: thin solid #00fa9a;
     background: #0f1923;
     padding-top: 2.75em;
     padding-bottom: 5em;
-  }
-
-  .section-header {
-    gap: 0.3em;
-    color: #00ced1;
-    font-size: clamp(1.5em, 6.4vw, 2em);
-    line-height: 1.5;
-    text-align: center;
-    $mx: 0.75em;
-    margin: 0 $mx 1.25em $mx;
-    > svg {
-      display: inline-block;
-      vertical-align: sub;
-      margin: 0 0.3em;
-      width: 1.25em;
-      color: #40e0d0;
-    }
-  }
-
-  .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    padding: 0;
-    max-width: 100em;
-    list-style: none;
   }
 
   #more-projects-details {
@@ -242,9 +243,107 @@ import Project from "#src/components/Project.astro";
     }
   }
 
+  .featured-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em 2em;
+    margin-block: 0 4em;
+  }
+
+  .featured-project-content {
+    padding-inline: 1em;
+    max-width: 36.25em;
+  }
+
+  .featured-project-features {
+    display: grid;
+    gap: 0.75em;
+    color: #dcdcdc;
+    padding-inline-start: 1em;
+    > li {
+      &::marker {
+        color: #00ced1;
+      }
+    }
+  }
+
+  .featured-project-img {
+    box-shadow: 0 0 0.25em #008b8b;
+    border-radius: 1em;
+    max-width: 18em;
+  }
+
+  .featured-project-indicator {
+    text-align: center;
+    color: #ffd700;
+    font-size: 1.5em;
+    margin-block-start: 0;
+  }
+
+  .featured-project-link {
+    display: block;
+    transition: text-shadow 0.2s;
+    color: #40e0d0;
+    font-size: 1.375em;
+    text-decoration: none;
+    max-width: max-content;
+    margin-block-start: 1.5em;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+    &:active {
+      text-shadow: 0 0 4px;
+    }
+  }
+
+  .featured-project-slogan {
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .featured-project-title {
+    text-align: center;
+    margin-block: 0.25em 0.5em;
+    color: #c8ffe1;
+    font-size: 2.5em;
+    text-shadow: 0 0 6px #008080;
+  }
+
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: 0;
+    max-width: 100em;
+    list-style: none;
+  }
+
+  .title-other-projects {
+    margin-block-end: 1.25em;
+    color: #00ced1;
+    font-size: 2.5em;
+    text-align: center;
+  }
+
   @media (width > 35em) {
     .project-list {
       gap: 1.5em;
+    }
+  }
+
+  @media (width > 62em) {
+    .featured-project {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .featured-project-indicator, .featured-project-slogan, .featured-project-title {
+      text-align: start;
     }
   }
 </style>

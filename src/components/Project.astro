@@ -19,7 +19,7 @@ const id = toTag(name);
   <img src={`/images/projects/${id}.webp`} alt="Project Image" loading="lazy" draggable={false} />
 
   <figcaption>
-    <h2 class="project-title">{name}</h2>
+    <h3 class="project-title">{name}</h3>
 
     {
       Astro.slots.has("default") && (
