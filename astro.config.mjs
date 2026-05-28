@@ -37,7 +37,7 @@ export default defineConfig({
         "upgrade-insecure-requests"
       ],
       styleDirective: {
-        resources: ["'self'", "'unsafe-inline'"]
+        resources: ["'self'", "'unsafe-hashes'"]
       }
     }
   },
