@@ -27,7 +27,10 @@ import Project from "#src/components/Project.astro";
         <p class="featured-project-indicator">Featured project</p>
       </hgroup>
       <h3 class="featured-project-slogan">The Map of Your Online Presence</h3>
-      <p>A platform that enables users to easily create profiles and micropages using Markdown. Built with <strong>Next.js</strong> (Front-End) and <strong>Bun</strong> (Back-End), it features:</p>
+      <p>
+        A platform that enables users to easily create profiles and micropages using Markdown. Built with <strong>Next.js</strong> (Front-End)
+        and <strong>Bun</strong> (Back-End), it features:
+      </p>
       <ul class="featured-project-features">
         <li>Secure session management</li>
         <li>Payment processing via Polar.sh</li>
@@ -59,8 +62,8 @@ import Project from "#src/components/Project.astro";
     <li>
       <Project name="Voting App" source="https://github.com/SSbit01/voting-app" website="https://voting-app-iota.vercel.app/">
         <p>
-          Full-stack polling platform for community-driven polls. Built with Next.js, Tailwind CSS, and MongoDB for data persistence,
-          featuring advanced modal-based interactions.
+          Full-stack for user poll creation and open voting that features advanced modal-based interactions. Built with Next.js, Tailwind
+          CSS, and MongoDB.
         </p>
       </Project>
     </li>
@@ -79,8 +82,8 @@ import Project from "#src/components/Project.astro";
         website="https://simple-chat-rooms.onrender.com/"
       >
         <p>
-          Real-time chat platform built with Vue, Node.js, and Socket.IO, allowing users to create and join chat rooms without account
-          creation.
+          Real-time chat platform that allows users to create and join chat rooms without account creation, built with Vue, Node.js, and
+          Socket.IO.
         </p>
         <p><strong>Note:</strong> Due to the free tier limitations of Render, it may take a few seconds to wake up the platform.</p>
       </Project>
@@ -91,7 +94,7 @@ import Project from "#src/components/Project.astro";
         source="https://github.com/SSbit01/Image-Search-Abstraction-Layer"
         website="https://image-search-abstraction-layer.onrender.com/"
       >
-        <p>Intuitive image search application powered by the Pixabay API, developed with Express, Pug, and Bootstrap.</p>
+        <p>Intuitive image search application powered by the Pixabay API, built with Express, Pug, and Bootstrap.</p>
         <p><strong>Note:</strong> Due to the free tier limitations of Render, it may take a few seconds to wake up the platform.</p>
       </Project>
     </li>
@@ -246,8 +249,8 @@ import Project from "#src/components/Project.astro";
   .featured-project {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 1em 2em;
     margin-block: 0 4em;
   }
@@ -260,8 +263,8 @@ import Project from "#src/components/Project.astro";
   .featured-project-features {
     display: grid;
     gap: 0.75em;
-    color: #dcdcdc;
     padding-inline-start: 1em;
+    color: #dcdcdc;
     > li {
       &::marker {
         color: #00ced1;
@@ -276,20 +279,20 @@ import Project from "#src/components/Project.astro";
   }
 
   .featured-project-indicator {
-    text-align: center;
+    margin-block-start: 0;
     color: #ffd700;
     font-size: 1.5em;
-    margin-block-start: 0;
+    text-align: center;
   }
 
   .featured-project-link {
     display: block;
     transition: text-shadow 0.2s;
+    margin-block-start: 1.5em;
+    max-width: max-content;
     color: #40e0d0;
     font-size: 1.375em;
     text-decoration: none;
-    max-width: max-content;
-    margin-block-start: 1.5em;
 
     &:hover,
     &:active {
@@ -301,15 +304,15 @@ import Project from "#src/components/Project.astro";
   }
 
   .featured-project-slogan {
-    text-align: center;
     font-size: 1.5em;
+    text-align: center;
   }
 
   .featured-project-title {
-    text-align: center;
     margin-block: 0.25em 0.5em;
     color: #c8ffe1;
     font-size: 2.5em;
+    text-align: center;
     text-shadow: 0 0 6px #008080;
   }
 
@@ -342,7 +345,9 @@ import Project from "#src/components/Project.astro";
       align-items: flex-start;
     }
 
-    .featured-project-indicator, .featured-project-slogan, .featured-project-title {
+    .featured-project-indicator,
+    .featured-project-slogan,
+    .featured-project-title {
       text-align: start;
     }
   }

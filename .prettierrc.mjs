@@ -30,6 +30,7 @@ const prettierConfig = {
   proseWrap: "preserve",
   htmlWhitespaceSensitivity: "css",
   vueIndentScriptAndStyle: false,
+  endOfLine: "lf",
   singleAttributePerLine: false
 };
 
