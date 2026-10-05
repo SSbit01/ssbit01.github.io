@@ -2,16 +2,6 @@
 import Project from "#src/components/Project.astro";
 ---
 
-<script>
-  document.getElementById("more-projects-details")?.addEventListener("toggle", function (event) {
-    const el = event.target as HTMLDetailsElement;
-
-    if (el.open) {
-      el.scrollIntoView(true);
-    }
-  });
-</script>
-
 <section id="projects">
   <div class="featured-project">
     <img
@@ -185,6 +175,16 @@ import Project from "#src/components/Project.astro";
     </ul>
   </details>
 </section>
+
+<script>
+  document.getElementById("more-projects-details")?.addEventListener("toggle", function (event) {
+    const el = event.target as HTMLDetailsElement;
+
+    if (el.open) {
+      el.scrollIntoView(true);
+    }
+  });
+</script>
 
 <style lang="scss">
   p {
